@@ -10,6 +10,15 @@ function Header(){
                 <div className="headerlogo">
                     <h1>eCommerce</h1>
                 </div>
+                <div className="headercategories">
+                        <select>
+                            <option selected disabled>Categorias</option>
+                            <option>Blusas</option>
+                            <option>Calças</option>
+                            <option>Shorts</option>
+                            <option>Sapatos</option>
+                        </select>
+                </div>
                 <div className="headerinput">
                     <input type="text" placeholder="Procure um produto"></input>
                 </div>
