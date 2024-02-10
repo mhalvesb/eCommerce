@@ -1,0 +1,24 @@
+header{
+    width: 100%;
+    background-color: #111;
+    color: #fff;
+}
+
+h1, p{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+.headerarea{
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
