@@ -2,6 +2,7 @@ import React from "react";
 import "./header.css"
 
 import Cart from "../../assets/icons/cart.png";
+import User from "../../assets/icons/user.png";
 
 function Header(){
     return(
@@ -23,9 +24,10 @@ function Header(){
                     <input type="text" placeholder="Procure um produto"></input>
                 </div>
                 <div className="headerlogin">
+                    <img src={User} alt="user"></img>
                     <p>Login</p>
                 </div>
-                <div className="header-cart">
+                <div className="headercart">
                     <img src={Cart} alt="cart"></img>
                     <p>Cart</p>
                 </div>
