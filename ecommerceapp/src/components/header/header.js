@@ -3,9 +3,20 @@ import "./header.css"
 
 function Header(){
     return(
-        <div>
-
-        </div>
+        <header>
+            <div className="headerlogo">
+                <h1>eCommerce</h1>
+            </div>
+            <div className="headerinput">
+                <input type="text" placeholder="Procure um produto"></input>
+            </div>
+            <div className="headerlogin">
+                <p>Login</p>
+            </div>
+            <div className="header-cart">
+                
+            </div>
+        </header>
     )
 }
 
