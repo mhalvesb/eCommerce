@@ -1,5 +1,6 @@
 import React from "react";
 
+import Header from "../../components/header/header.js";
 
 import "./main.css";
 
@@ -7,10 +8,18 @@ import "./main.css";
 
 function Main(){
     return(
-        <main>
+        <div>
+            <Header/>
+            <main>
             <section className="banner">
-                
+                <div className="bannertext">
+                    <h1></h1>
+                </div>
             </section>
-        </main>
+            </main>
+        </div>
+        
     )
 }
+
+export default Main;
