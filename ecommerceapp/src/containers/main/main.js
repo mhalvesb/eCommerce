@@ -26,6 +26,17 @@ function Main(){
                     <div className="ic1"><img src={Support} alt=""></img>Suporte funcionando 24/7</div>
                 </div>
             </div>
+
+            <section>
+                <div className="products">
+                    <h3 className="productpromotion">Promoções do mês</h3>
+                    <div className="productarea">
+                        <div className="product">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
             </main>
         </div>
         

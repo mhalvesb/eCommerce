@@ -45,3 +45,23 @@
 .ic1:nth-child(3){
     justify-content: flex-end;
 }
+
+
+.products{
+    width: 100%;
+    background-color: aliceblue;
+    
+    text-align: center;
+}
+
+.productpromotion{
+    font-weight: 400;
+    font-size: 30px;
+    margin: 0px;
+    
+}
+
+.productarea{
+    width: 80vw;
+}
+
