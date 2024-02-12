@@ -4,6 +4,8 @@ import Header from "../../components/header/header.js";
 
 import "./main.css";
 
+
+import Blusa from "../../assets/images/blusabranca.avif";
 import Delivery from "../../assets/icons/delivery.png";
 import Discount from "../../assets/icons/discount.png";
 import Support from "../../assets/icons/support.png";
@@ -31,9 +33,49 @@ function Main(){
                 <div className="products">
                     <h3 className="productpromotion">Promoções do mês</h3>
                     <div className="productarea">
-                        <div className="product">
 
+                        <div className="product">
+                            <img src={Blusa} alt="blusa"></img>
+                            <h4>Blusa branca Masculina</h4>
+                            <p>R$ 90,00</p>
+                            <button>Comprar</button>
                         </div>
+
+                        <div className="product">
+                            <img src={Blusa} alt="blusa"></img>
+                            <h4>Blusa branca Masculina</h4>
+                            <p>R$ 90,00</p>
+                            <button>Comprar</button>
+                        </div>
+
+                        <div className="product">
+                            <img src={Blusa} alt="blusa"></img>
+                            <h4>Blusa branca Masculina</h4>
+                            <p>R$ 90,00</p>
+                            <button>Comprar</button>
+                        </div>
+
+                        <div className="product">
+                            <img src={Blusa} alt="blusa"></img>
+                            <h4>Blusa branca Masculina</h4>
+                            <p>R$ 90,00</p>
+                            <button>Comprar</button>
+                        </div>
+
+                        <div className="product">
+                            <img src={Blusa} alt="blusa"></img>
+                            <h4>Blusa branca Masculina</h4>
+                            <p>R$ 90,00</p>
+                            <button>Comprar</button>
+                        </div>
+
+                        <div className="product">
+                            <img src={Blusa} alt="blusa"></img>
+                            <h4>Blusa branca Masculina</h4>
+                            <p>R$ 90,00</p>
+                            <button>Comprar</button>
+                        </div>
+
                     </div>
                 </div>
             </section>
