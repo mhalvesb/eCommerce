@@ -22,11 +22,18 @@
 }
 
 .bannertext button{
-    width: 50%;
-    height: 40px;
+    width: 60%;
+    height: 50px;
     border: none;
     background-color: #111;
     color: #fff;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.bannertext button:hover{
+    background-color: #333;
+    
 }
 
 .mainbar{
