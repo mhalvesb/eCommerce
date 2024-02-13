@@ -15,12 +15,15 @@ function Main(){
         <div>
             <Header/>
             <main>
-            <section className="banner">
-                <div className="bannertext">
-                    <h1>Compre roupas e acessórios com super descontos</h1>
-                    <button>Comprar agora</button>
-                </div>
-            </section>
+                <section className="bannerarea">
+                    <div className="banner">
+                    <div className="bannertext">
+                        <h1>Compre roupas e acessórios com super descontos</h1>
+                        <button>Comprar agora</button>
+                    </div>
+                    </div>
+                </section>
+            
 
             <div className="mainbar">
                 <div className="mainarea">

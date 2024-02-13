@@ -1,9 +1,17 @@
+.bannerarea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 .banner{
     background: url("../../assets/images/banner.jpg");
     background-position:center;
     background-size: contain;
     background-repeat: no-repeat;
     height: 500px;
+    width: 80vw;
 }
 
 .bannertext{
@@ -11,7 +19,6 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    margin-left: 50px;
     font-size: 40px;
     align-items: flex-start;
     width: 30%;
