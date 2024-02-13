@@ -6,6 +6,29 @@
     height: 500px;
 }
 
+.bannertext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+    font-size: 40px;
+    align-items: flex-start;
+    width: 30%;
+    margin-top: 40px;
+}
+
+.bannertext h1{
+    font-weight: 900;
+}
+
+.bannertext button{
+    width: 50%;
+    height: 40px;
+    border: none;
+    background-color: #111;
+    color: #fff;
+}
+
 .mainbar{
     width: 100%;
     color: #fff;
@@ -69,7 +92,7 @@
     width: 80vw;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
