@@ -18,6 +18,8 @@ footer{
 .f1{
     width: 25%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .f1:first-child{
@@ -26,4 +28,19 @@ footer{
 
 .f1:last-child{
     text-align: end;
+}
+
+.f1 h4{
+    font-weight: 900;
+}
+
+.f1 p{
+    font-weight: 200;
+    margin-top: 10px;
+}
+
+.f1 a{
+    text-decoration: none;
+    color: #fff;
+    margin-top: 10px;
 }

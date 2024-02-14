@@ -15,16 +15,18 @@ function Footer(){
 
                 <div className="f1">
                     <h4>Social</h4>
-                    
+                    <Link to="">Facebook</Link>
+                    <Link to="">Instagram</Link>
+                    <Link to="">Twitter</Link>
                 </div>
                 
                 <div className="f1">
-                    <p>Links uteis</p>
+                    <h4>Links uteis</h4>
                 </div>
                 
 
                 <div className="f1">
-                    <p>Contato</p>
+                    <h4>Contato</h4>
                 </div>
             </div>
         </footer>
