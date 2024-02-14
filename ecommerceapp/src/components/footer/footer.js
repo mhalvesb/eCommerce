@@ -22,11 +22,17 @@ function Footer(){
                 
                 <div className="f1">
                     <h4>Links uteis</h4>
+                    <p>Blusas</p>
+                    <p>Calças</p>
+                    <p>Shorts</p>
+                    <p>Sapatos</p>
                 </div>
                 
 
                 <div className="f1">
                     <h4>Contato</h4>
+                    <p>XXXXX@gmail.com</p>
+                    <p>+55 (11)99999-9999</p>
                 </div>
             </div>
         </footer>
