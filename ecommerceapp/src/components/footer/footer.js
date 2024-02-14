@@ -8,7 +8,8 @@ function Footer(){
         <footer>
             <div className="footernames">
                 <div>
-                    <p>eCommerce</p>
+                    <h4>eCommerce</h4>
+                    <p>Explore nossa variedade de produtos e desfrute de uma jornada de compras fácil e segura conosco.</p>
                 </div>
 
                 <div>
