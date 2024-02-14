@@ -84,6 +84,7 @@ function Main(){
                 </div>
             </section>
             </main>
+            <Footer/>
         </div>
         
     )
