@@ -80,6 +80,27 @@ function Main(){
                             <button>Comprar</button>
                         </div>
 
+                        <div className="product">
+                            <img src={Blusa} alt="blusa"></img>
+                            <h4>Blusa branca Masculina</h4>
+                            <p>R$ 90,00</p>
+                            <button>Comprar</button>
+                        </div>
+
+                        <div className="product">
+                            <img src={Blusa} alt="blusa"></img>
+                            <h4>Blusa branca Masculina</h4>
+                            <p>R$ 90,00</p>
+                            <button>Comprar</button>
+                        </div>
+
+                        <div className="product">
+                            <img src={Blusa} alt="blusa"></img>
+                            <h4>Blusa branca Masculina</h4>
+                            <p>R$ 90,00</p>
+                            <button>Comprar</button>
+                        </div>
+
                     </div>
                 </div>
             </section>

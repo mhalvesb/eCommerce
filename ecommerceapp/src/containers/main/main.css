@@ -98,7 +98,7 @@
 .productpromotion{
     font-weight: 400;
     font-size: 30px;
-    margin: 20px 0px;
+    margin: 20px 0px 0px 0px;
     color: #444;    
 }
 
@@ -106,19 +106,24 @@
     width: 80vw;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.productarea::after{
+    content: "";
+    flex: auto;
 }
 
 .product{
     width: 300px;
     height: 400px;
     background-color: #fff;
-    padding: 10px 20px;
+    padding: 0px 20px;
     text-align: start;
     display: flex;
     flex-direction: column;
-    margin: 20px 20px;
+    margin: 40px 20px;
 }
 
 .product h4{
