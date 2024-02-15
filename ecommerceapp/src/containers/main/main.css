@@ -1,13 +1,18 @@
+main{
+    
+}
 .bannerarea{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    z-index: 100;
+    position: relative;
 }
 
 .banner{
     background: url("../../assets/images/banner.jpg");
-    background-position:center;
+    background-position: right;
     background-size: contain;
     background-repeat: no-repeat;
     height: 500px;
@@ -25,7 +30,41 @@
 }
 
 .bannertext h1{
+    position: relative;
     font-weight: 900;
+    animation: h1anim 2s forwards;
+}
+
+.bannertext h1:before{
+    content: "Compre roupas";
+    position: relative;
+    left: -100%;
+    top: 0;
+    animation: h1anim 1s forwards;
+    animation-delay: 0.5s;
+
+}
+.bannertext h1:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-color: #fff;
+}
+
+
+@keyframes h1anim{
+    0%{
+        opacity: 0.2s;
+        left: -100%;
+    }
+
+    100%{
+        opacity: 1;
+        left: 0%;
+    }
 }
 
 .bannertext button{
@@ -36,6 +75,18 @@
     color: #fff;
     transition: 0.4s;
     cursor: pointer;
+    animation: buttonanim 2s forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+}
+
+@keyframes buttonanim{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 .bannertext button:hover{
@@ -158,4 +209,41 @@
 .product button:hover{
     background-color: #333;
     cursor: pointer;
+}
+
+
+span{
+    position: relative;
+    margin-bottom: 5px;
+}
+
+span:before{
+    content: "e acessorios com super descontos";
+    position: relative;
+    animation: textanim 2s forwards;
+    animation-delay: 1s;
+    top: 0;
+    left: -100%;
+}
+
+span:after{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: -100%;
+}
+
+
+@keyframes textanim{
+    0%{
+        left: -100%;
+        opacity: 0.2;
+    }
+    100%{
+        left: 0%;
+        opacity: 1;
+    }
 }

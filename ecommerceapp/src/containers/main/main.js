@@ -18,7 +18,9 @@ function Main(){
                 <section className="bannerarea">
                     <div className="banner">
                     <div className="bannertext">
-                        <h1>Compre roupas e acessórios com super descontos</h1>
+                        <h1></h1> 
+                            <span className="anim"></span>
+                        
                         <button>Comprar agora</button>
                     </div>
                     </div>
