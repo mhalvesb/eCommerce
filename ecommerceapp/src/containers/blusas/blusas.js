@@ -15,8 +15,10 @@ function Blusas(){
             <Header/>
             
                 <main>
-                    <section className="blusasproduct">
+                    <section className="blusassection">
+
                         <h3 className="blusastext">Blusas</h3>
+
                         <div className="blusasproductarea">
 
                             <div className="blusasproduct">
