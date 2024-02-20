@@ -30,7 +30,7 @@ function Header(){
             atualizarCateg(categoriaSalva);
         }
         if(`/${categoriaSalva}` !== searchParams){
-            atualizarCateg(`${searchParams}`);
+            atualizarCateg(`${searchParams.substring(1)}`);
             console.log("sim")
         }
     })
