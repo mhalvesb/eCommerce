@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./header.css"
 
@@ -10,19 +10,30 @@ function Header(){
     const history = useNavigate();
     const location = useLocation();
     const [categoriaSelect, atualizarCateg] = useState("");
+
     const searchParams = location.pathname;
 
-    console.log(searchParams);
     const handleSelecionarCategoria = (event) =>{
-        
         const categoria = event.target.value;
+        atualizarCateg(categoria);
+        localStorage.setItem("categoriaSelect", categoria);
+        if(`/${categoria}` == searchParams){
 
-       
-        if(categoria !== categoriaSelect){
-            atualizarCateg(categoria);
-            
+        }else{
+            history(`/${categoria}`);
         }
     }
+
+    useEffect(()=>{
+        const categoriaSalva = localStorage.getItem("categoriaSelect");
+        if(categoriaSalva){
+            atualizarCateg(categoriaSalva);
+        }
+        if(`/${categoriaSalva}` !== searchParams){
+            atualizarCateg(`${searchParams}`);
+            console.log("sim")
+        }
+    })
 
 
 
@@ -34,12 +45,11 @@ function Header(){
                 </div>
                 <div className="headercategories">
                         <select value={categoriaSelect} onChange={handleSelecionarCategoria}>
-                            <option value="" selected disabled>Categorias</option>
-                            
+                            <option  value="">Inicio</option>
                             <option value="blusas">Blusas</option>
-                            <option>Calças</option>
-                            <option>Shorts</option>
-                            <option>Sapatos</option>
+                            <option value="calcas">Calças</option>
+                            <option value="shorts">Shorts</option>
+                            <option value="sapatos">Sapatos</option>
                         </select>
                 </div>
                 <div className="headerinput">
