@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import "./header.css"
 
 import Cart from "../../assets/icons/cart.png";
@@ -41,7 +41,7 @@ function Header(){
         <header>
             <div className="headerarea">
                 <div className="headerlogo">
-                    <h1>eCommerce</h1>
+                <h1><Link to="/">eCommerce</Link></h1>
                 </div>
                 <div className="headercategories">
                         <select value={categoriaSelect} onChange={handleSelecionarCategoria}>

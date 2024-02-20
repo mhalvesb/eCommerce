@@ -15,6 +15,13 @@ h1, p{
 
 
 
+h1 a{
+    font-size: 40px;
+    font-weight:1000;
+    color: #fff;
+    text-decoration: none;
+}
+
 
 
 .headerarea{
