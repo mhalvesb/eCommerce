@@ -1,34 +1,73 @@
 .calcassection{
     width: 100%;
+    height: 100%;
     background-color: aliceblue;
-    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .calcastext{
     color: #333;
     font-weight: 400;
     padding: 40px;
+    font-size: 30px;
 }
 
 
 .calcasproductarea{
     width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .calcasproduct{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 300px;
     height: 400px;
+    padding: 0px 20px;
+    background-color: #fff;
+}
+
+
+.calcasproduct h4{
+    font-size: 18px;
+    margin-top: 2px;
+    font-weight: 400;
+}
+
+.calcasproduct p{
+    font-size: 20px;
+    margin-top: 2px;
+    font-weight: 200;
 }
 
 .calcasproduct img{
     height: 300px;
     object-fit: cover;
+    align-self: center;
+}
+
+.calcasproduct button{
+    align-self: center;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 7px 20px;
+    margin-bottom: 10px;
+    transition: 0.4s;
+    width: 200px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.calcasproduct button:hover{
+    background-color: #333;
 }
 
