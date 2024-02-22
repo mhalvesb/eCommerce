@@ -1,16 +1,17 @@
 import React from "react";
-
+import "./calcas.css";
 
 
 import Header from "../../components/header/header.js";
 import Footer from "../../components/footer/footer.js";
 
 
-import Calca from "";
+import Calca from "../../assets/images/calcapreta.jpg";
 
 function Calcas(){
     return(
         <div>
+            <Header/>
              <main>
             <section className="calcassection">
                 <h3 className="calcastext">Calças</h3>
@@ -28,6 +29,8 @@ function Calcas(){
             </section>
 
         </main>
+
+        <Footer/>
         </div>
        
     )

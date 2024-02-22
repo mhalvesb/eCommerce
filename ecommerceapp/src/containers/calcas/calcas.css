@@ -1,0 +1,34 @@
+.calcassection{
+    width: 100%;
+    background-color: aliceblue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.calcastext{
+    color: #333;
+    font-weight: 400;
+    padding: 40px;
+}
+
+
+.calcasproductarea{
+    width: 80vw;
+}
+
+
+.calcasproduct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 400px;
+}
+
+.calcasproduct img{
+    height: 300px;
+    object-fit: cover;
+}
+
