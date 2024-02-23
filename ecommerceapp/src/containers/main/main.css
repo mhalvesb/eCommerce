@@ -111,8 +111,21 @@
     width: 100%;
     display: flex;
     align-items: center;
+    position: relative;
     margin: 10px 0px;
+    animation: mainbar 3s ease-out forwards;
+    transform: translate(-4000px);
 }
+
+@keyframes mainbar{
+    0%{
+        
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
 .ic1 img{
     width: 22px;
     margin-right: 5px;
@@ -165,14 +178,29 @@
 }
 
 .product{
-    width: 300px;
-    height: 400px;
+    width: 280px;
+    height: 380px;
     background-color: #fff;
     padding: 0px 20px;
     text-align: start;
     display: flex;
     flex-direction: column;
     margin: 40px 20px;
+    animation: productanim 1s forwards;
+}
+
+@keyframes productanim{
+    0%{
+        width: 280px;
+        height: 380px;
+        opacity: 0;
+    }
+
+    100%{
+        width: 300px;
+        height: 400px;
+        opacity: 1;
+    }
 }
 
 .product h4{
