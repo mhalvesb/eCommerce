@@ -53,6 +53,27 @@ function Calcas(){
                         <button>Comprar</button>
                     </div>
 
+                    <div className="calcasproduct">
+                        <img src={Calca} alt="calca"></img>
+                        <h4>Calça branca</h4>
+                        <p>R$ 280,00</p>
+                        <button>Comprar</button>
+                    </div>
+
+                    <div className="calcasproduct">
+                        <img src={Calca} alt="calca"></img>
+                        <h4>Calça branca</h4>
+                        <p>R$ 280,00</p>
+                        <button>Comprar</button>
+                    </div>
+
+                    <div className="calcasproduct">
+                        <img src={Calca} alt="calca"></img>
+                        <h4>Calça branca</h4>
+                        <p>R$ 280,00</p>
+                        <button>Comprar</button>
+                    </div>
+
                 </div>
 
             </section>
