@@ -17,6 +17,35 @@ function Calcas(){
                 <h3 className="calcastext">Calças</h3>
 
                 <div className="calcasproductarea">
+
+                    <div className="calcasproduct">
+                        <img src={Calca} alt="calca"></img>
+                        <h4>Calça branca</h4>
+                        <p>R$ 280,00</p>
+                        <button>Comprar</button>
+                    </div>
+
+                    <div className="calcasproduct">
+                        <img src={Calca} alt="calca"></img>
+                        <h4>Calça branca</h4>
+                        <p>R$ 280,00</p>
+                        <button>Comprar</button>
+                    </div>
+
+                    <div className="calcasproduct">
+                        <img src={Calca} alt="calca"></img>
+                        <h4>Calça branca</h4>
+                        <p>R$ 280,00</p>
+                        <button>Comprar</button>
+                    </div>
+
+                    <div className="calcasproduct">
+                        <img src={Calca} alt="calca"></img>
+                        <h4>Calça branca</h4>
+                        <p>R$ 280,00</p>
+                        <button>Comprar</button>
+                    </div>
+
                     <div className="calcasproduct">
                         <img src={Calca} alt="calca"></img>
                         <h4>Calça branca</h4>
