@@ -5,14 +5,18 @@ import "./header.css"
 import Cart from "../../assets/icons/cart.png";
 import User from "../../assets/icons/user.png";
 
+
+import Carts from "../cart/cart.js";
+
+
+
+
 function Header(){
 
     const history = useNavigate();
     const location = useLocation();
     const [categoriaSelect, atualizarCateg] = useState("");
-
     const searchParams = location.pathname;
-
     const handleSelecionarCategoria = (event) =>{
         const categoria = event.target.value;
         atualizarCateg(categoria);
@@ -23,7 +27,6 @@ function Header(){
             history(`/${categoria}`);
         }
     }
-
     useEffect(()=>{
         const categoriaSalva = localStorage.getItem("categoriaSelect");
         if(categoriaSalva){
@@ -35,10 +38,13 @@ function Header(){
         }
     })
 
-
+    const cart = (event) =>{
+        
+    }
 
     return(
         <header>
+            <Carts/>
             <div className="headerarea">
                 <div className="headerlogo">
                 <h1><Link to="/">eCommerce</Link></h1>
@@ -59,7 +65,7 @@ function Header(){
                     <img src={User} alt="user"></img>
                     <p>Login</p>
                 </div>
-                <div className="headercart">
+                <div className="headercart" onClick={cart}>
                     <img src={Cart} alt="cart"></img>
                     <p>Cart</p>
                 </div>

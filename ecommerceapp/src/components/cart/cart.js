@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import Blusa from "../../assets/images/blucabranca.avif";
+import Blusa from "../../assets/images/blusabranca.avif";
 
 
 function Cart(){
@@ -24,3 +24,6 @@ function Cart(){
         </div>
     )
 }
+
+
+export default Cart;
