@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./cart.css";
 
 import Blusa from "../../assets/images/blusabranca.avif";
 
@@ -8,7 +8,9 @@ function Cart(){
     return(
         <div className="cart">
             <div className="cartarea">
+                <h3>Carrinho</h3>
                 <ul>
+
                     <li>
                         <img src={Blusa} alt="item"></img>
                         <p className="itemname">Camisa branca</p>
@@ -19,8 +21,17 @@ function Cart(){
                             <button>+</button>
                         </div>
                     </li>
+
+
                 </ul>
+                
             </div>
+            <div className="cartbuttons">
+                
+                <button>Sair</button>
+                <button>Comprar</button>
+            </div>
+            
         </div>
     )
 }
