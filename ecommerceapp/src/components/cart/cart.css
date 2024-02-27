@@ -6,6 +6,7 @@
     width: 500px;
     height: 800px;
     z-index: 9999999;
+    display: none;
 }
 
 .cartarea h3{
@@ -67,14 +68,27 @@
 
 
 .cartbuttons{
-    margin-top: 655px;
+    margin-top: 625px;
     display: flex;
+    justify-content: space-between;
 }
 
 
 .cartbuttons button{
     display: block;
     margin-top: auto;
+    width: 49%;
+    height: 50px;
+    margin: 0px 5px;
+    background-color: #111;
+    border: none;
+    color: #fff;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.cartbuttons button:hover{
+    background-color: #999;
 }
 
 

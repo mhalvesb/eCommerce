@@ -17,6 +17,9 @@ function Header(){
     const location = useLocation();
     const [categoriaSelect, atualizarCateg] = useState("");
     const searchParams = location.pathname;
+    const [carrinho, selecionarCarrinho] = useState("");
+
+
     const handleSelecionarCategoria = (event) =>{
         const categoria = event.target.value;
         atualizarCateg(categoria);
