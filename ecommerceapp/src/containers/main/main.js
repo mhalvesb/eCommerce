@@ -1,19 +1,43 @@
-import React from "react";
+import React, {useState} from "react";
 
 import Header from "../../components/header/header.js";
 import Footer from "../../components/footer/footer.js";
 import "./main.css";
 
 
+import Cart from "../../components/cart/cart.js";
+
 import Blusa from "../../assets/images/blusabranca.avif";
 import Delivery from "../../assets/icons/delivery.png";
 import Discount from "../../assets/icons/discount.png";
 import Support from "../../assets/icons/support.png";
 
+
+
 function Main(){
+    const [cartItems, setCartItems] = useState([{
+            name: "",
+            price: 90
+    }]);
+    const [cartId, setCartId] = useState(1);
+
+    const addToCart = () =>{
+        const newItem = {
+            id: cartId,
+            name: "",
+            price: 90,
+            image: Blusa
+        };
+        setCartItems([...cartItems, newItem]);
+        setCartId(cartId + 1);
+    }
+
+
+
     return(
         <div>
             <Header/>
+            <Cart items={cartItems}/>
             <main>
                 <section className="bannerarea">
                     <div className="banner">
@@ -44,7 +68,7 @@ function Main(){
                             <img src={Blusa} alt="blusa"></img>
                             <h4>Blusa branca Masculina</h4>
                             <p>R$ 90,00</p>
-                            <button>Comprar</button>
+                            <button onClick={addToCart}>Comprar</button>
                         </div>
 
                         <div className="product">
@@ -108,6 +132,8 @@ function Main(){
             </section>
             </main>
             <Footer/>
+
+           
         </div>
         
     )

@@ -40,7 +40,7 @@ function Header(){
         }
         if(`/${categoriaSalva}` !== searchParams){
             atualizarCateg(`${searchParams.substring(1)}`);
-            console.log("sim")
+            
         }
     })
 
