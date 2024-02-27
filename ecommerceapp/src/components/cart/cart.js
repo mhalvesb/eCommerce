@@ -4,9 +4,11 @@ import "./cart.css";
 import Blusa from "../../assets/images/blusabranca.avif";
 
 
-function Cart(){
+function Cart({show, handleClickCart}){
+
+
     return(
-        <div className="cart">
+        <div className="cart" style={{display: show ? "block" : "none"}}>
             <div className="cartarea">
                 <h3>Carrinho</h3>
                 <ul>
@@ -27,8 +29,7 @@ function Cart(){
                 
             </div>
             <div className="cartbuttons">
-                
-                <button>Sair</button>
+                <button onClick={handleClickCart}>Sair</button>
                 <button>Comprar</button>
             </div>
             
