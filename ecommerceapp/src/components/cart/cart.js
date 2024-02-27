@@ -8,7 +8,7 @@ function Cart({show, handleClickCart}){
 
 
     return(
-        <div className="cart" style={{display: show ? "block" : "none"}}>
+        <div className="cart" style={{display: show ? "flex" : "none"}}>
             <div className="cartarea">
                 <h3>Carrinho</h3>
                 <ul>
