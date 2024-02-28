@@ -11,7 +11,7 @@ import Carts from "../cart/cart.js";
 
 
 
-function Header(){
+function Header({cartItems}){
 
     const history = useNavigate();
     const location = useLocation();
@@ -50,7 +50,7 @@ function Header(){
 
     return(
         <header>
-            <Carts show={carrinho} handleClickCart={handleClickCart}/>
+            <Carts show={carrinho} handleClickCart={handleClickCart} items={cartItems}/>
             <div className="headerarea">
                 <div className="headerlogo">
                 <h1><Link to="/">eCommerce</Link></h1>

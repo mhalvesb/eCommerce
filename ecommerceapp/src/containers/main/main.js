@@ -36,8 +36,8 @@ function Main(){
 
     return(
         <div>
-            <Header/>
-            <Cart items={cartItems}/>
+            <Header cartItems={cartItems}/>
+            
             <main>
                 <section className="bannerarea">
                     <div className="banner">
