@@ -12,7 +12,6 @@ import Carts from "../cart/cart.js";
 
 
 function Header({cartItems}){
-
     const history = useNavigate();
     const location = useLocation();
     const [categoriaSelect, atualizarCateg] = useState("");

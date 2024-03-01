@@ -17,9 +17,9 @@ function Cart({show, handleClickCart, items}){
                         return(
                         
                             <li key={index}>
-                            <img src={Blusa} alt="item"></img>
-                            <p className="itemname">Camisa branca</p>
-                            <p className="itemprice">R$ 90,00</p>
+                            <img src={item.image} alt="item"></img>
+                            <p className="itemname">{item.name}</p>
+                            <p className="itemprice">R$ {item.price}</p>
                             <div className="itemcount">
                                 <button>-</button>
                                 <p className="itemnumber">1</p>

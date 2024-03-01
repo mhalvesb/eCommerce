@@ -8,6 +8,7 @@ import "./main.css";
 import Cart from "../../components/cart/cart.js";
 
 import Blusa from "../../assets/images/blusabranca.avif";
+import BlusaPreta from "../../assets/images/camisapreta.png";
 import Delivery from "../../assets/icons/delivery.png";
 import Discount from "../../assets/icons/discount.png";
 import Support from "../../assets/icons/support.png";
@@ -15,18 +16,15 @@ import Support from "../../assets/icons/support.png";
 
 
 function Main(){
-    const [cartItems, setCartItems] = useState([{
-            name: "",
-            price: 90
-    }]);
+    const [cartItems, setCartItems] = useState([]);
     const [cartId, setCartId] = useState(1);
 
-    const addToCart = () =>{
+    const addToCart = (productName, productPrice, productImage) =>{
         const newItem = {
             id: cartId,
-            name: "",
-            price: 90,
-            image: Blusa
+            name: productName,
+            price: productPrice,
+            image: productImage
         };
         setCartItems([...cartItems, newItem]);
         setCartId(cartId + 1);
@@ -79,10 +77,10 @@ function Main(){
                         </div>
 
                         <div className="product">
-                            <img src={Blusa} alt="blusa"></img>
-                            <h4>Blusa branca Masculina</h4>
-                            <p>R$ 90,00</p>
-                            <button onClick={addToCart}>Comprar</button>
+                            <img src={BlusaPreta} alt="blusa"></img>
+                            <h4>Blusa preta Masculina</h4>
+                            <p>R$ 100,00</p>
+                            <button onClick={() => addToCart("Blusa preta Masculina", 100, BlusaPreta)}>Comprar</button>
                         </div>
 
                         <div className="product">
