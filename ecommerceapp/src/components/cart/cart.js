@@ -32,7 +32,9 @@ function Cart({show, handleClickCart, items}){
 
 
                 </ul>
-                
+                <div className="total">
+                    <p>R$ 100,00</p>
+                </div>
             </div>
             <div className="cartbuttons">
                 <button onClick={handleClickCart}>Sair</button>

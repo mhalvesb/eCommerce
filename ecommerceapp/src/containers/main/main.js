@@ -9,6 +9,10 @@ import Cart from "../../components/cart/cart.js";
 
 import Blusa from "../../assets/images/blusabranca.avif";
 import BlusaPreta from "../../assets/images/camisapreta.png";
+import CalcaPreta from "../../assets/images/calcapreta.jpg";
+
+
+
 import Delivery from "../../assets/icons/delivery.png";
 import Discount from "../../assets/icons/discount.png";
 import Support from "../../assets/icons/support.png";
@@ -66,21 +70,21 @@ function Main(){
                             <img src={Blusa} alt="blusa"></img>
                             <h4>Blusa branca Masculina</h4>
                             <p>R$ 90,00</p>
-                            <button onClick={addToCart}>Comprar</button>
+                            <button onClick={() => addToCart("Blusa branca Masculina", "90,00", Blusa)}>Comprar</button>
                         </div>
 
                         <div className="product">
-                            <img src={Blusa} alt="blusa"></img>
-                            <h4>Blusa branca Masculina</h4>
-                            <p>R$ 90,00</p>
-                            <button onClick={addToCart}>Comprar</button>
+                            <img src={CalcaPreta} alt="blusa"></img>
+                            <h4>Calça preta Masculina</h4>
+                            <p>R$ 120,00</p>
+                            <button onClick={() => addToCart("Calça preta Masculina", "120,00", CalcaPreta)}>Comprar</button>
                         </div>
 
                         <div className="product">
                             <img src={BlusaPreta} alt="blusa"></img>
                             <h4>Blusa preta Masculina</h4>
                             <p>R$ 100,00</p>
-                            <button onClick={() => addToCart("Blusa preta Masculina", 100, BlusaPreta)}>Comprar</button>
+                            <button onClick={() => addToCart("Blusa preta Masculina", "100,00", BlusaPreta)}>Comprar</button>
                         </div>
 
                         <div className="product">
