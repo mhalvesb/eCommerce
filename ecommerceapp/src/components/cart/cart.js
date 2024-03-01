@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./cart.css";
 
 import Blusa from "../../assets/images/blusabranca.avif";
@@ -6,13 +6,13 @@ import Blusa from "../../assets/images/blusabranca.avif";
 
 function Cart({show, handleClickCart, items}){
     let cartItems = items;
-    
-    
+    const [qtdItems, setQtds] = useState([]);
+
     let totalValue = () => {
         let total = 0;
         if(cartItems){
             cartItems.forEach((item) =>{
-                total += parseFloat(item.price);
+                total += parseFloat(item.price) * item.qtd;
             })
         };
         return total;
@@ -22,6 +22,8 @@ function Cart({show, handleClickCart, items}){
 
     console.log(totalValue());
 
+    
+
     return(
         <div className="cart" style={{display: show ? "flex" : "none"}}>
             <div className="cartarea">
@@ -29,16 +31,37 @@ function Cart({show, handleClickCart, items}){
                 <ul>
 
                     {items ? items.map((item, index)=>{
+                        const handleDecrease = () =>{
+                            if(item.qtd >= 1){
+                                const newItems = [...items];
+                                if(newItems[index].qtd > 0){
+                                    newItems[index].qtd--;
+                                    setQtds(newItems);
+                                }
+                                if(item.qtd <= 0){
+                                    items.splice(index, 1);
+                                    console.log("ok");
+                                }
+                            }
+                            
+                        };
+                        const handleIncrease = () =>{
+                            const newItems = [...items];
+                            newItems[index].qtd++;
+                            setQtds(newItems);
+                        }
+
+
                         return(
-                        
+                    
                             <li key={index}>
                             <img src={item.image} alt="item"></img>
                             <p className="itemname">{item.name}</p>
-                            <p className="itemprice">R$ {item.price}</p>
+                            <p className="itemprice">R$ {parseFloat(item.price) * item.qtd}</p>
                             <div className="itemcount">
-                                <button>-</button>
-                                <p className="itemnumber">1</p>
-                                <button>+</button>
+                                <button onClick={handleDecrease}>-</button>
+                                <p className="itemnumber">{item.qtd}</p>
+                                <button onClick={handleIncrease}>+</button>
                             </div>
                     </li>
                         

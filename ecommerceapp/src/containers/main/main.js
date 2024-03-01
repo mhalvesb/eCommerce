@@ -28,7 +28,8 @@ function Main(){
             id: cartId,
             name: productName,
             price: productPrice,
-            image: productImage
+            image: productImage,
+            qtd : 1
         };
         setCartItems([...cartItems, newItem]);
         setCartId(cartId + 1);
