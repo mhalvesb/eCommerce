@@ -74,7 +74,6 @@
 
 
 .cartbuttons{
-    margin-top: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -82,7 +81,6 @@
 
 .cartbuttons button{
     display: block;
-    margin-top: auto;
     width: 49%;
     height: 50px;
     margin: 5px 5px;
@@ -95,6 +93,17 @@
 
 .cartbuttons button:hover{
     background-color: #999;
+}
+
+.total{
+    margin-top: auto;
+    text-align: end;
+}
+
+.total p{
+    font-weight: 500;
+    font-size: 20px;
+    margin-right: 5px;
 }
 
 

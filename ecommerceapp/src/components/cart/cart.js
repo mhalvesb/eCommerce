@@ -6,7 +6,22 @@ import Blusa from "../../assets/images/blusabranca.avif";
 
 function Cart({show, handleClickCart, items}){
     let cartItems = items;
-    console.log(cartItems);
+    
+    
+    let totalValue = () => {
+        let total = 0;
+        if(cartItems){
+            cartItems.forEach((item) =>{
+                total += parseFloat(item.price);
+            })
+        };
+        return total;
+    }
+
+    totalValue();
+
+    console.log(totalValue());
+
     return(
         <div className="cart" style={{display: show ? "flex" : "none"}}>
             <div className="cartarea">
@@ -32,10 +47,11 @@ function Cart({show, handleClickCart, items}){
 
 
                 </ul>
-                <div className="total">
-                    <p>R$ 100,00</p>
-                </div>
+                
             </div>
+            <div className="total">
+                    <p>Total: R$ {totalValue()}</p>
+                </div>
             <div className="cartbuttons">
                 <button onClick={handleClickCart}>Sair</button>
                 <button>Comprar</button>
