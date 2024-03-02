@@ -4,15 +4,23 @@ import "./header.css"
 
 import Cart from "../../assets/icons/cart.png";
 import User from "../../assets/icons/user.png";
-
+import Main from "../../containers/main/main.js";
 
 import Carts from "../cart/cart.js";
 
 
 
 
-function Header({cartItems}){
-    
+function Header({items}){
+
+    const [cartItems, setCartItems] = useState(items);
+    const [cartId, setCartId] = useState(1);
+
+    useEffect(()=>{
+        setCartItems(items);
+    })
+
+
     const history = useNavigate();
     const location = useLocation();
     const [categoriaSelect, atualizarCateg] = useState("");

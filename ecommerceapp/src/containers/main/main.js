@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import Header from "../../components/header/header.js";
 import Footer from "../../components/footer/footer.js";
@@ -20,9 +20,17 @@ import Support from "../../assets/icons/support.png";
 
 
 function Main(){
-    const [cartItems, setCartItems] = useState([]);
+    const storageItem = localStorage.getItem("cartItem");
+    const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")): [];
+    const [cartItems, setCartItems] = useState(initialItem);
+
     const [cartId, setCartId] = useState(1);
 
+
+    
+
+
+    
     const addToCart = (productName, productPrice, productImage) =>{
         const newItem = {
             id: cartId,
@@ -31,15 +39,23 @@ function Main(){
             image: productImage,
             qtd : 1
         };
+        
         setCartItems([...cartItems, newItem]);
         setCartId(cartId + 1);
+       
     }
+
+    useEffect(()=>{
+        localStorage.setItem("cartItem", JSON.stringify(cartItems));
+    })
+
+    
 
 
 
     return(
         <div>
-            <Header cartItems={cartItems}/>
+            <Header items={cartItems}/>
             
             <main>
                 <section className="bannerarea">

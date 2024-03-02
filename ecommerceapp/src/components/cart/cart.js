@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./cart.css";
 
 import Blusa from "../../assets/images/blusabranca.avif";
@@ -6,12 +6,21 @@ import Blusa from "../../assets/images/blusabranca.avif";
 
 function Cart({show, handleClickCart, items}){
     let cartItems = items;
+
+
+    useEffect(()=>{
+        localStorage.setItem("cartItem", JSON.stringify(cartItems));
+        console.log("atualizado");
+    })
+
+    
+
     const [qtdItems, setQtds] = useState([]);
 
     let totalValue = () => {
         let total = 0;
-        if(cartItems){
-            cartItems.forEach((item) =>{
+        if(items){
+            items.forEach((item) =>{
                 total += parseFloat(item.price) * item.qtd;
             })
         };
@@ -23,6 +32,15 @@ function Cart({show, handleClickCart, items}){
     console.log(totalValue());
 
     
+    
+
+
+        
+
+    
+        
+
+
 
     return(
         <div className="cart" style={{display: show ? "flex" : "none"}}>
