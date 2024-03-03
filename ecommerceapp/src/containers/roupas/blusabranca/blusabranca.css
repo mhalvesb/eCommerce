@@ -33,7 +33,7 @@ hr{
 }
 
 .roupaimg img{
-    width: 450px;
+    width: 550px;
     border-radius: 4px;
 }
 
@@ -189,6 +189,59 @@ hr{
     border: none;
     border-radius: 5px;
     margin-left: 10px;
+}
+
+
+.desc{
+    margin-top: 20px;
+}
+
+.desc button{
+    width: 100%;
+    text-align: start;
+    background-color: transparent;
+    border: none;
+    font-weight: 900;
+    height: 30px;
+    cursor: pointer;
+    border-bottom: 1px solid #999;
+}
+
+.desc p{
+    color: #222;
+    font-size: 12px;
+}
+
+.desc h3{
+    font-weight: 700;
+    font-size: 14px;
+    margin: 5px 0px;
+}
+
+.desc ul{
+    padding: 0;
+    margin: 5px 0px;
+}
+
+.desc li {
+    font-size: 12px;
+    color: #555;
+}
+
+.desctxt{
+    animation: desc 5s ease-in-out;
+    overflow: hidden;
+}
+
+
+@keyframes desc{
+    0%{
+        max-height: 0px;
+        
+    }
+    100%{
+        max-height: 800px;
+    }
 }
 
 

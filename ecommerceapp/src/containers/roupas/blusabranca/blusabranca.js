@@ -58,7 +58,40 @@ function BlusaBranca(){
                         </div>
                     </div>
                     <div className="secrow">
-                        <p>Descrição</p>
+                        <div className="desc">
+                            <button>Descrição</button>
+                            <div className="desctxt">
+                                <p>Para uma composição urbana sofisticada e com muito estilo, 
+                                    o Blazer feminino slim abotoamento duplo verde |
+                                    AK by Riachuelo é a terceira peça perfeita para a sua composição. Sua modelagem em 
+                                    alfaiataria traz o toque de sofisticação que você precisa para um look business woman. 
+                                    Confeccionada em poliéster e elastano, com ombreiras remetem ao estilo dos anos 80, 
+                                    sendo um clássico que não pode faltar no seu guarda-roupa. São diversas opções para 
+                                    você combinar com essa peça, aposte!</p> 
+
+                                <h3>Características:</h3>
+                                <ul>
+                                    <li>Marca: AK by Riachuelo</li>
+                                    <li>Composição: Poliester 95%; Elastano 5%</li>
+                                    <li>Forro Poliéster 100%</li>
+                                    <li>Modelo slim</li>
+                                    <li>Aboatoamento duplo</li>
+                                    <li>Fechamento duplo com botão</li>
+                                    <li>Bolsos decorativos</li>
+                                </ul>
+
+                                <p>Medidas da modelo: altura: 1,71m; busto: 83cm; cintura: 89cm; quadril: 60cm. Modelo está vestindo: 38</p>
+
+                                <p>Pensando na mulher mais madura, 
+                                    a AK by Riachuelo foi desenvolvida para criar peças que trazem sofisticação, 
+                                    modernidade e funcionalidade. 
+                                    A marca conta com peças confeccionadas em tecidos naturais com caimento leve e tecidos plano com mais estrutura, 
+                                    gerando um mix de produtos que transitam entre o casual e o glamoroso.</p>
+
+                                <p>A cor do produto nas fotos reproduzidas com modelos pode sofrer alteração, em decorrência do uso do flash.</p>
+                            </div>
+                            
+                        </div>
                     </div>
                     
                 </div>
