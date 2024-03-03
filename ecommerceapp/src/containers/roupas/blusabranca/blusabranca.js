@@ -38,6 +38,7 @@ function BlusaBranca(){
                             </div>
                             </div>
                             <div className="sizes">
+                                <p>Tamanho</p>
                                 <ul>
                                     <li>38</li>
                                     <li>40</li>

@@ -74,17 +74,35 @@ hr{
 .sizes ul{
     list-style: none;
     display: flex;
+    padding: 0px;
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 .sizes li{
-    
+    padding: 10px;
+    border: 1px solid #555;
+    color: #555;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.sizes li:hover{
+    background-color: #111;
+    color: #fff;
+}
+
+.sizes p{
+    color: #888;
+    font-size: 12px;
+    margin: 0;
 }
 
 .color{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 20px;
 }
 
 .colortxt{
