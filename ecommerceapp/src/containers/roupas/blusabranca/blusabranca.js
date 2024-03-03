@@ -26,16 +26,20 @@ function BlusaBranca(){
                             <hr></hr>
                             <p>R$ 200,00</p>
 
-                            <div className="color"><p className="grey">Cor: </p> <p>Branca</p> 
+                            <div className="color"><div className="colortxt"><p className="grey">Cor:</p> <p>Branca</p></div> 
                             <div className="colorradius">
                                 <div className="colorarea"></div>
                             </div>
                             </div>
 
                             <button className="addCart">Adicionar ao carrinho</button>
-                            <label>Consultar o frete</label>
-                            <input type="text" placeholder="Digite seu cep"></input> 
-                            <button>OK</button>
+                            <div className="frete">
+                                <label>Consultar o frete</label>
+                                <br></br>
+                                <input type="text" placeholder="Digite seu CEP"></input> 
+                                <button>OK</button>
+                            </div>
+                            
                         </div>
                     </div>
                     <div className="secrow">

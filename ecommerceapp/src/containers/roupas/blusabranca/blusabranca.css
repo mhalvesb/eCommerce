@@ -24,13 +24,17 @@ hr{
 
 
 .roupaimg{
-    background-color: aliceblue;
-    padding: 10px;
-    border-radius: 10px;
+    background-color: #999;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
 }
 
 .roupaimg img{
     width: 450px;
+    border-radius: 4px;
 }
 
 .roupatext{
@@ -53,12 +57,18 @@ hr{
 
 .color{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 20px;
 }
 
+.colortxt{
+    display: flex;
+    align-items: center;
+}
+
 .color p{
-    font-size: 20px;
+    font-size: 14px;
     margin-bottom: 0px;
 }
 
@@ -70,9 +80,9 @@ hr{
 
 
 .colorradius{
+    margin-top: 6px;
     width: 30px;
     height: 30px;
-    margin-left: 5px;
     cursor: pointer;
     border-radius: 10px;
     background-color: #999;
@@ -103,3 +113,39 @@ hr{
     background-color: #999;
     color: #333;
 }
+
+.frete{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.frete label{
+    color: #555;
+    font-size: 12px;
+}
+
+.frete input{
+    height: 40px;
+    border-radius: 2px;
+    padding-left: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #999;
+    width: 80%;
+    outline: none;
+    font-weight: 600;
+}
+
+
+.frete button{
+    height: 40px;
+    width: 50px;
+    font-weight: 900;
+    background-color: #888;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+
