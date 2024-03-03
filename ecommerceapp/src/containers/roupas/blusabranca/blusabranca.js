@@ -22,16 +22,30 @@ function BlusaBranca(){
                             <img src={Blusa} alt="roupa"></img>
                         </div>
                         <div className="roupatext">
-                            <h1>Blusa branca masculina</h1>
-                            <hr></hr>
-                            <p>R$ 200,00</p>
+                            <div className="price">
+                                <h1>Blusa branca masculina</h1>
+                                <hr></hr>
+                                <p>R$ 200,00</p>
+                                <div className="juros">
+                                    <p>10x de R$ 20,00 sem juros no cartão de crédito</p>
+                                </div>
+                            </div>
+                            
 
                             <div className="color"><div className="colortxt"><p className="grey">Cor:</p> <p>Branca</p></div> 
                             <div className="colorradius">
                                 <div className="colorarea"></div>
                             </div>
                             </div>
-
+                            <div className="sizes">
+                                <ul>
+                                    <li>38</li>
+                                    <li>40</li>
+                                    <li>42</li>
+                                    <li>44</li>
+                                    <li>46</li>
+                                </ul>
+                            </div>
                             <button className="addCart">Adicionar ao carrinho</button>
                             <div className="frete">
                                 <label>Consultar o frete</label>

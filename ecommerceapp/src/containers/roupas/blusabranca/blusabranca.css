@@ -40,7 +40,8 @@ hr{
 .roupatext{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin-left: 10px;
 }
 
@@ -53,6 +54,30 @@ hr{
     font-size: 28px;
     font-weight: 800;
     margin-bottom: 10px;
+}
+
+.juros{
+    width: 90%;
+    height: 50px;
+    border: 1px solid #999;
+    padding: 10px 6px;
+    display: flex;
+    align-items: center;
+}
+
+.juros p{
+    font-size: 12px;
+    margin: 0;
+    color: #555;
+}
+
+.sizes ul{
+    list-style: none;
+    display: flex;
+}
+
+.sizes li{
+    
 }
 
 .color{
