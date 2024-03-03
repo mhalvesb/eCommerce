@@ -54,7 +54,7 @@ function BlusaBranca(){
                             </div>
                             <div className="sizes">
                                 <p>Tamanho</p>
-                                <ul>
+                                <ul className="ulsize">
                                     <li>38</li>
                                     <li>40</li>
                                     <li>42</li>
@@ -85,7 +85,7 @@ function BlusaBranca(){
                                     você combinar com essa peça, aposte!</p> 
 
                                 <h3>Características:</h3>
-                                <ul>
+                                <ul className="uldesc">
                                     <li>Marca: AK by Riachuelo</li>
                                     <li>Composição: Poliester 95%; Elastano 5%</li>
                                     <li>Forro Poliéster 100%</li>
@@ -105,9 +105,15 @@ function BlusaBranca(){
 
                                 <p>A cor do produto nas fotos reproduzidas com modelos pode sofrer alteração, em decorrência do uso do flash.</p>
                             </div>
-                            <button>Especificações</button>
+
+                            <button onClick={handleClickSpec}>Especificações</button>
                             <div className={useAnimSpec ? "descanim" : "desctxt"}>
-                                
+                                <ul className="specul">
+                                    <li><h6 className="specs">Instrução de lavagem:</h6> <h6 className="specinfo">Lavar em temperatura máxima de 30°; 
+                                    Não usar alvejante a base de cloro; Proibido usar secadora</h6></li>
+                                    <li><h6 className="specs">País de fabricação</h6> <h6 className="specinfo">VN - Vietnã</h6></li>
+                                    <li><h6 className="specs">Cor: </h6> <h6 className="specinfo">Branca</h6></li>
+                                </ul>
                             </div>
                         </div>
 
