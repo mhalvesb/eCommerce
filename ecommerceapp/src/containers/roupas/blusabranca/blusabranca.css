@@ -8,6 +8,7 @@
 .roupaarea{
     width: 80vw;
     display: flex;
+    align-items: center;
     flex-direction: column;
     margin-top: 20px;
 }
@@ -210,6 +211,7 @@ hr{
 .desc p{
     color: #222;
     font-size: 12px;
+    margin-bottom: 10px;
 }
 
 .desc h3{
@@ -221,6 +223,7 @@ hr{
 .desc ul{
     padding: 0;
     margin: 5px 0px;
+    margin-bottom: 10px;
 }
 
 .desc li {
