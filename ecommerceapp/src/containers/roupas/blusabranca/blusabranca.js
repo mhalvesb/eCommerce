@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import "./blusabranca.css";
 
@@ -8,9 +8,24 @@ import Footer from "../../../components/footer/footer.js";
 import Blusa from "../../../assets/images/blusabranca.avif";
 
 function BlusaBranca(){
+    const [useAnimDesc, setUseAnimDesc] = useState(false);
+    const [useAnimSpec, setUseAnimSpec] = useState(false);
 
 
-
+    const handleClickDesc = () =>{
+        if(useAnimDesc){
+            setUseAnimDesc(false);
+        } else{
+            setUseAnimDesc(true);
+        }
+    }
+    const handleClickSpec = () =>{
+        if(useAnimSpec){
+            setUseAnimSpec(false);
+        } else{
+            setUseAnimSpec(true);
+        }
+    }
     return(
         <div>
             <Header/>
@@ -59,8 +74,8 @@ function BlusaBranca(){
                     </div>
                     <div className="secrow">
                         <div className="desc">
-                            <button>Descrição</button>
-                            <div className="desctxt">
+                            <button onClick={handleClickDesc}>Descrição</button>
+                            <div className={useAnimDesc ? "descanim" : "desctxt"}>
                                 <p>Para uma composição urbana sofisticada e com muito estilo, 
                                     o Blazer feminino slim abotoamento duplo verde |
                                     AK by Riachuelo é a terceira peça perfeita para a sua composição. Sua modelagem em 
@@ -90,8 +105,12 @@ function BlusaBranca(){
 
                                 <p>A cor do produto nas fotos reproduzidas com modelos pode sofrer alteração, em decorrência do uso do flash.</p>
                             </div>
-                            
+                            <button>Especificações</button>
+                            <div className={useAnimSpec ? "descanim" : "desctxt"}>
+                                
+                            </div>
                         </div>
+
                     </div>
                     
                 </div>

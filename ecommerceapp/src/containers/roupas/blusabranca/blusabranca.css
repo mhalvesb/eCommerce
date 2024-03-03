@@ -232,19 +232,22 @@ hr{
 }
 
 .desctxt{
-    animation: desc 5s ease-in-out;
+    max-height: 0px;
     overflow: hidden;
+    
 }
 
-
-@keyframes desc{
-    0%{
-        max-height: 0px;
-        
-    }
-    100%{
-        max-height: 800px;
-    }
+.descanim{
+    overflow: hidden;
+    transition: 2s;
+    max-height: 800px;
 }
+
+.desctxt{
+    max-height: 0px;
+    overflow: hidden;
+    transition: 1s;
+}
+
 
 
