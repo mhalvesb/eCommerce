@@ -16,7 +16,7 @@ import Pretovermelho from "../../assets/images/gradientepretovermelho.png";
 
 function Blusas(){
     const storageItem = localStorage.getItem("cartItem");
-    const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")): [];
+    const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")) : [];
     const [cartItems, setCartItems] = useState(initialItem);
 
     return(

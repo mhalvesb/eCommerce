@@ -20,7 +20,7 @@ import Support from "../../assets/icons/support.png";
 
 
 function Main(){
-    const storageItem = localStorage.getItem("cartItem");
+    const storageItem = JSON.parse(localStorage.getItem("cartItem"));
     const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")): [];
     const [cartItems, setCartItems] = useState(initialItem);
 
