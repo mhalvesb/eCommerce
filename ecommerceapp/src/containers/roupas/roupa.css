@@ -1,0 +1,292 @@
+.roupa{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roupaarea{
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+hr{
+    border: 1px solid #999;
+    width: 100%;
+}
+
+
+.firstrow{
+    display: flex;
+}
+
+
+.roupaimg{
+    background-color: #999;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.roupaimg img{
+    width: 550px;
+    border-radius: 4px;
+}
+
+.roupatext{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+
+.roupatext h1{
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.roupatext p{
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.juros{
+    width: 90%;
+    height: 50px;
+    border: 1px solid #999;
+    padding: 10px 6px;
+    display: flex;
+    align-items: center;
+}
+
+.juros p{
+    font-size: 12px;
+    margin: 0;
+    color: #555;
+}
+
+.ulsize{
+    list-style: none;
+    display: flex;
+    padding: 0px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.sizes li{
+    padding: 10px;
+    border: 1px solid #555;
+    color: #555;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.sizes li:hover{
+    background-color: #111;
+    color: #fff;
+}
+
+.sizes p{
+    color: #888;
+    font-size: 12px;
+    margin: 0;
+}
+
+.color{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.colortxt{
+    display: flex;
+    align-items: center;
+}
+
+.color p{
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.color .grey{
+    font-size: 10px;
+    color: #999;
+    margin-right: 4px;
+}
+
+
+.colorradius{
+    margin-top: 6px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #999;
+    border: 2px solid #000;
+    padding: 3px;
+}
+
+.colorarea{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+
+.addCart{
+    width: 100%;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #111;
+    color: #fff;
+    transition: 0.4s;
+}
+
+.addCart:hover{
+    background-color: #999;
+    color: #333;
+}
+
+.frete{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.frete label{
+    color: #555;
+    font-size: 12px;
+}
+
+.frete input{
+    height: 40px;
+    border-radius: 2px;
+    padding-left: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #999;
+    width: 80%;
+    outline: none;
+    font-weight: 600;
+}
+
+
+.frete button{
+    height: 40px;
+    width: 50px;
+    font-weight: 900;
+    background-color: #888;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+
+.desc{
+    margin-top: 20px;
+    padding-bottom: 200px;
+}
+
+.desc button{
+    width: 100%;
+    text-align: start;
+    background-color: transparent;
+    border: none;
+    font-weight: 900;
+    height: 30px;
+    cursor: pointer;
+}
+
+.desc p{
+    color: #222;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.desc h3{
+    font-weight: 700;
+    font-size: 14px;
+    margin: 5px 0px;
+}
+
+.uldesc{
+    padding: 0;
+    margin: 5px 0px;
+    margin-bottom: 10px;
+}
+
+.desc li {
+    font-size: 12px;
+    color: #555;
+}
+
+
+
+.descanim{
+    overflow: hidden;
+    transition: 2s;
+    max-height: 800px;
+    border-bottom: 1px solid #999;
+}
+
+.desctxt{
+    max-height: 0px;
+    overflow: hidden;
+    transition: 1s;
+    border-bottom: 1px solid #999;
+    margin-bottom: 2px;
+}
+
+.specul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.specul li:last-child{
+    border: none;
+}
+
+.specul li{
+    display: flex;
+    border-bottom: 1px solid #999;
+    align-items: center;
+}
+
+.specul p{
+    margin: 10px 0px;
+}
+
+.specinfo{
+    color: #111;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 10px 0px;
+}
+
+.specs{
+    font-size: 12px;
+    font-weight: 200;
+    width: 20%;
+    color: #555;
+    margin: 0px;
+    margin-right: 200px;
+}
+
+
+.sizes .selected{
+    background-color: #000;
+    color: #fff;
+}
+
