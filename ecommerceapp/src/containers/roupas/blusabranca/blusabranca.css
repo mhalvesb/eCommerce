@@ -284,3 +284,9 @@ hr{
     margin-right: 200px;
 }
 
+
+.sizes .selected{
+    background-color: #000;
+    color: #fff;
+}
+

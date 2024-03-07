@@ -10,7 +10,14 @@ import Blusa from "../../../assets/images/blusabranca.avif";
 function BlusaBranca(){
     const [useAnimDesc, setUseAnimDesc] = useState(false);
     const [useAnimSpec, setUseAnimSpec] = useState(false);
+    const [selectedLi, setLi] = useState(null);
 
+    const handleItemClick = (index) =>{
+        setLi(index);
+    }
+
+        const itemSize = [38, 40, 42, 44, 46, 48];
+    
 
     const handleClickDesc = () =>{
         if(useAnimDesc){
@@ -55,11 +62,13 @@ function BlusaBranca(){
                             <div className="sizes">
                                 <p>Tamanho</p>
                                 <ul className="ulsize">
-                                    <li>38</li>
-                                    <li>40</li>
-                                    <li>42</li>
-                                    <li>44</li>
-                                    <li>46</li>
+                                   {itemSize.map((item, index) =>{
+                                    return(
+                                        <li key={index} className={index == selectedLi  ? "selected" : ""} onClick={() => handleItemClick(index)}>
+                                            {item}
+                                        </li>
+                                    )
+                                   })}
                                 </ul>
                             </div>
                             <button className="addCart">Adicionar ao carrinho</button>
