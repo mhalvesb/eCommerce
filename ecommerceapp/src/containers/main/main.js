@@ -85,14 +85,16 @@ function Main(){
                     <h3 className="productpromotion">Promoções do mês</h3>
                     <div className="productarea">
 
-                       <Link to="/roupas/blusabranca">
+                       
                        <div className="product">
+                       <Link to="/roupas/blusabranca">
                             <img src={Blusa} alt="blusa"></img>
                             <h4>Blusa branca Masculina</h4>
                             <p>R$ 90,00</p>
+                            </Link>
                             <button onClick={() => addToCart("Blusa branca Masculina", "90,00", Blusa)}>Comprar</button>
                         </div>
-                       </Link>
+                       
 
                        <Link to="/roupas/calcapreta">
                         <div className="product">

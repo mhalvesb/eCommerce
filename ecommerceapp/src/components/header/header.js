@@ -12,7 +12,6 @@ import Carts from "../cart/cart.js";
 
 
 function Header({items}){
-    localStorage.clear();
     const [cartItems, setCartItems] = useState(items);
     const [cartId, setCartId] = useState(1);
 

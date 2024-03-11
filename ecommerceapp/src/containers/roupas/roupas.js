@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import "./roupa.css";
 
@@ -9,6 +9,10 @@ function BlusaBranca(props){
     const [useAnimDesc, setUseAnimDesc] = useState(false);
     const [useAnimSpec, setUseAnimSpec] = useState(false);
     const [selectedLi, setLi] = useState(null);
+
+    const storageItem = JSON.parse(localStorage.getItem("cartItem"));
+    const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")) : [];
+    const [cartItems, setCartItems] = useState(initialItem);
 
     const handleItemClick = (index) =>{
         setLi(index);
@@ -33,7 +37,7 @@ function BlusaBranca(props){
     }
     return(
         <div>
-            <Header/>
+            <Header items={cartItems}/>
             <section>
             <div className="roupa">
                 <div className="roupaarea">
