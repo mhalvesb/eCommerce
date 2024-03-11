@@ -5,7 +5,7 @@ import Blusas from "./containers/blusas/blusas.js";
 import Calcas from "./containers/calcas/calcas.js";
 import BlusaBranca from "./containers/roupas/blusabranca/blusabranca.js";
 import BlusaPreta from "./containers/roupas/blusapreta/blusapreta.js";
-
+import CalcaPreta from "./containers/roupas/calcapreta/calcapreta.js";
 import "./index.css";
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
         <Route path="/calcas" element={<Calcas/>}></Route>
         <Route path="/roupas/blusabranca" element={<BlusaBranca/>}></Route>
         <Route path="/roupas/blusapreta" element={<BlusaPreta/>}></Route>
+        <Route path="/roupas/calcapreta" element={<CalcaPreta/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>
