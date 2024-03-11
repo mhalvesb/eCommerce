@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
 
+import {Link} from "react-router-dom";
+
 import Header from "../../components/header/header.js";
 import Footer from "../../components/footer/footer.js";
 import "./main.css";
@@ -83,26 +85,32 @@ function Main(){
                     <h3 className="productpromotion">Promoções do mês</h3>
                     <div className="productarea">
 
-                        <div className="product">
+                       <Link to="/roupas/blusabranca">
+                       <div className="product">
                             <img src={Blusa} alt="blusa"></img>
                             <h4>Blusa branca Masculina</h4>
                             <p>R$ 90,00</p>
                             <button onClick={() => addToCart("Blusa branca Masculina", "90,00", Blusa)}>Comprar</button>
                         </div>
+                       </Link>
 
+                       <Link to="/roupas/calcapreta">
                         <div className="product">
-                            <img src={CalcaPreta} alt="blusa"></img>
-                            <h4>Calça preta Masculina</h4>
-                            <p>R$ 120,00</p>
-                            <button onClick={() => addToCart("Calça preta Masculina", "120,00", CalcaPreta)}>Comprar</button>
-                        </div>
+                                <img src={CalcaPreta} alt="blusa"></img>
+                                <h4>Calça preta Masculina</h4>
+                                <p>R$ 120,00</p>
+                                <button onClick={() => addToCart("Calça preta Masculina", "120,00", CalcaPreta)}>Comprar</button>
+                            </div>
+                       </Link>
 
-                        <div className="product">
-                            <img src={BlusaPreta} alt="blusa"></img>
-                            <h4>Blusa preta Masculina</h4>
-                            <p>R$ 100,00</p>
-                            <button onClick={() => addToCart("Blusa preta Masculina", "100,00", BlusaPreta)}>Comprar</button>
-                        </div>
+                        <Link to="/roupas/blusapreta">
+                            <div className="product">
+                                <img src={BlusaPreta} alt="blusa"></img>
+                                <h4>Blusa preta Masculina</h4>
+                                <p>R$ 100,00</p>
+                                <button onClick={() => addToCart("Blusa preta Masculina", "100,00", BlusaPreta)}>Comprar</button>
+                            </div>
+                        </Link>
 
                         <div className="product">
                             <img src={Blusa} alt="blusa"></img>

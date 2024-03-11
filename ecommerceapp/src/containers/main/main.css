@@ -187,6 +187,12 @@
     flex-direction: column;
     margin: 40px 20px;
     animation: productanim 1s forwards;
+    cursor: pointer;
+}
+
+a{
+    color: #111;
+    text-decoration: none;
 }
 
 @keyframes productanim{
