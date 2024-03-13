@@ -23,9 +23,10 @@ function Login(){
             </div>
 
             <div className="log-2">
-                <h2>Ecommerce</h2>
-                <h1>Bom ver você novamente</h1>
+               
                 <div className="login-container">
+                        <h2>Ecommerce</h2>
+                        <h1>Bom ver você novamente</h1>
                     <form action="" method="post">
                         <div className="inputarea">
                             <input type="email" name="emails" id="emails" required></input>
