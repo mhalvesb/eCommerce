@@ -36,11 +36,11 @@ function Login(){
                             <input type="password" name="pass" id="pass" required></input>
                             <p>Sua senha</p>
                         </div>
+                        
+                        <button>Fazer login</button>
                         <div className="login-nav">
                             <Link to="">Não possui uma conta?</Link>
-                            <Link to="">Criar uma conta</Link>
                         </div>
-                        <button>Fazer login</button>
                     </form>
                 </div>
             </div>
