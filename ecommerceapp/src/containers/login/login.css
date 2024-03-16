@@ -38,6 +38,7 @@
     margin-right: 20px;
     padding: 0px 200px 0px 100px;
     background-image: url("../../assets/images/wallpaper.png");
+    background-size: cover;
     background-position: flex-start;
 }
 
