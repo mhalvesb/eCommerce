@@ -14,7 +14,7 @@ function Singup(){
                 <div className="sig-1">
                     <div className="singup-container">
                     <h2>Ecommerce</h2>
-                        <h1>Boas vindas</h1>
+                        <h1>Bem vindo a nossa plataforma</h1>
                         <form>
                             <div className="inputarea">
                                 <input type="email" name="emails" id="emails" required></input>

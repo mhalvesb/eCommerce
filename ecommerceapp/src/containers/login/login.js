@@ -39,7 +39,7 @@ function Login(){
                         
                         <button>Fazer login</button>
                         <div className="login-nav">
-                            <Link to="">Não possui uma conta?</Link>
+                            <Link to="/singup">Não possui uma conta?</Link>
                         </div>
                     </form>
                 </div>
