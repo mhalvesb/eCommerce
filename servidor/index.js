@@ -41,6 +41,8 @@ app.post("/users", async (req, res) =>{
         email: email,
         senha: senha
     })
+
+    console.log("postado");
 })
 
 

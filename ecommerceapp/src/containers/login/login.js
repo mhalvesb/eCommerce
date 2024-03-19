@@ -34,7 +34,7 @@ function Login(){
     }
 
     const handleSubmit = async (e) =>{
-        await Axios.post("localhost:8080/users", {
+        await Axios.post("http://localhost:8080/users", {
             email: values.email,
             senha: values.senha
         });
@@ -59,13 +59,13 @@ function Login(){
                 <div className="login-container">
                         <h2>Ecommerce</h2>
                         <h1>Bom ver você novamente</h1>
-                    <form action="/login" method="post" onClick={handleSubmit}>
+                    <form action="" method="POST" onSubmit={handleSubmit}>
                         <div className="inputarea">
                             <input type="email" name="email" id="emails" onChange={handleValue} required></input>
                             <p>Seu e-mail</p>
                         </div>
                         <div className="inputarea">
-                            <input type="password" name="pass" id="pass" onChange={handleValue} required></input>
+                            <input type="password" name="senha" id="pass" onChange={handleValue} required></input>
                             <p>Sua senha</p>
                         </div>
                         
