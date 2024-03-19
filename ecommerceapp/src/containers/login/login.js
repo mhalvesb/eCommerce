@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, {useEffect} from "react";
+import Axios from "axios";
 
 import {Link} from "react-router-dom";
 
@@ -8,6 +8,25 @@ import "./login.css";
 
 
 function Login(){
+
+
+    useEffect(() => {
+        fetch("http://localhost:8080/users", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then((resp) => resp.json())
+        .then((data) => {
+            console.log(data);
+        });
+    }, []);
+
+    const handleSubmit = () =>{
+
+    }
+
     return(
         <div className="login-area">
 
@@ -27,7 +46,7 @@ function Login(){
                 <div className="login-container">
                         <h2>Ecommerce</h2>
                         <h1>Bom ver você novamente</h1>
-                    <form action="" method="post">
+                    <form action="/login" method="post">
                         <div className="inputarea">
                             <input type="email" name="emails" id="emails" required></input>
                             <p>Seu e-mail</p>
