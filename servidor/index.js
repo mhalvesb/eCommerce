@@ -32,6 +32,18 @@ app.get("/users", async (req, res) =>{
 });
 
 
+app.post("/users", async (req, res) =>{
+    const email = req.body.email;
+    const senha = req.body.senha;
+
+
+    db.users.create({
+        email: email,
+        senha: senha
+    })
+})
+
+
 
 
 app.listen(8080, ()=>{

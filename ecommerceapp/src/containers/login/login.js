@@ -1,14 +1,15 @@
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import Axios from "axios";
 
 import {Link} from "react-router-dom";
 
 import "./login.css";
+import axios from "axios";
 
 
 
 function Login(){
-
+    const [values, setValues] = useState();
 
     useEffect(() => {
         fetch("http://localhost:8080/users", {
@@ -23,8 +24,20 @@ function Login(){
         });
     }, []);
 
-    const handleSubmit = () =>{
+    const handleValue = (value) =>{
+        setValues((prevValue) => ({
+            ...prevValue,
+            [value.target.name]: value.target.value
+        }));
 
+        console.log(value);
+    }
+
+    const handleSubmit = async (e) =>{
+        await Axios.post("localhost:8080/users", {
+            email: values.email,
+            senha: values.senha
+        });
     }
 
     return(
@@ -46,13 +59,13 @@ function Login(){
                 <div className="login-container">
                         <h2>Ecommerce</h2>
                         <h1>Bom ver você novamente</h1>
-                    <form action="/login" method="post">
+                    <form action="/login" method="post" onClick={handleSubmit}>
                         <div className="inputarea">
-                            <input type="email" name="emails" id="emails" required></input>
+                            <input type="email" name="email" id="emails" onChange={handleValue} required></input>
                             <p>Seu e-mail</p>
                         </div>
                         <div className="inputarea">
-                            <input type="password" name="pass" id="pass" required></input>
+                            <input type="password" name="pass" id="pass" onChange={handleValue} required></input>
                             <p>Sua senha</p>
                         </div>
                         

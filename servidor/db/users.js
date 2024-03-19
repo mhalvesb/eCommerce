@@ -6,10 +6,20 @@ const sequelize = new Sequelize("logins", "root", "teteu778",{
 
 
 
+const users = sequelize.define("usuarios", {
+    email: {
+        type: Sequelize.STRING(50)
+    },
+    senha: {
+        type: Sequelize.INTEGER
+    }
+});
+
 
 module.exports = {
     Sequelize: Sequelize,
-    sequelize: sequelize
+    sequelize: sequelize,
+    users: users
 }
 
 
