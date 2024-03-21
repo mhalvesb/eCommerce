@@ -9,36 +9,7 @@ import axios from "axios";
 
 
 function Login(){
-    const [values, setValues] = useState();
-
-    useEffect(() => {
-        fetch("http://localhost:8080/users", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-        .then((resp) => resp.json())
-        .then((data) => {
-            console.log(data);
-        });
-    }, []);
-
-    const handleValue = (value) =>{
-        setValues((prevValue) => ({
-            ...prevValue,
-            [value.target.name]: value.target.value
-        }));
-
-        console.log(value);
-    }
-
-    const handleSubmit = async (e) =>{
-        await Axios.post("http://localhost:8080/users", {
-            email: values.email,
-            senha: values.senha
-        });
-    }
+    
 
     return(
         <div className="login-area">
@@ -59,13 +30,13 @@ function Login(){
                 <div className="login-container">
                         <h2>Ecommerce</h2>
                         <h1>Bom ver você novamente</h1>
-                    <form action="" method="POST" onSubmit={handleSubmit}>
+                    <form action="" method="POST" >
                         <div className="inputarea">
-                            <input type="email" name="email" id="emails" onChange={handleValue} required></input>
+                            <input type="email" name="email" id="emails" required></input>
                             <p>Seu e-mail</p>
                         </div>
                         <div className="inputarea">
-                            <input type="password" name="senha" id="pass" onChange={handleValue} required></input>
+                            <input type="password" name="senha" id="pass" required></input>
                             <p>Sua senha</p>
                         </div>
                         
