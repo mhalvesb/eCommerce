@@ -118,4 +118,7 @@
     transform: translate(10%, -100%);
 }
 
+.inputarea input:valid ~ p{
+    transform: translate(10%, -100%);
+}
 

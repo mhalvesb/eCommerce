@@ -32,12 +32,16 @@ function Login(){
                         <h1>Bom ver você novamente</h1>
                     <form action="" method="POST" >
                         <div className="inputarea">
-                            <input type="email" name="email" id="emails" required></input>
+
+                            <input type="text" name="email" id="emails" required></input>
                             <p>Seu e-mail</p>
+
                         </div>
                         <div className="inputarea">
+
                             <input type="password" name="senha" id="pass" required></input>
                             <p>Sua senha</p>
+
                         </div>
                         
                         <button>Fazer login</button>
