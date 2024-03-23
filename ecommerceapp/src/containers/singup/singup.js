@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Axios from "axios";
 
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 import "./singup.css";
 
@@ -9,7 +9,7 @@ import "./singup.css";
 
 function Singup(){
     const [values, setValues] = useState();
-
+    const navigate = useNavigate();
 
     useEffect(()=>{
         fetch("http://localhost:8080/users", {
@@ -31,6 +31,8 @@ function Singup(){
     }
 
     const handleSubmit = async (e) =>{
+        e.preventDefault();
+        navigate("/login");
         await Axios.post("http://localhost:8080/users", {
             email: values.email,
             senha: values.senha

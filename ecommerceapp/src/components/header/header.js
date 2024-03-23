@@ -74,10 +74,12 @@ function Header({items}){
                 <div className="headerinput">
                     <input type="text" placeholder="Procure um produto"></input>
                 </div>
-                <div className="headerlogin">
-                    <img src={User} alt="user"></img>
-                    <p>Login</p>
-                </div>
+                <Link to="/login" className="logins">
+                    <div className="headerlogin">
+                        <img src={User} alt="user"></img>
+                        <p>Login</p>
+                    </div>
+                </Link>
                 <div className="headercart" onClick={handleCartClick}>
                     <img src={Cart} alt="cart"></img>
                     <p>Cart</p>

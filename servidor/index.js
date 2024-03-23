@@ -13,6 +13,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors());
 
+
+
+
 app.get("/users", async (req, res) =>{
     try{
         const [results] = await db.sequelize.query("SHOW TABLES");
@@ -40,9 +43,9 @@ app.post("/users", async (req, res) =>{
     db.users.create({
         email: email,
         senha: senha
-    })
+    });
 
-    console.log("postado");
+    
 })
 
 
