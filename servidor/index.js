@@ -5,14 +5,21 @@ const sequelize = require("sequelize");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const db = require("./db/users.js");
+const flash = require("connect-flash");
+const passport = require("passport");
 
 
+app.use(session({
+    secret: 'seu_segredo_aqui',
+    resave: false,
+    saveUninitialized: true
+}));
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors());
-
+app.use(flash());
 
 
 
@@ -34,6 +41,12 @@ app.get("/users", async (req, res) =>{
     }
 });
 
+app.get("/flash", (req, res)=>{
+    res.json({
+        success: req.flash("success")
+    })
+})
+
 
 app.post("/users", async (req, res) =>{
     const email = req.body.email;
@@ -45,6 +58,8 @@ app.post("/users", async (req, res) =>{
         senha: senha
     });
 
+    req.flash("success", "Conta criada com sucesso");
+    res.status(201).json({message: "Conta criada com sucesso"});
     
 })
 

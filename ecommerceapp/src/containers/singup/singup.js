@@ -4,11 +4,13 @@ import Axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
 
 import "./singup.css";
+import axios from "axios";
 
 
 
 function Singup(){
     const [values, setValues] = useState();
+    const [flashMessages, setFlashMessages] = useState({succes: "", error: ""});
     const navigate = useNavigate();
 
     useEffect(()=>{
@@ -20,6 +22,10 @@ function Singup(){
         }).then((resp) => resp.json()).then((data) =>{
 
         });
+        const flashMessages = async () =>{
+                const response = await axios.get("http://localhost:8080/flash");
+                setFlashMessages(response.data);
+        }
     })
 
     const handleValue = (value) =>{
