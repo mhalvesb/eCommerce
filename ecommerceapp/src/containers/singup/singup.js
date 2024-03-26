@@ -10,10 +10,13 @@ import axios from "axios";
 
 function Singup(){
     const [values, setValues] = useState();
-    const [flashMessages, setFlashMessages] = useState({succes: "", error: ""});
+    const [flashMessages, setFlashMessages] = useState("");
     const navigate = useNavigate();
-
     useEffect(()=>{
+        
+        
+
+
         fetch("http://localhost:8080/users", {
             method: "GET",
             headers: {
@@ -22,11 +25,11 @@ function Singup(){
         }).then((resp) => resp.json()).then((data) =>{
 
         });
-        const flashMessages = async () =>{
+        const flashMessage = async () =>{
                 const response = await axios.get("http://localhost:8080/flash");
-                setFlashMessages(response.data);
+                setFlashMessages(response.data.flash);
         }
-    })
+    });
 
     const handleValue = (value) =>{
         setValues((prevValue) =>({
@@ -38,11 +41,13 @@ function Singup(){
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        navigate("/login");
+
         await Axios.post("http://localhost:8080/users", {
             email: values.email,
             senha: values.senha
         });
+
+        navigate("/login", {message: "Conta criada com sucesso"});
     }
 
 
@@ -53,6 +58,7 @@ function Singup(){
                     <div className="singup-container">
                     <h2>Ecommerce</h2>
                         <h1>Bem vindo a nossa plataforma</h1>
+                        <h6>{flashMessages}</h6>
                         <form action="" method="POST" onSubmit={handleSubmit}>
                             <div className="inputarea">
                                 <input type="text" name="email" id="emails" onChange={handleValue} required></input>

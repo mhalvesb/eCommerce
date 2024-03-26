@@ -7,13 +7,18 @@ const cors = require("cors");
 const db = require("./db/users.js");
 const flash = require("connect-flash");
 const passport = require("passport");
+require("./config/auth.js")(passport);
 
 
 app.use(session({
-    secret: 'seu_segredo_aqui',
-    resave: false,
-    saveUninitialized: true
-}));
+    secret: "curso", 
+    resave: true, 
+    saveUninitialized: true,
+    }));
+
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -42,9 +47,9 @@ app.get("/users", async (req, res) =>{
 });
 
 app.get("/flash", (req, res)=>{
-    res.json({
-        success: req.flash("success")
-    })
+
+    res.json(req.flash("success_msg"));
+
 })
 
 
@@ -52,15 +57,16 @@ app.post("/users", async (req, res) =>{
     const email = req.body.email;
     const senha = req.body.senha;
 
+    req.flash("success_msg", "Conta criada com sucesso");
 
     db.users.create({
         email: email,
         senha: senha
     });
-
-    req.flash("success", "Conta criada com sucesso");
-    res.status(201).json({message: "Conta criada com sucesso"});
     
+    
+   
+    console.log(req.flash("success_msg"));
 })
 
 
