@@ -25,6 +25,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(flash());
+app.use((req, res, next) =>{
+    res.locals.success_msg = req.flash("success_msg");
+    res.locals.error_msg = req.flash("error_msg");
+    res.locals.error = req.flash("error");
+    next();
+})
 
 
 
@@ -37,32 +43,43 @@ app.get("/users", async (req, res) =>{
             const [tableData] = await db.sequelize.query(`SELECT * FROM ${table}`);
             return {table, data: tableData}
         });
-
         const allData = await Promise.all(datas);
         res.json(allData);
 
     } catch(error){
 
     }
+
+    
 });
-
-app.get("/flash", (req, res)=>{
-
-    res.json(req.flash("success_msg"));
-
-})
 
 
 app.post("/users", async (req, res) =>{
     const email = req.body.email;
     const senha = req.body.senha;
+    
+    
+    db.users.findOne({where:{
+        email: email
+    }}).then(usuario =>{
+        if(usuario){
+            res.status(200).json({error: "Já há um usuario cadastrado"})
+            
+        } else{
+            db.users.create({
+                email: email,
+                senha: senha
+            });
+            res.status(200).json({success: "Usuário cadastrado com sucesso"});
+            
+        }
+    })
 
-    req.flash("success_msg", "Conta criada com sucesso");
-
-    db.users.create({
-        email: email,
-        senha: senha
-    });
+    
+   
+        
+    
+    
     
     
    

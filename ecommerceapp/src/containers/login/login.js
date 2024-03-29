@@ -11,6 +11,7 @@ import axios from "axios";
 
 function Login(){
     const location = useLocation();
+    console.log(location);
     let message = "";
 
     

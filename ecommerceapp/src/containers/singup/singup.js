@@ -12,10 +12,6 @@ function Singup(){
     const [values, setValues] = useState();
     const navigate = useNavigate();
     useEffect(()=>{
-        
-        
-
-
         fetch("http://localhost:8080/users", {
             method: "GET",
             headers: {
@@ -36,11 +32,23 @@ function Singup(){
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        navigate("/login", {state: {message: "Conta criada com sucesso!"}});
+        
         await Axios.post("http://localhost:8080/users", {
             email: values.email,
             senha: values.senha
+        }).then((response) =>{
+            if(response.data.error){
+                navigate("/singup", {state: {message: response.data.error}});
+            } else{
+                navigate("/login", {state: {message: "Usuario cadastrado com sucesso"}});
+            }
+            
+        }).catch(()=>{
+            console.log("erro");
         });
+
+        
+        
     }
 
 
