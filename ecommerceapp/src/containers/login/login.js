@@ -11,13 +11,36 @@ import axios from "axios";
 
 function Login(){
     const location = useLocation();
-    console.log(location);
     let message = "";
 
     
     if(location.state){
         message = location.state.message
     }
+
+
+    const loginSub = async (e) =>{
+        e.preventDefault()
+        try{
+            const formData = new FormData(e.target);
+            const email = formData.get('email');
+            const senha = formData.get('senha');
+
+            const responses = await Axios.post("http://localhost:8080/login", {
+                email: email,
+                senha: senha
+            }).then((response)=>{
+                
+                console.log(response);
+            });
+
+            
+        } catch(error){
+
+        }
+    
+    }
+
 
     return(
         <div className="login-area">
@@ -37,10 +60,9 @@ function Login(){
                 {message && <Message type="success" msg={message}/>}
 
                 <div className="login-container">
-                
                         <h2>Ecommerce</h2>
                         <h1>Bom ver você novamente</h1>
-                    <form action="" method="POST" >
+                    <form action="" method="POST" onSubmit={loginSub}>
                         <div className="inputarea">
 
                             <input type="text" name="email" id="emails" required></input>

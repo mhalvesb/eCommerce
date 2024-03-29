@@ -73,26 +73,37 @@ app.post("/users", async (req, res) =>{
             res.status(200).json({success: "Usuário cadastrado com sucesso"});
             
         }
-    })
+    });
 
-    
-   
-        
-    
-    
-    
-    
-   
     console.log(req.flash("success_msg"));
-})
+});
+
+app.post("/login", async (req, res)=>{
+    passport.authenticate("local", (error, user, message) => {
+        if (error) {
+            console.error(error);
+            return error;
+        }
+        if (!user) {
+            return res.status(401).json({ error: "Usuário não encontrado ou senha inválida" });
+        }
+        req.login(user, (err) => {
+            if (err) {
+                console.error(err);
+                return err;
+            }
+            console.log("Usuário encontrado:", user);
+            return res.json({ user });
+        });
+    })(req, res);
+});
 
 
 
 
 app.listen(8080, ()=>{
     console.log("Servidor iniciado na porta 8080");
-})
-
+});
 
 
 
