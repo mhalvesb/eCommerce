@@ -28,7 +28,32 @@
     }
 }
 
+@keyframes failed{
+    0%{
+        border-radius: 2px;
+        padding: 2px;
+        margin-top: -550px;
+    }
+    100%{
+        background-color: #D22B2B;
+        color: #111;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: -600px;
+    }
+}
+
 
 .failure{
-
+    background-color: #D22B2B;
+    color: #111;
+    border-radius: 10px;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: absolute;
+    animation-name: failed;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    margin-top: -600px;
 }

@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import Axios from "axios";
 
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useNavigate, useLocation} from "react-router-dom";
 
+import Message from "../../components/message/message.js";
 import "./singup.css";
 import axios from "axios";
 
@@ -11,6 +12,13 @@ import axios from "axios";
 function Singup(){
     const [values, setValues] = useState();
     const navigate = useNavigate();
+    const location = useLocation();
+    let message = ""
+
+    if(location.state){
+        message = location.state.message;
+    }
+
     useEffect(()=>{
         fetch("http://localhost:8080/users", {
             method: "GET",
@@ -56,6 +64,7 @@ function Singup(){
         return(
             <div className="singup-area">
                 <div className="sig-1">
+                    <Message msg={message} type="failure"/>
                     <div className="singup-container">
                     <h2>Ecommerce</h2>
                         <h1>Bem vindo a nossa plataforma</h1>
