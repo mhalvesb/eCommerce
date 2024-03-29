@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {useLocation} from "react-router-dom";
 import Axios from "axios";
 import Message from "../../components/message/message.js";
 import {Link} from "react-router-dom";
@@ -9,7 +10,13 @@ import axios from "axios";
 
 
 function Login(){
+    const location = useLocation();
+    let message = "";
+
     
+    if(location.state){
+        message = location.state.message
+    }
 
     return(
         <div className="login-area">
@@ -26,7 +33,7 @@ function Login(){
             </div>
 
             <div className="log-2">
-                <Message type="success" msg="conta criada com sucesso"/>
+                {message && <Message type="success" msg={message}/>}
 
                 <div className="login-container">
                 
