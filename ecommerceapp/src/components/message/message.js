@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 
+import "./message.css";
 
 
-function Message(type, msg){
+function Message({type, msg}){
     const [isVisible, setVisible] = useState(false);
 
 
@@ -17,8 +18,11 @@ function Message(type, msg){
     },[msg])
 
     return(
-        <div>
-            
+        <div className={type}>
+           {msg}
         </div>
     )
 }
+
+
+export default Message;

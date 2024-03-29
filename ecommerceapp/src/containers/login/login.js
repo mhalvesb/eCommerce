@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Axios from "axios";
-
+import Message from "../../components/message/message.js";
 import {Link} from "react-router-dom";
 
 import "./login.css";
@@ -26,8 +26,10 @@ function Login(){
             </div>
 
             <div className="log-2">
-               
+                <Message type="success" msg="conta criada com sucesso"/>
+
                 <div className="login-container">
+                
                         <h2>Ecommerce</h2>
                         <h1>Bom ver você novamente</h1>
                     <form action="" method="POST" >

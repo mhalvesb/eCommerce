@@ -1,0 +1,15 @@
+.success{
+    background-color: #7CFC00;
+    color: #111;
+    padding: 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: absolute;
+    margin-top: -600px;
+}
+
+
+.failure{
+
+}
