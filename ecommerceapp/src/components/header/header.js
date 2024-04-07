@@ -7,14 +7,26 @@ import User from "../../assets/icons/user.png";
 import Main from "../../containers/main/main.js";
 
 import Carts from "../cart/cart.js";
+import { Axios } from "axios";
 
 
 
 
 function Header({items}){
+    
     const [cartItems, setCartItems] = useState(items);
     const [cartId, setCartId] = useState(1);
+    const [user, setUser] = useState();
 
+    useEffect(()=>{
+        const userDataString = localStorage.getItem('user');
+        console.log(userDataString);
+        if(userDataString){
+            setUser(JSON.parse(userDataString));
+        }
+    }, [])
+    
+    
     useEffect(()=>{
         setCartItems(items);
     })
@@ -51,6 +63,11 @@ function Header({items}){
         }
     })
 
+
+    const handleLogout = () =>{
+        
+    }
+
     const handleCartClick = (event) =>{
         selecionarCarrinho(true);
     }
@@ -77,7 +94,10 @@ function Header({items}){
                 <Link to="/login" className="logins">
                     <div className="headerlogin">
                         <img src={User} alt="user"></img>
-                        <p>Login</p>
+                        {user ? user.email : <p>Login</p>}
+                    </div>
+                    <div>
+                        {user ? <button onClick={}>Logout</button> : ""}
                     </div>
                 </Link>
                 <div className="headercart" onClick={handleCartClick}>

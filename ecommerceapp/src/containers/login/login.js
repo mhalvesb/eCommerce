@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
-import {useLocation} from "react-router-dom";
+import Header from "../../components/header/header.js";
+import {useLocation, useNavigate} from "react-router-dom";
 import Axios from "axios";
 import Message from "../../components/message/message.js";
 import {Link} from "react-router-dom";
@@ -10,6 +11,7 @@ import axios from "axios";
 
 
 function Login(){
+    const navigate = useNavigate();
     const location = useLocation();
     let message = "";
 
@@ -30,8 +32,9 @@ function Login(){
                 email: email,
                 senha: senha
             }).then((response)=>{
-                
-                console.log(response);
+                console.log(response.data.user);
+                localStorage.setItem("user", JSON.stringify(response.data.user));
+                navigate("/");
             });
 
             
@@ -40,6 +43,9 @@ function Login(){
         }
     
     }
+
+
+
 
 
     return(
