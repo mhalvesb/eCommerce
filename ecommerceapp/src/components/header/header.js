@@ -65,7 +65,12 @@ function Header({items}){
 
 
     const handleLogout = () =>{
-        
+        localStorage.removeItem("user");
+        window.location.reload();
+    }
+
+    const handleLogin = () =>{
+        window.location.href = "/login"
     }
 
     const handleCartClick = (event) =>{
@@ -91,15 +96,15 @@ function Header({items}){
                 <div className="headerinput">
                     <input type="text" placeholder="Procure um produto"></input>
                 </div>
-                <Link to="/login" className="logins">
-                    <div className="headerlogin">
+                
+                    <div className="headerlogin logins">
                         <img src={User} alt="user"></img>
-                        {user ? user.email : <p>Login</p>}
+                        {user ? user.email : <p onClick={handleLogin}>Login</p>}
                     </div>
-                    <div>
-                        {user ? <button onClick={}>Logout</button> : ""}
+                
+                <div>
+                        {user ? <button className="logout" onClick={handleLogout}>Logout</button> : ""}
                     </div>
-                </Link>
                 <div className="headercart" onClick={handleCartClick}>
                     <img src={Cart} alt="cart"></img>
                     <p>Cart</p>
