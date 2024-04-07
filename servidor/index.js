@@ -57,9 +57,12 @@ app.get("/users", async (req, res) =>{
 app.post("/users", async (req, res) =>{
     const email = req.body.email;
     const senha = req.body.senha;
-    const login = req.body.usuario;
+    const login = req.body.login;
     const nome = req.body.nome;
     
+
+    
+
     db.users.findOne({where:{
         email: email
     }}).then(usuario =>{
@@ -69,10 +72,11 @@ app.post("/users", async (req, res) =>{
         } else{
             db.users.create({
                 email: email,
-                senha: senha
+                senha: senha,
+                login: login,
+                nome: nome
             });
             res.status(200).json({success: "Usuário cadastrado com sucesso"});
-            
         }
     });
 

@@ -91,28 +91,32 @@ function Main(){
                             <img src={Blusa} alt="blusa"></img>
                             <h4>Blusa branca Masculina</h4>
                             <p>R$ 90,00</p>
-                            </Link>
+                        </Link>
                             <button onClick={() => addToCart("Blusa branca Masculina", "90,00", Blusa)}>Comprar</button>
                         </div>
                        
 
-                       <Link to="/roupas/calcapreta">
+                       
                         <div className="product">
+                        <Link to="/roupas/calcapreta">
                                 <img src={CalcaPreta} alt="blusa"></img>
                                 <h4>Calça preta Masculina</h4>
                                 <p>R$ 120,00</p>
+                        </Link>
                                 <button onClick={() => addToCart("Calça preta Masculina", "120,00", CalcaPreta)}>Comprar</button>
                             </div>
-                       </Link>
+                       
 
-                        <Link to="/roupas/blusapreta">
+                        
                             <div className="product">
+                            <Link to="/roupas/blusapreta">
                                 <img src={BlusaPreta} alt="blusa"></img>
                                 <h4>Blusa preta Masculina</h4>
                                 <p>R$ 100,00</p>
+                            </Link>
                                 <button onClick={() => addToCart("Blusa preta Masculina", "100,00", BlusaPreta)}>Comprar</button>
                             </div>
-                        </Link>
+                        
 
 
                     </div>

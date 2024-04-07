@@ -99,7 +99,7 @@ function Header({items}){
                 
                     <div className="headerlogin logins">
                         <img src={User} alt="user"></img>
-                        {user ? user.email : <p onClick={handleLogin}>Login</p>}
+                        {user ? user.nome : <p onClick={handleLogin}>Login</p>}
                     </div>
                 
                 <div>

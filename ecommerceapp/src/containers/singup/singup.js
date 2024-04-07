@@ -49,7 +49,9 @@ function Singup(){
         
         await Axios.post("http://localhost:8080/users", {
             email: values.email,
-            senha: values.senha
+            senha: values.senha,
+            login: values.usuario,
+            nome: values.nome
         }).then((response) =>{
             if(response.data.error){
                 navigate("/singup", {state: {message: response.data.error}});
@@ -76,11 +78,11 @@ function Singup(){
                         <h1>Bem vindo a nossa plataforma</h1>
                         <form action="" method="POST" onSubmit={handleSubmit}>
                             <div className="inputarea">
-                                <input type="text" name="nome" id="nome" onChange={handleValue} required></input>
+                                <input type="text" name="nome" id="nomes" onChange={handleValue} required></input>
                                 <p>Seu nome</p>
                             </div>
                             <div className="inputarea">
-                                <input type="text" name="usuario" id="usuario" onChange={handleValue} required></input>
+                                <input type="text" name="usuario" id="usuarios" onChange={handleValue} required></input>
                                 <p>Seu usuario</p>
                             </div>
                             <div className="inputarea">

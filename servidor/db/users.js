@@ -12,6 +12,12 @@ const users = sequelize.define("usuarios", {
     },
     senha: {
         type: Sequelize.INTEGER
+    },
+    login:{
+        type: Sequelize.STRING(20)
+    },
+    nome: {
+        type: Sequelize.STRING(20)
     }
 });
 
