@@ -10,6 +10,12 @@ import axios from "axios";
 
 
 function Singup(){
+    if(localStorage.getItem("user")){
+        window.location.href = "/"
+        navigate("/");
+    }
+
+
     const [values, setValues] = useState();
     const navigate = useNavigate();
     const location = useLocation();

@@ -20,7 +20,7 @@ function Header({items}){
 
     useEffect(()=>{
         const userDataString = localStorage.getItem('user');
-        console.log(userDataString);
+        
         if(userDataString){
             setUser(JSON.parse(userDataString));
         }

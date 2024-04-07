@@ -11,10 +11,17 @@ import axios from "axios";
 
 
 function Login(){
+    if(localStorage.getItem("user")){
+        window.location.href = "/"
+        navigate("/");
+    }
+    
     const navigate = useNavigate();
     const location = useLocation();
     let message = "";
 
+
+    
     
     if(location.state){
         message = location.state.message
