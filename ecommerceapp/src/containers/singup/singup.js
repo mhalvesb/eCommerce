@@ -76,6 +76,14 @@ function Singup(){
                         <h1>Bem vindo a nossa plataforma</h1>
                         <form action="" method="POST" onSubmit={handleSubmit}>
                             <div className="inputarea">
+                                <input type="text" name="nome" id="nome" onChange={handleValue} required></input>
+                                <p>Seu nome</p>
+                            </div>
+                            <div className="inputarea">
+                                <input type="text" name="usuario" id="usuario" onChange={handleValue} required></input>
+                                <p>Seu usuario</p>
+                            </div>
+                            <div className="inputarea">
                                 <input type="text" name="email" id="emails" onChange={handleValue} required></input>
                                 <p>Seu e-mail</p>
                             </div>

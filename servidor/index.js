@@ -57,7 +57,8 @@ app.get("/users", async (req, res) =>{
 app.post("/users", async (req, res) =>{
     const email = req.body.email;
     const senha = req.body.senha;
-    
+    const login = req.body.usuario;
+    const nome = req.body.nome;
     
     db.users.findOne({where:{
         email: email
