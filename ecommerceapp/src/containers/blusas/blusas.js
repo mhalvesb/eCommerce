@@ -20,6 +20,18 @@ function Blusas(){
     const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")) : [];
     const [cartItems, setCartItems] = useState(initialItem);
 
+
+    const addToCart = (productName, productPrice, productImage) =>{
+        const newItem = {
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            qtd: 1
+        }
+
+        setCartItems([...cartItems, newItem]);
+    }
+
     return(
         <div>
             <Header items={cartItems}/>
@@ -37,7 +49,7 @@ function Blusas(){
                                 <h4>Blusa branca masculina</h4>
                                 <p>R$ 180,00</p>
                                 </Link>
-                                <button>Comprar</button>
+                                <button onClick={addToCart("Blusa branca masculina", "180,00", Blusa)}>Comprar</button>
                             </div>
 
                             <div className="blusasproduct">
@@ -46,7 +58,7 @@ function Blusas(){
                                 <h4>Blusa preta masculina</h4>
                                 <p>R$ 150,00</p>
                                 </Link>
-                                <button>Comprar</button>
+                                <button onClick={addToCart("Blusa preta masculina", "150,00", Blusapreta)}>Comprar</button>
                             </div>
 
                             <div className="blusasproduct">
@@ -55,7 +67,7 @@ function Blusas(){
                                 <h4>Blusa flor turquesa masculina</h4>
                                 <p>R$ 240,00</p>
                                 </Link>
-                                <button>Comprar</button>
+                                <button onClick={addToCart()}>Comprar</button>
                             </div>
 
                             <div className="blusasproduct">

@@ -89,8 +89,6 @@ function Header({items}){
                             <option  value="">Inicio</option>
                             <option value="blusas">Blusas</option>
                             <option value="calcas">Calças</option>
-                            <option value="shorts">Shorts</option>
-                            <option value="sapatos">Sapatos</option>
                         </select>
                 </div>
                 <div className="headerinput">
