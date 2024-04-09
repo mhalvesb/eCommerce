@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 
+import {Link} from "react-router-dom";
 
 import "./blusas.css";
 
@@ -31,9 +32,11 @@ function Blusas(){
                         <div className="blusasproductarea">
 
                             <div className="blusasproduct">
+                                <Link to="/blusabranca">
                                 <img src={Blusa} alt="blusa"></img>
                                 <h4>Blusa branca masculina</h4>
                                 <p>R$ 180,00</p>
+                                </Link>
                                 <button>Comprar</button>
                             </div>
 

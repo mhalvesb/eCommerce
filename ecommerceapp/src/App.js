@@ -8,7 +8,7 @@ import Singup from "./containers/singup/singup.js";
 import BlusaBranca from "./containers/roupas/blusabranca/blusabranca.js";
 import BlusaPreta from "./containers/roupas/blusapreta/blusapreta.js";
 import CalcaPreta from "./containers/roupas/calcapreta/calcapreta.js";
-
+import BlusaTurquesa from "./containers/roupas/blusaturquesa/blusaturquesa.js";
 
 
 import "./index.css";
@@ -26,6 +26,7 @@ function App() {
         <Route path="/roupas/blusabranca" element={<BlusaBranca/>}></Route>
         <Route path="/roupas/blusapreta" element={<BlusaPreta/>}></Route>
         <Route path="/roupas/calcapreta" element={<CalcaPreta/>}></Route>
+        <Route path="/roupas/blusaflorturquesa" element={<BlusaTurquesa/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>
