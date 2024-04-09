@@ -32,7 +32,7 @@ function Blusas(){
                         <div className="blusasproductarea">
 
                             <div className="blusasproduct">
-                                <Link to="/blusabranca">
+                                <Link to="/roupas/blusabranca">
                                 <img src={Blusa} alt="blusa"></img>
                                 <h4>Blusa branca masculina</h4>
                                 <p>R$ 180,00</p>
@@ -41,81 +41,41 @@ function Blusas(){
                             </div>
 
                             <div className="blusasproduct">
+                                <Link to="/roupas/blusapreta">
                                 <img src={Blusapreta} alt="blusa"></img>
                                 <h4>Blusa preta masculina</h4>
                                 <p>R$ 150,00</p>
+                                </Link>
                                 <button>Comprar</button>
                             </div>
 
                             <div className="blusasproduct">
+                                <Link to="/roupas/blusaflorturquesa">
                                 <img src={Blusaturquesa} alt="blusa"></img>
                                 <h4>Blusa flor turquesa masculina</h4>
                                 <p>R$ 240,00</p>
+                                </Link>
                                 <button>Comprar</button>
                             </div>
 
                             <div className="blusasproduct">
+                                <Link to="/roupas/azulmasculina">
                                 <img src={Azulpreto} alt="blusa"></img>
                                 <h4>Blusa gradiente azul masculina</h4>
                                 <p>R$ 300,00</p>
+                                </Link>
                                 <button>Comprar</button>
                             </div>
 
                             <div className="blusasproduct">
+                                <Link to="/roupas/gradiente">
                                 <img src={Pretovermelho} alt="blusa"></img>
                                 <h4>Blusa gradiente masculina</h4>
                                 <p>R$ 300,00</p>
+                                </Link>
                                 <button>Comprar</button>
                             </div>
 
-                            <div className="blusasproduct">
-                                <img src={Blusa} alt="blusa"></img>
-                                <h4>Blusa branca masculina</h4>
-                                <p>R$ 180,00</p>
-                                <button>Comprar</button>
-                            </div>
-
-                            <div className="blusasproduct">
-                                <img src={Blusa} alt="blusa"></img>
-                                <h4>Blusa branca masculina</h4>
-                                <p>R$ 180,00</p>
-                                <button>Comprar</button>
-                            </div>
-
-                            <div className="blusasproduct">
-                                <img src={Blusapreta} alt="blusa"></img>
-                                <h4>Blusa preta masculina</h4>
-                                <p>R$ 150,00</p>
-                                <button>Comprar</button>
-                            </div>
-
-                            <div className="blusasproduct">
-                                <img src={Blusaturquesa} alt="blusa"></img>
-                                <h4>Blusa flor turquesa masculina</h4>
-                                <p>R$ 240,00</p>
-                                <button>Comprar</button>
-                            </div>
-
-                            <div className="blusasproduct">
-                                <img src={Azulpreto} alt="blusa"></img>
-                                <h4>Blusa gradiente azul masculina</h4>
-                                <p>R$ 300,00</p>
-                                <button>Comprar</button>
-                            </div>
-
-                            <div className="blusasproduct">
-                                <img src={Pretovermelho} alt="blusa"></img>
-                                <h4>Blusa gradiente masculina</h4>
-                                <p>R$ 300,00</p>
-                                <button>Comprar</button>
-                            </div>
-
-                            <div className="blusasproduct">
-                                <img src={Blusa} alt="blusa"></img>
-                                <h4>Blusa branca masculina</h4>
-                                <p>R$ 180,00</p>
-                                <button>Comprar</button>
-                            </div>
 
                         </div>
                     </section>
