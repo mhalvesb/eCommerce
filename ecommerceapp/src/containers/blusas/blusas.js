@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import {Link} from "react-router-dom";
 
@@ -22,6 +22,7 @@ function Blusas(){
 
 
     const addToCart = (productName, productPrice, productImage) =>{
+
         const newItem = {
             name: productName,
             price: productPrice,
@@ -31,6 +32,10 @@ function Blusas(){
 
         setCartItems([...cartItems, newItem]);
     }
+
+    useEffect(() =>{
+        localStorage.setItem("cartItem", JSON.stringify(cartItems));
+    })
 
     return(
         <div>
@@ -49,7 +54,7 @@ function Blusas(){
                                 <h4>Blusa branca masculina</h4>
                                 <p>R$ 180,00</p>
                                 </Link>
-                                <button onClick={addToCart("Blusa branca masculina", "180,00", Blusa)}>Comprar</button>
+                                <button onClick={() => addToCart("Blusa branca masculina", "180,00", Blusa)}>Comprar</button>
                             </div>
 
                             <div className="blusasproduct">
@@ -58,7 +63,7 @@ function Blusas(){
                                 <h4>Blusa preta masculina</h4>
                                 <p>R$ 150,00</p>
                                 </Link>
-                                <button onClick={addToCart("Blusa preta masculina", "150,00", Blusapreta)}>Comprar</button>
+                                <button onClick={() => addToCart("Blusa preta masculina", "150,00", Blusapreta)}>Comprar</button>
                             </div>
 
                             <div className="blusasproduct">
@@ -67,7 +72,7 @@ function Blusas(){
                                 <h4>Blusa flor turquesa masculina</h4>
                                 <p>R$ 240,00</p>
                                 </Link>
-                                <button onClick={addToCart()}>Comprar</button>
+                                <button onClick={() => addToCart("Blusa flor turquesa", "240,00", Blusaturquesa)}>Comprar</button>
                             </div>
 
                             <div className="blusasproduct">
@@ -76,7 +81,7 @@ function Blusas(){
                                 <h4>Blusa gradiente azul masculina</h4>
                                 <p>R$ 300,00</p>
                                 </Link>
-                                <button>Comprar</button>
+                                <button onClick={() => addToCart("Blusa gradiente azul", "300,00", Azulpreto)}>Comprar</button>
                             </div>
 
                             <div className="blusasproduct">
@@ -85,7 +90,7 @@ function Blusas(){
                                 <h4>Blusa gradiente masculina</h4>
                                 <p>R$ 300,00</p>
                                 </Link>
-                                <button>Comprar</button>
+                                <button onClick={() => addToCart("Blusa gradiente vermelha", "300,00", Pretovermelho)}>Comprar</button>
                             </div>
 
 
