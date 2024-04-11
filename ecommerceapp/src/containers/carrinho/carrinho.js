@@ -4,6 +4,8 @@ import React from "react";
 
 import Blusa from "../../assets/images/blusabranca.avif"
 
+import TrashIcon from "../../assets/icons/trash.png";
+
 import "./carrinho.css";
 
 
@@ -22,10 +24,15 @@ function Carrinho(){
                         </div>
                     </div>
                     <div className="more">
-                        <img src="" alt="image"></img>
-                        <p>199</p>
+                        <img src={TrashIcon} alt="image"></img>
+                        <div className="money">
+                            <p>R$</p> 
+                            <p>199</p>
+                        </div>
                     </div>
                 </div>
+                
+                
             </div>
             <div className="side2">
 
