@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 
-
+import Header from "../../components/header/header.js";
 
 import Blusa from "../../assets/images/blusabranca.avif"
 
@@ -11,8 +11,21 @@ import "./carrinho.css";
 
 
 function Carrinho(){
+    const storageItem = localStorage.getItem("cartItem");
+    const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")) : [];
+    const [cartItems, setCartItems] = useState(initialItem);
+
+
     return(
+
+
+
+        
+<div className="container-area">
+
+        <Header hidden={true} items={cartItems}/>
         <div className="carrinho-area">
+            
             <div className="side1">
                 
                 <div className="item">
@@ -31,13 +44,12 @@ function Carrinho(){
                         </div>
                     </div>
                 </div>
-                
-                
             </div>
             <div className="side2">
 
             </div>
         </div>
+    </div>
     )
 }
 

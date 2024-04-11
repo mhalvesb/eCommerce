@@ -12,7 +12,7 @@ import { Axios } from "axios";
 
 
 
-function Header({items}){
+function Header({items, hidden}){
     
     const [cartItems, setCartItems] = useState(items);
     const [cartId, setCartId] = useState(1);
@@ -77,6 +77,9 @@ function Header({items}){
         selecionarCarrinho(true);
     }
 
+
+    
+
     return(
         <header>
             <Carts show={carrinho} handleClickCart={handleClickCart} items={cartItems}/>
@@ -84,18 +87,18 @@ function Header({items}){
                 <div className="headerlogo">
                 <h1><Link to="/">eCommerce</Link></h1>
                 </div>
-                <div className="headercategories">
+                <div className="headercategories" style={{display: hidden ? "none" : "block"}}>
                         <select value={categoriaSelect} onChange={handleSelecionarCategoria}>
                             <option  value="">Inicio</option>
                             <option value="blusas">Blusas</option>
                             <option value="calcas">Calças</option>
                         </select>
                 </div>
-                <div className="headerinput">
+                <div className="headerinput" style={{display: hidden ? "none" : "block"}}>
                     <input type="text" placeholder="Procure um produto"></input>
                 </div>
                 
-                    <div className="headerlogin logins">
+                    <div className="headerlogin logins" style={{display: hidden ? "none" : "block"}}>
                         <img src={User} alt="user"></img>
                         {user ? user.nome : <p onClick={handleLogin}>Login</p>}
                     </div>
@@ -103,7 +106,7 @@ function Header({items}){
                 <div>
                         {user ? <button className="logout" onClick={handleLogout}>Logout</button> : ""}
                     </div>
-                <div className="headercart" onClick={handleCartClick}>
+                <div className="headercart" onClick={handleCartClick} style={{display: hidden ? "none" : "block"}}>
                     <img src={Cart} alt="cart"></img>
                     <p>Cart</p>
                 </div>
