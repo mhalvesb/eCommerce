@@ -1,10 +1,71 @@
 .carrinho-area{
     width: 100%;
     height: 100vh;
-    background-color: aliceblue;
+    background-color: rgb(202, 201, 201);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .side1, .side2{
     background-color: #fff;
+    width: 40%;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.side1{
+    display: flex;
+}
+
+
+.item{
+    display: flex;
+    width: 100%;
+}
+
+.item img{
+    width: 150px;
+    height: 150px;
+}
+
+.item-options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.items-qtd{
+    display: flex;
+}
+
+.items-qtd p{
+    color: #333;
+    font-weight: 200;
+}
+
+.items-qtd button{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0px 10px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #000;
+    font-weight: 900;
+}
+
+.more{
+    display: flex;
+    margin-left: auto;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.more img{
+    width: 20px;
+    height: 20px;
 }
