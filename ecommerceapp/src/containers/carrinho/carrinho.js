@@ -31,7 +31,6 @@ function Carrinho(){
         <div className="carrinho-area">
             
             <div className="side1">
-                
                 <div className="item">
                     <img src={Blusa} alt="image"></img>
                     <div className="item-options">
@@ -52,13 +51,20 @@ function Carrinho(){
             <div className="side2">
                 <div className="cep">
                     <h2>Calcule o preço do frete</h2>
-                    <input type="text" placeholder="Digite o seu cep"></input>
+                    <div className="cepcalc">
+                        <input type="text" placeholder="Digite o seu cep"></input>
+                        <button>Calcular frete</button>
+                    </div>
                 </div>
 
                 <div className="resume">
                     <p>Resumo do pedido</p>
                     <div className="resumetext">
                         <p>Total: </p><p>R$ 199</p>
+                    </div>
+
+                    <div className="buy">
+                        <button>Comprar agora</button>
                     </div>
                 </div>
             </div>

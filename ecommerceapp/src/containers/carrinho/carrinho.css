@@ -1,6 +1,6 @@
 .container-area{
     width: 100%;
-    height: 93vh;
+    height: 100vh;
     background-color: rgb(202, 201, 201);
     display: flex;
     flex-direction: column;
@@ -11,8 +11,8 @@
 .carrinho-area{
     display: flex;
     justify-content: space-between;
-    
     width: 90%;
+    align-items: flex-start;
 }
 
 .cart-text{
@@ -33,6 +33,9 @@
 .side1{
     display: flex;
     flex-direction: column;
+}
+
+.side2{
 }
 
 
@@ -104,9 +107,21 @@
 }
 
 .cep input{
-    width: auto;
-    height: 30px;
-    border: 1px solid black;
+    width: 100%;
+    height: 40px;
+    padding-left: 20px;
+    border: 1px solid #40B5AD;
+}
+
+.cepcalc{
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+}
+
+.cepcalc button{
+    width: 200px;
+    
 }
 
 
@@ -124,10 +139,25 @@
 .resumetext{
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px dotted #333;
+    padding-bottom: 20px;
 }
 
 .resumetext p{
     font-size: 20px;
     color: #222;
     font-weight: 900;
+}
+
+.buy button{
+    margin-top: 20px;
+    width: 100%;
+    background-color: #228B22;
+    border: none;
+    color: #fff;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 900;
+    text-transform: uppercase;
 }
