@@ -56,7 +56,7 @@ function Carrinho(){
                 </div>
 
                 <div className="resume">
-                    <p>Resumo do pedido:</p>
+                    <p>Resumo do pedido</p>
                     <div className="resumetext">
                         <p>Total: </p><p>R$ 199</p>
                     </div>

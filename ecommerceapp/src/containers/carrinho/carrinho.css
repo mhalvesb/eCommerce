@@ -99,7 +99,7 @@
 .cep{
     display: flex;
     flex-direction: column;
-    border: 1px dotted #333;
+    border-bottom: 1px dotted #333;
     padding: 10px 20px;
 }
 
@@ -107,4 +107,27 @@
     width: auto;
     height: 30px;
     border: 1px solid black;
+}
+
+
+.resume{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.resume p{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.resumetext{
+    display: flex;
+    justify-content: space-between;
+}
+
+.resumetext p{
+    font-size: 20px;
+    color: #222;
+    font-weight: 900;
 }
