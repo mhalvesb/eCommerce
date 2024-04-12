@@ -25,6 +25,9 @@ function Carrinho(){
 <div className="container-area">
 
         <Header hidden={true} items={cartItems}/>
+        <div className="cart-text">
+            <h1>SACOLA</h1>
+        </div>
         <div className="carrinho-area">
             
             <div className="side1">

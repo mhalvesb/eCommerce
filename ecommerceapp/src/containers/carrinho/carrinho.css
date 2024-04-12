@@ -1,19 +1,33 @@
-.carrinho-area{
+.container-area{
     width: 100%;
     height: 93vh;
     background-color: rgb(202, 201, 201);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    
+}
+
+.carrinho-area{
+    display: flex;
+    justify-content: space-between;
+    
+    width: 90%;
+}
+
+.cart-text{
+    display: flex;
+    width: 90%;
+    margin-top: 10vh;
+    
 }
 
 
 .side1, .side2{
     background-color: #fff;
-    width: 40%;
+    width: 48%;
     border-radius: 5px;
     padding: 20px;
-    margin: 0px 20px;
 }
 
 .side1{
@@ -80,4 +94,17 @@
     display: flex;
     font-weight: 400;
     color: #333;
+}
+
+.cep{
+    display: flex;
+    flex-direction: column;
+    border: 1px dotted #333;
+    padding: 10px 20px;
+}
+
+.cep input{
+    width: auto;
+    height: 30px;
+    border: 1px solid black;
 }
