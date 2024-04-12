@@ -47,7 +47,10 @@ function Carrinho(){
                 </div>
             </div>
             <div className="side2">
-
+                <div className="cep">
+                    <h2>Calcule o preço do frete</h2>
+                    <input type="text" placeholder="Digite o seu cep"></input>
+                </div>
             </div>
         </div>
     </div>
