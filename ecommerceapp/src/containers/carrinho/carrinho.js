@@ -51,6 +51,13 @@ function Carrinho(){
                     <h2>Calcule o preço do frete</h2>
                     <input type="text" placeholder="Digite o seu cep"></input>
                 </div>
+
+                <div className="resume">
+                    <p>Resumo do pedido:</p>
+                    <div className="resumetext">
+                        <p>Total: </p><p>R$ 199</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
