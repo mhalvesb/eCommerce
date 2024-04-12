@@ -110,18 +110,29 @@
     width: 100%;
     height: 40px;
     padding-left: 20px;
-    border: 1px solid #40B5AD;
+    border-top: 1px solid 		#0047AB;
+    border-left: 1px solid		#0047AB;
+    border-bottom: 1px solid		#0047AB;
+    border-right: none;
+    border-radius: 5px 0px 0px 5px;
 }
 
 .cepcalc{
     width: 100%;
     display: flex;
-    border-radius: 10px;
 }
 
 .cepcalc button{
     width: 200px;
-    
+    border-right: 1px solid	#0047AB;
+    border-top: 1px solid 	#0047AB;
+    border-bottom: 1px solid 	#0047AB;
+    border-left: none;
+    border-radius: 0px 5px 5px 0px;
+    background-color: 	#0047AB;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 
