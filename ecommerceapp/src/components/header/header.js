@@ -98,7 +98,7 @@ function Header({items, hidden}){
                     <input type="text" placeholder="Procure um produto"></input>
                 </div>
                 
-                    <div className="headerlogin logins" style={{display: hidden ? "none" : "block"}}>
+                    <div className="headerlogin logins" style={{display: hidden ? "none" : "flex"}}>
                         <img src={User} alt="user"></img>
                         {user ? user.nome : <p onClick={handleLogin}>Login</p>}
                     </div>
@@ -106,7 +106,7 @@ function Header({items, hidden}){
                 <div>
                         {user ? <button className="logout" onClick={handleLogout}>Logout</button> : ""}
                     </div>
-                <div className="headercart" onClick={handleCartClick} style={{display: hidden ? "none" : "block"}}>
+                <div className="headercart" onClick={handleCartClick} style={{display: hidden ? "none" : "flex"}}>
                     <img src={Cart} alt="cart"></img>
                     <p>Cart</p>
                 </div>

@@ -63,10 +63,11 @@ function Carrinho(){
                         <p>Total: </p><p>R$ 199</p>
                     </div>
 
-                    <div className="buy">
+                    
+                </div>
+                <div className="buy">
                         <button>Comprar agora</button>
                     </div>
-                </div>
             </div>
         </div>
     </div>
