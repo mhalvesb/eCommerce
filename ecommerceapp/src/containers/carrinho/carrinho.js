@@ -18,10 +18,6 @@ function Carrinho(){
     let inputCepValue = "";
 
     const handleCepValue = (e) =>{
-
-       
-        
-        
         if(e.target.value.length == 6){
             console.log("ok");
             e.target.value = e.target.value.slice(0, 5);
@@ -30,22 +26,19 @@ function Carrinho(){
             e.target.value += "-";
             
         } 
-
         console.log(e.target.value.length);
-
-
-
-        
-
-
-       
-        
-
-
         console.log();
 
-       
     }
+
+    const totalValue = () =>{
+        let total = 0;
+        cartItems.forEach((item) =>{
+            total += parseFloat(item.price) * item.qtd;
+        })
+        return total;
+    }
+
     
     return(
 
@@ -62,26 +55,44 @@ function Carrinho(){
             
             <div className="side1">
                 {cartItems ? cartItems.map((item, index) =>{
+                    const handleIncrease = () =>{
+                       if(item.qtd >= 1){
+                        const updateItems = [...cartItems];
+                        if(updateItems[index].qtd > 0){
+                            updateItems[index].qtd++;
+                            setCartItems(updateItems);
+                        }
+                       }
+                    }
+                
+                    const handleDecrease = () =>{
+                        if(item.qtd > 1){
+                            const updateItems = [...cartItems];
+                            if(updateItems[index].qtd > 0){
+                                updateItems[index].qtd--;
+                                setCartItems(updateItems);
+                            }
+                        }
+                    }
                     return(
                     <div className="item" key={index}>
                         <img src={item.image} alt="image"></img>
                         <div className="item-options">
                             <h4>{item.name}</h4>
                             <div className="items-qtd">
-                                <p>Quantidade</p> <button>-</button> <p>{item.qtd}</p> <button>+</button>
+                                <p>Quantidade</p> <button onClick={handleDecrease}>-</button> <p>{item.qtd}</p> <button onClick={handleIncrease}>+</button>
                             </div>
                         </div>
                         <div className="more">
                             <img src={TrashIcon} alt="image"></img>
                             <div className="money">
                                 <p>R$</p> 
-                                <p>{item.price}</p>
+                                <p>{parseFloat(item.price) * item.qtd}</p>
                             </div>
                         </div>
                 </div>
-                    )
-
-                }): <div>Nada</div>}
+                   
+                   )}) : <div><h1>Nada</h1></div>}
             </div>
             <div className="side2">
                 <div className="cep">
@@ -95,7 +106,7 @@ function Carrinho(){
                 <div className="resume">
                     <p>Resumo do pedido</p>
                     <div className="resumetext">
-                        <p>Total: </p><p>R$ 199</p>
+                        <p>Total: </p><p>R$ {totalValue()}</p>
                     </div>
 
                     
