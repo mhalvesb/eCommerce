@@ -72,7 +72,7 @@ function Cart({show, handleClickCart, items}){
 
                         return(
                     
-                            <li key={index}>
+                        <li key={index}>
                             <img src={item.image} alt="item"></img>
                             <p className="itemname">{item.name}</p>
                             <p className="itemprice">R$ {parseFloat(item.price) * item.qtd}</p>
@@ -81,7 +81,7 @@ function Cart({show, handleClickCart, items}){
                                 <p className="itemnumber">{item.qtd}</p>
                                 <button onClick={handleIncrease}>+</button>
                             </div>
-                    </li>
+                        </li>
                         
                         )
                     }): <div>Nada</div>}
