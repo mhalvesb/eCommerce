@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./calcas.css";
 
 
@@ -15,6 +15,24 @@ function Calcas(){
     const [cartItems, setCartItems] = useState(initialItem);
 
 
+    const handleBuy = (img, name, value, qtd) =>{
+        const newItem = {
+            id: 1,
+            image: img,
+            name: name,
+            price: value,
+            qtd: 1
+        }
+
+        console.log("ok");
+
+        setCartItems([...cartItems, newItem]);
+    }
+
+    useEffect(() =>{
+        localStorage.setItem("cartItem", JSON.stringify(cartItems));
+    })
+
     return(
         <div>
             <Header items={cartItems}/>
@@ -28,56 +46,7 @@ function Calcas(){
                         <img src={Calca} alt="calca"></img>
                         <h4>Calça branca</h4>
                         <p>R$ 280,00</p>
-                        <button>Comprar</button>
-                    </div>
-
-                    <div className="calcasproduct">
-                        <img src={Calca} alt="calca"></img>
-                        <h4>Calça branca</h4>
-                        <p>R$ 280,00</p>
-                        <button>Comprar</button>
-                    </div>
-
-                    <div className="calcasproduct">
-                        <img src={Calca} alt="calca"></img>
-                        <h4>Calça branca</h4>
-                        <p>R$ 280,00</p>
-                        <button>Comprar</button>
-                    </div>
-
-                    <div className="calcasproduct">
-                        <img src={Calca} alt="calca"></img>
-                        <h4>Calça branca</h4>
-                        <p>R$ 280,00</p>
-                        <button>Comprar</button>
-                    </div>
-
-                    <div className="calcasproduct">
-                        <img src={Calca} alt="calca"></img>
-                        <h4>Calça branca</h4>
-                        <p>R$ 280,00</p>
-                        <button>Comprar</button>
-                    </div>
-
-                    <div className="calcasproduct">
-                        <img src={Calca} alt="calca"></img>
-                        <h4>Calça branca</h4>
-                        <p>R$ 280,00</p>
-                        <button>Comprar</button>
-                    </div>
-
-                    <div className="calcasproduct">
-                        <img src={Calca} alt="calca"></img>
-                        <h4>Calça branca</h4>
-                        <p>R$ 280,00</p>
-                        <button>Comprar</button>
-                    </div>
-
-                    <div className="calcasproduct">
-                        <img src={Calca} alt="calca"></img>
-                        <h4>Calça branca</h4>
-                        <p>R$ 280,00</p>
-                        <button>Comprar</button>
+                        <button onClick={() => handleBuy(Calca, "Calça Branca", "280,00", 1)}>Comprar</button>
                     </div>
 
                 </div>
