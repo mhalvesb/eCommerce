@@ -5,6 +5,7 @@ import Header from "../../components/header/header.js";
 import Blusa from "../../assets/images/blusabranca.avif"
 
 import TrashIcon from "../../assets/icons/trash.png";
+import Sacola from "../../assets/icons/sacola-de-compras-aberta.png";
 
 import "./carrinho.css";
 
@@ -38,6 +39,8 @@ function Carrinho(){
         })
         return total;
     }
+
+    console.log(cartItems);
 
     
     return(
@@ -93,6 +96,13 @@ function Carrinho(){
                 </div>
                    
                    )}) : <div><h1>Nada</h1></div>}
+
+                    {cartItems.length == 0 ? 
+                    <div className="sacolavazia">
+                        <img src={Sacola}></img>
+                        <p>Sua sacola está vazia</p>
+                        </div> : ""}
+                   
             </div>
             <div className="side2">
                 <div className="cep">

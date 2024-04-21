@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 import "./cart.css";
 
 import Blusa from "../../assets/images/blusabranca.avif";
@@ -6,7 +7,7 @@ import Blusa from "../../assets/images/blusabranca.avif";
 
 function Cart({show, handleClickCart, items}){
     let cartItems = items;
-
+    const navigate = useNavigate();
 
     useEffect(()=>{
         localStorage.setItem("cartItem", JSON.stringify(cartItems));
@@ -39,7 +40,9 @@ function Cart({show, handleClickCart, items}){
 
     
         
-
+    const handleCartBuy = () =>{
+        navigate("/cart");
+    }
 
 
     return(
@@ -47,6 +50,7 @@ function Cart({show, handleClickCart, items}){
             <div className="cartarea">
                 <h3>Carrinho</h3>
                 <ul>
+                
 
                     {items ? items.map((item, index)=>{
                         const handleDecrease = () =>{
@@ -63,30 +67,29 @@ function Cart({show, handleClickCart, items}){
                             }
                             
                         };
+
                         const handleIncrease = () =>{
                             const newItems = [...items];
                             newItems[index].qtd++;
                             setQtds(newItems);
                         }
-
-
-                        return(
+                            return(
+                                <li key={index}>
+                                    <img src={item.image} alt="item"></img>
+                                    <p className="itemname">{item.name}</p>
+                                    <p className="itemprice">R$ {parseFloat(item.price) * item.qtd}</p>
+                                    <div className="itemcount">
+                                        <button onClick={handleDecrease}>-</button>
+                                        <p className="itemnumber">{item.qtd}</p>
+                                        <button onClick={handleIncrease}>+</button>
+                                    </div>
+                                </li>
+                                
+                                )
+                    }) : <div>Sacola vazia</div>}
                     
-                        <li key={index}>
-                            <img src={item.image} alt="item"></img>
-                            <p className="itemname">{item.name}</p>
-                            <p className="itemprice">R$ {parseFloat(item.price) * item.qtd}</p>
-                            <div className="itemcount">
-                                <button onClick={handleDecrease}>-</button>
-                                <p className="itemnumber">{item.qtd}</p>
-                                <button onClick={handleIncrease}>+</button>
-                            </div>
-                        </li>
-                        
-                        )
-                    }): <div>Nada</div>}
-
-
+                    {items ? "" : <div>Sacola vazia</div>}
+                    
                 </ul>
                 
             </div>
@@ -95,7 +98,7 @@ function Cart({show, handleClickCart, items}){
                 </div>
             <div className="cartbuttons">
                 <button onClick={handleClickCart}>Sair</button>
-                <button>Comprar</button>
+                <button onClick={handleCartBuy}>Comprar</button>
             </div>
             
         </div>
