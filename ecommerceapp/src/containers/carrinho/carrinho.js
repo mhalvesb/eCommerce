@@ -77,6 +77,13 @@ function Carrinho(){
                             }
                         }
                     }
+
+                    const removeItem = () =>{
+                        const updateItems = [...cartItems];
+                        updateItems.splice(index, 1);
+                        setCartItems(updateItems);
+                    }
+
                     return(
                     <div className="item" key={index}>
                         <img src={item.image} alt="image"></img>
@@ -87,7 +94,7 @@ function Carrinho(){
                             </div>
                         </div>
                         <div className="more">
-                            <img src={TrashIcon} alt="image"></img>
+                            <img src={TrashIcon} onClick={removeItem} alt="image"></img>
                             <div className="money">
                                 <p>R$</p> 
                                 <p>{parseFloat(item.price) * item.qtd}</p>
