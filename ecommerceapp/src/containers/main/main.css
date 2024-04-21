@@ -221,8 +221,15 @@ a{
     font-weight: 200;
 }
 
+.product a{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
 .product img{
     height: 300px;
+    align-self: center;
     object-fit: cover;
     align-self: center;
 }
