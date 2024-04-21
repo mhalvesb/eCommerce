@@ -179,5 +179,34 @@
     text-transform: uppercase;
 }
 
+.sacolavazia{
+    display: flex;  
+    align-items: center;
+    animation-name: sacolavazia;
+    animation-duration: 2s;
+    animation-direction:normal;
+    filter: opacity(100);
+}
 
+
+.sacolavazia img{
+    width: 64px;
+}
+
+.sacolavazia p{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+
+@keyframes sacolavazia{
+    0%{
+        filter: opacity(0)
+    }
+
+    100%{
+        filter: opacity(100);
+    }
+}
 
