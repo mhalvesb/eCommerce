@@ -8,6 +8,15 @@
     
 }
 
+
+.steps{
+    width: 100%;
+    height: 30px;
+    background-color: green;
+    margin-top: 50px;
+    border: none;
+}
+
 .carrinho-area{
     display: flex;
     justify-content: space-between;
