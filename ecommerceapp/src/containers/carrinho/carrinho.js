@@ -53,7 +53,15 @@ function Carrinho(){
         <Header hidden={true} items={cartItems}/>
 
         <div className="steps">
-            
+        <div className="step1">
+                <h1>1</h1>
+            </div>
+            <div className="step2">
+                <h1>2</h1>
+            </div>
+            <div className="step3">
+                <h1>3</h1>
+            </div>
         </div>
         <div className="cart-text">
             <h1>SACOLA</h1>
