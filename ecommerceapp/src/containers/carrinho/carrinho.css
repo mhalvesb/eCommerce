@@ -48,7 +48,7 @@
     height: 50px;
     margin-left: -5px;
     border-radius: 50%;
-    background-color: green;
+    background-color: #999;
     border: none;
     z-index: 1;
     display: flex;
@@ -61,7 +61,7 @@
     height: 50px;
     margin-left: -5px;
     border-radius: 50%;
-    background-color: green;
+    background-color: #999;
     border: none;
     z-index: 1;
     display: flex;

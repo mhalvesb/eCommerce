@@ -12,6 +12,7 @@ import CalcaPreta from "./containers/roupas/calcapreta/calcapreta.js";
 import BlusaTurquesa from "./containers/roupas/blusaturquesa/blusaturquesa.js";
 import Gradiente from "./containers/roupas/gradiente/gradiente.js";
 import AzulMasculina from "./containers/roupas/azulmasculina/azulmasculina.js";
+import Payment from "./containers/pagamento/payment.js";
 import "./index.css";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/roupas/blusaflorturquesa" element={<BlusaTurquesa/>}></Route>
         <Route path="/roupas/gradiente" element={<Gradiente/>}></Route>
         <Route path="/roupas/azulmasculina" element={<AzulMasculina/>}></Route>
+        <Route path="/payment" element={<Payment/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>
