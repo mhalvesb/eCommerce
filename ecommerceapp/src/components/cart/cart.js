@@ -27,9 +27,7 @@ function Cart({show, handleClickCart, items}){
         };
         return total;
     }
-
     totalValue();
-
     console.log(totalValue());
 
     

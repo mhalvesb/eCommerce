@@ -28,23 +28,50 @@ function Main(){
 
     const [cartId, setCartId] = useState(1);
 
-
-    
-
+ 
 
     
     const addToCart = (productName, productPrice, productImage) =>{
-        const newItem = {
-            id: cartId,
-            name: productName,
-            price: productPrice,
-            image: productImage,
-            qtd : 1
-        };
-        
-        setCartItems([...cartItems, newItem]);
-        setCartId(cartId + 1);
-       
+            const existingItem = cartItems.find(item => item.name === productName);
+            
+            if(existingItem){
+                const updateItem = cartItems.map((item) =>{
+                    if(item.name === productName){
+                        return item.qtd += 1;
+                    } else{
+                        return item;
+                    }
+                    setCartItems([...cartItems, updateItem]);
+                });
+
+                
+
+            } 
+            else 
+            {
+                const newItem = 
+            {
+                id: cartId,
+                name: productName,
+                price: productPrice,
+                image: productImage,
+                qtd : 1
+            };
+            setCartItems([...cartItems, newItem]);
+            }
+
+            
+           
+
+            
+
+            
+
+
+
+            setCartId(cartId + 1);
+            console.log("ok");
+            
     }
 
     useEffect(()=>{
