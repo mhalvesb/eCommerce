@@ -1,0 +1,51 @@
+.row1{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50vw;
+    margin: auto;
+    border: 1px solid #333;
+    height: 500px;
+    padding-left: 20px;
+}
+
+.inputsInformations{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.inputsInformations p{
+    margin: 0;
+    padding: 0;
+    padding-left: 4px;
+    position: absolute;
+    transition: 0.2s;
+    pointer-events: none;
+}
+
+.inputsInformations input{
+    width: 500px;
+    height: 40px;
+    margin: 10px 0px;
+    outline: none;
+    
+}
+
+.inputs{
+    display: flex;
+    align-items: center;
+}
+
+.inputs input:hover ~ p{
+    transform: translate(20%, -100%);
+}
+
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+
+.row2{
+
+}

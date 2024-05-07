@@ -8,6 +8,7 @@ import TrashIcon from "../../assets/icons/trash.png";
 import Sacola from "../../assets/icons/sacola-de-compras-aberta.png";
 
 import "./carrinho.css";
+import { Step } from "../../components/steps/step.js";
 
 
 
@@ -52,17 +53,8 @@ function Carrinho(){
 
         <Header hidden={true} items={cartItems}/>
 
-        <div className="steps">
-        <div className="step1">
-                <h1>1</h1>
-            </div>
-            <div className="step2">
-                <h1>2</h1>
-            </div>
-            <div className="step3">
-                <h1>3</h1>
-            </div>
-        </div>
+        <Step stepOne={true} stepTwo={false} stepThree={false}/>
+        
         <div className="cart-text">
             <h1>SACOLA</h1>
         </div>
