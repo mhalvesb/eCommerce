@@ -288,3 +288,71 @@ span:after{
         opacity: 1;
     }
 }
+
+
+@media(max-width: 1264px){
+    .banner{
+        width: 90vw;
+    }
+
+    .mainarea{
+        width: 90vw;
+    }
+
+    .productarea{
+        width: 90vw;
+    }
+
+    .mainarea{
+        width: 90vw;
+    }
+    .ic1:nth-child(2){
+        padding: 0 20px;
+    }
+
+    .ic1{
+        font-size: 12px;
+    }
+}
+
+
+@media(max-width: 940px){
+    .banner{
+        width: 100vw;
+        padding: 5vw;
+    }
+
+    .bannertext{
+        width: 40%;
+    }
+    .bannertext h1{
+        font-size: 50px;
+    }
+
+    .mainarea{
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .ic1{
+        margin: 0;
+        padding: 10px 0px;
+    }
+
+    .ic1:nth-child(1), .ic1:nth-child(2), .ic1:nth-child(3){
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ic1:nth-child(2){
+        border: none;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        padding: 10px 0px;
+    }
+}
+
+
+@media(max-width: 800px){
+    
+}

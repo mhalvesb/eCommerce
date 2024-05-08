@@ -76,6 +76,10 @@ h1 a{
     width: 90%;
 }
 
+.headerinput img{
+    display: none;
+}
+
 .headerinput input{
     width: 90%;
     height: 35px;
@@ -105,6 +109,81 @@ h1 a{
     margin-right: 5px;
 }
 
+
+
+@media (max-width: 1264px){
+    .headerarea{
+        width: 90vw;
+    }
+
+    .headerlogo{
+        align-items: flex-start;
+    }
+    
+
+    h1 a{
+        font-size: 30px;
+    }
+    .headercategories select{
+        width: 150px;
+        height: 30px;
+    }
+    .headerinput input{
+        height: 30px;
+    }
+}
+
+@media (max-width: 940px){
+    h1 a{
+        font-size: 25px;
+    }
+    .headercategories select{
+        width: 100px;
+        height: 25px;
+        font-size: 15px;
+    }
+    .headerinput input{
+        height: 25px;
+    }
+}
+
+
+@media (max-width: 800px){
+    .headerinput{
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        justify-content: center;
+        margin: 0px 20px;
+        min-width: 1.5rem;
+    }
+    .headerinput img{
+        display: block;
+        position: absolute;
+    }
+    .headerinput input{
+        display: none;
+    }
+    .headerlogin p{
+        display: none;
+    }
+    .headercart p{
+        display: none;
+    }
+    .headerarea{
+        justify-content: flex-end;
+    }
+
+    .headerlogo{
+        margin-right: auto;
+    }
+    .headercategories{
+        margin: 0px 1rem;
+    }
+    .headerlogin, .headercart{
+        margin: 0px 1rem;
+    }
+}
 
 
 

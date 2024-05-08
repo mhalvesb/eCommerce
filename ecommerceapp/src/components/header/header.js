@@ -5,6 +5,9 @@ import "./header.css"
 import Cart from "../../assets/icons/cart.png";
 import User from "../../assets/icons/user.png";
 import Main from "../../containers/main/main.js";
+import Search from "../../assets/icons/search.png";
+
+
 
 import Carts from "../cart/cart.js";
 import { Axios } from "axios";
@@ -94,7 +97,8 @@ function Header({items, hidden}){
                             <option value="calcas">Calças</option>
                         </select>
                 </div>
-                <div className="headerinput" style={{display: hidden ? "none" : "block"}}>
+                <div className="headerinput" style={{display: hidden ? "none" : "flex"}}>
+                    <img src={Search}></img>
                     <input type="text" placeholder="Procure um produto"></input>
                 </div>
                 

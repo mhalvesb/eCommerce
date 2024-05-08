@@ -49,4 +49,11 @@ footer{
 }
 
 
+@media (max-width: 1264px){
+    .footernames{
+        width: 90%;
+    }
+}
+
+
 
