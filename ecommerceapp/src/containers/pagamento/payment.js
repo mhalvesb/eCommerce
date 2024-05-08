@@ -55,10 +55,22 @@ function Payment(){
                         <img src="https://www.svgrepo.com/show/522503/card-ok.svg"></img>
                     </div>
                     <div className="inputsInformations">
-                        <input type="text" placeholder="Digite o nome do dono do cartão"></input>
-                        <input type="number" placeholder="Numero do Cartão"></input>
-                        <input type="number" placeholder="CVC"></input>
-                        <input type="number" placeholder="data de validade"></input>
+                                <div className="inputs">
+                                    <input type="text" required></input>
+                                    <p>Nome do titular</p>
+                                </div>
+                                <div className="inputs">
+                                    <input type="number" required></input>
+                                    <p>Número do cartão</p>
+                                </div>
+                                <div className="inputs">
+                                    <input type="number" required></input>
+                                    <p>CVC</p>
+                                </div>
+                                <div className="inputs">
+                                    <input type="text" required></input>
+                                    <p>Data de validade</p>
+                                </div>
                     </div>
                 </div>
                 <div className="column1">
