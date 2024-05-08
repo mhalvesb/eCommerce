@@ -61,26 +61,27 @@ function Payment(){
                         <input type="number" placeholder="data de validade"></input>
                     </div>
                 </div>
+                <div className="column1">
+                    <h2>Resumo da compra</h2>
+                    <p>1 Blusa branca, 2 Calças</p>
+                    <div className="subTotal">
+                        <h5>Subtotal:</h5>
+                        <h4>R$ 100,00</h4>
+                    </div>
+                    <div className="subTax">
+                        <h5>Taxa de segurança</h5>
+                        <h4>R$ 10,00</h4>
+                    </div>
+                    <div className="total">
+                        <h5>Total:</h5>
+                        <h4>R$ 110,00</h4>
+                    </div>
+
+                <button>Concluir a compra</button>
+                </div>
         </div>
 
-        <div className="column1">
-            <h2>Resumo da compra</h2>
-            <p>1 Blusa branca, 2 Calças</p>
-            <div className="subTotal">
-                <h5>Subtotal:</h5>
-                <h4>R$ 100,00</h4>
-            </div>
-            <div className="subTax">
-                <h5>Taxa de segurança</h5>
-                <h4>R$ 10,00</h4>
-            </div>
-            <div className="total">
-                <h5>Total:</h5>
-                <h4>R$ 110,00</h4>
-            </div>
-
-        <button>Concluir a compra</button>
-        </div>
+       
 
 
     </div>

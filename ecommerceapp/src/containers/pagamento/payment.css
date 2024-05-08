@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 40vw;
+    width: 30vw;
     border-radius: 20px;
     padding: 20px;
     background-color: #fff;
@@ -82,9 +82,77 @@ input::-webkit-inner-spin-button{
     display: flex;
     flex-direction: column;
     width: fit-content;
-    width: 40vw;
+    width: 30vw;
     padding: 20px;
     border-radius: 20px;
     height: fit-content;
     margin-top: 20px;
+}
+
+.column1{
+    background-color: #fff;
+    width: 20vw;
+    position: relative;
+    border-radius: 20px;
+    margin-top: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.column1 h2{
+    padding: 10px 20px;
+    font-size: 30px;
+    margin: 10px 0px;
+   
+}
+
+.column1 p{
+    padding: 10px 20px;
+    font-weight: 200;
+}
+
+.subTotal{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subTax{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total{
+    background-color: #333;
+    color: #fff;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    padding: 10px 20px;
+}
+
+.total h5{
+    font-weight: 900;
+}
+
+.total h4{
+    font-weight: 200;
+}
+
+.column1 button{
+    height: 50px;
+    background-color: orange;
+    border: none;
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 3px;
+    cursor: pointer;
+    border-radius: 0px 0px 20px 20px;
 }
