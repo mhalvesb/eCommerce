@@ -11,6 +11,8 @@
     display: flex;
     justify-content: space-between;
     width: 90%;
+    height: 100vh;
+    margin-bottom: 100px;
 }
 
 .row1{

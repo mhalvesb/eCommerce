@@ -6,6 +6,7 @@ import "./payment.css";
 
 import Header from "../../components/header/header.js";
 import { Step } from "../../components/steps/step";
+import Footer from "../../components/footer/footer";
 
 
 function Payment(){
@@ -95,7 +96,7 @@ function Payment(){
 
        
 
-
+        <Footer></Footer>
     </div>
     )
 }

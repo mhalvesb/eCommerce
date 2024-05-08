@@ -24,8 +24,6 @@ function Footer(){
                     <h4>Links uteis</h4>
                     <p>Blusas</p>
                     <p>Calças</p>
-                    <p>Shorts</p>
-                    <p>Sapatos</p>
                 </div>
                 
 

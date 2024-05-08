@@ -9,6 +9,7 @@ import Sacola from "../../assets/icons/sacola-de-compras-aberta.png";
 
 import "./carrinho.css";
 import { Step } from "../../components/steps/step.js";
+import Footer from "../../components/footer/footer.js";
 
 
 
@@ -136,6 +137,8 @@ function Carrinho(){
                     </div>
             </div>
         </div>
+
+        <Footer></Footer>
     </div>
     )
 }
