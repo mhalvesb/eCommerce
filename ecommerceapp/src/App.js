@@ -13,6 +13,7 @@ import BlusaTurquesa from "./containers/roupas/blusaturquesa/blusaturquesa.js";
 import Gradiente from "./containers/roupas/gradiente/gradiente.js";
 import AzulMasculina from "./containers/roupas/azulmasculina/azulmasculina.js";
 import Payment from "./containers/pagamento/payment.js";
+import {Buys} from "./containers/success/buy.js";
 import "./index.css";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/roupas/gradiente" element={<Gradiente/>}></Route>
         <Route path="/roupas/azulmasculina" element={<AzulMasculina/>}></Route>
         <Route path="/payment" element={<Payment/>}></Route>
+        <Route path="/success" element={<Buys/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>
