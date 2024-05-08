@@ -155,7 +155,7 @@ h1 a{
         width: fit-content;
         justify-content: center;
         margin: 0px 20px;
-        min-width: 1.5rem;
+        min-width: 10px;
     }
     .headerinput img{
         display: block;
@@ -178,10 +178,20 @@ h1 a{
         margin-right: auto;
     }
     .headercategories{
-        margin: 0px 1rem;
+        margin: 0px 10px;
     }
     .headerlogin, .headercart{
-        margin: 0px 1rem;
+        margin: 0px 10px;
+    }
+}
+
+@media(max-width: 500px){
+    .headerarea{
+        width: 100vw;
+    }
+    .headerinput img, .headerlogin img, .headercart img{
+        margin: 0;
+        width: 20px;
     }
 }
 

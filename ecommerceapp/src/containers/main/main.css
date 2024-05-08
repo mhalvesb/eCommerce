@@ -354,5 +354,33 @@ span:after{
 
 
 @media(max-width: 800px){
-    
+    .bannertext{
+        width: 100%;
+    }
+
+    .banner{
+        background-size: cover;
+        background-position: center;
+    }
+    .bannertext{
+        display: none;
+        color: #fff;
+    }
+    span{
+        color: #fff;
+    }
+
+    span:after{
+        background-color: transparent;
+    }
+    .bannertext h1:after{
+        background-color: transparent;
+    }
+    .productarea{
+        justify-content: center;
+    }
+
+    .productarea::after{
+        flex:none;
+    }
 }
