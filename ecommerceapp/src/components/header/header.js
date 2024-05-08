@@ -108,7 +108,7 @@ function Header({items, hidden}){
                     </div>
                 <div className="headercart" onClick={handleCartClick} style={{display: hidden ? "none" : "flex"}}>
                     <img src={Cart} alt="cart"></img>
-                    <p>Cart</p>
+                    <p>Carrinho</p>
                 </div>
             </div>
             

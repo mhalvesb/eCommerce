@@ -23,6 +23,7 @@
     padding: 20px;
     background-color: #fff;
     margin-top: 20px;
+    height: fit-content;
 }
 
 .rowText{
@@ -155,4 +156,9 @@ input::-webkit-inner-spin-button{
     letter-spacing: 3px;
     cursor: pointer;
     border-radius: 0px 0px 20px 20px;
+    transition: 0.1s;
+}
+
+.column1 button:hover{
+    background-color: rgb(218, 141, 0);
 }

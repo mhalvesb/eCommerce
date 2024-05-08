@@ -8,10 +8,10 @@ export function Step({stepOne, stepTwo, stepThree}){
             <div className={stepOne | stepTwo | stepThree ? "stepColor" : "stepGray"}>
                     <h1>1</h1>
             </div>
-            <div className={stepTwo | stepThree ? "stepColor": "stepGray"}>
+            <div className={stepTwo ? "actualStep": stepThree ? "stepColor" : "stepGray"}>
                     <h1>2</h1>
             </div>
-            <div className={stepThree ? "stepColor" : "stepGray"}>
+            <div className={stepThree ? "actualStep" : "stepGray"}>
                     <h1>3</h1>
             </div>
         </div>

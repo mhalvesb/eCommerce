@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 
+import {useNavigate} from "react-router-dom"
+
 import Header from "../../components/header/header.js";
 
 import Blusa from "../../assets/images/blusabranca.avif"
@@ -14,6 +16,7 @@ import Footer from "../../components/footer/footer.js";
 
 
 function Carrinho(){
+    const Navigate = useNavigate();
     const storageItem = localStorage.getItem("cartItem");
     const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")) : [];
     const [cartItems, setCartItems] = useState(initialItem);
@@ -42,8 +45,13 @@ function Carrinho(){
         return total;
     }
 
-    console.log(cartItems);
 
+
+    function handleBuy(){
+        if(cartItems.length > 0){
+            Navigate("/payment");
+        }
+    }
     
     return(
 
@@ -133,7 +141,7 @@ function Carrinho(){
                     
                 </div>
                 <div className="buy">
-                        <button>Comprar agora</button>
+                        <button onClick={() => handleBuy()}>Comprar agora</button>
                     </div>
             </div>
         </div>

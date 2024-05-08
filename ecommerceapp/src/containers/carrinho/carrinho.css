@@ -183,6 +183,11 @@
     cursor: pointer;
     font-weight: 900;
     text-transform: uppercase;
+    transition: 0.1s;
+}
+
+.buy button:hover{
+    background-color: #1ad31a;
 }
 
 .sacolavazia{
