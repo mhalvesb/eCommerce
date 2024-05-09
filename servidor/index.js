@@ -41,7 +41,7 @@ app.get("/", (req, res) =>{
 app.get("/users", async (req, res) =>{
     try{
         const [results] = await db.sequelize.query("SHOW TABLES");
-        const tables = results.map(result => result.Tables_in_logins);
+        const tables = results.map(result => result.Tables_in_sql10705200);
 
         const datas = tables.map( async(table) =>{
             const [tableData] = await db.sequelize.query(`SELECT * FROM ${table}`);
