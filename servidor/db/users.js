@@ -3,7 +3,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.USERNAME, proce
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: "mysql",
-    dialectModule: 'mysql2',
+    dialectModule: require('mysql2'),
     
 });
 
