@@ -45,24 +45,29 @@ app.get("/users", async (req, res) => {
         const [results] = await db.sequelize.query("SHOW TABLES");
         const tables = results.map(result => result.Tables_in_sql10705200);
 
-        const pageSize = 10; // Defina o tamanho da página conforme necessário
-        const datas = [];
+        const processTable = async.queue(async (table, done) => {
+            try {
+                const [tableData] = await db.sequelize.query(`SELECT * FROM ${table}`);
+                done(null, { table, data: tableData });
+            } catch (error) {
+                done(error);
+            }
+        }, 1); // Limita o número de consultas em paralelo
 
-        for (const table of tables) {
-            let offset = 0;
-            let tableData = [];
-            let dataChunk;
+        processTable.drain(() => {
+            res.json(allData);
+        });
 
-            do {
-                dataChunk = await db.sequelize.query(`SELECT * FROM ${table} LIMIT ${offset}, ${pageSize}`);
-                tableData.push(...dataChunk);
-                offset += pageSize;
-            } while (dataChunk.length === pageSize);
+        const allData = [];
 
-            datas.push({ table, data: tableData });
-        }
-
-        res.json(datas);
+        processTable.push(tables, (error, data) => {
+            if (error) {
+                console.error(error);
+                res.status(500).json({ message: "Erro ao buscar dados do banco de dados" });
+            } else {
+                allData.push(data);
+            }
+        });
     } catch(error) {
         console.error(error);
         res.status(500).json({ message: "Erro ao buscar dados do banco de dados" });
