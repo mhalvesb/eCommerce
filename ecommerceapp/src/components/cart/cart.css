@@ -107,6 +107,38 @@
 }
 
 
+@media (max-width: 500px){
+    .cart{
+        width: 100%;
+    }
+
+    .cartarea h3{
+        font-size: 30px;
+    }
+    .cart li{
+        font-size: 12px;
+    }
+    .itemprice{
+        font-size: 10px;
+        margin: 0;
+        width: max-content;
+    }
+    .itemcount button{
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+    .itemnumber{
+        font-size: 10px;
+    }
+    .cart img {
+        width: 40px;
+        height: 60px;
+        object-fit: cover;
+    }
+}
+
+
 
 
 
