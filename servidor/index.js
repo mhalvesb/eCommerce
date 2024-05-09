@@ -34,30 +34,28 @@ app.use((req, res, next) =>{
 
 
 app.get("/", (req, res) =>{
-    res.send("Tudo Ok");
+    res.json({message: "Ok"});
 })
 
 
-app.get("/users", async (req, res) =>{
-    try{
+
+
+app.get("/users", async (req, res) => {
+    try {
         const [results] = await db.sequelize.query("SHOW TABLES");
         const tables = results.map(result => result.Tables_in_sql10705200);
 
-        const datas = tables.map( async(table) =>{
-            const [tableData] = await db.sequelize.query(`SELECT * FROM ${table}`);
-            return {table, data: tableData}
-        });
-        const allData = await Promise.all(datas);
-        res.json(allData);
-
-    } catch(error){
-        console.log(error);
-        res.status(500).json({message: "Erro ao buscar dados do banco de dados"});
+        const datas = [];
+        for (const table of tables) {
+            const [tableData] = await db.sequelize.query(`SELECT * FROM ${table} LIMIT 10`); // Limite o número de linhas recuperadas
+            datas.push({ table, data: tableData });
+        }
+        res.json(datas);
+    } catch(error) {
+        console.error(error);
+        res.status(500).json({ message: "Erro ao buscar dados do banco de dados" });
     }
-
-    
 });
-
 
 app.post("/users", async (req, res) =>{
     const email = req.body.email;
