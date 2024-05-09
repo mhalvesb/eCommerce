@@ -40,39 +40,26 @@ app.get("/", (req, res) =>{
 
 
 
-app.get("/users", async (req, res) => {
-    try {
+app.get("/users", async (req, res) =>{
+    try{
         const [results] = await db.sequelize.query("SHOW TABLES");
         const tables = results.map(result => result.Tables_in_sql10705200);
 
-        const processTable = async.queue(async (table, done) => {
-            try {
-                const [tableData] = await db.sequelize.query(`SELECT * FROM ${table}`);
-                done(null, { table, data: tableData });
-            } catch (error) {
-                done(error);
-            }
-        }, 1); // Limita o número de consultas em paralelo
-
-        processTable.drain(() => {
-            res.json(allData);
+        const datas = tables.map( async(table) =>{
+            const [tableData] = await db.sequelize.query(`SELECT * FROM ${table}`);
+            return {table, data: tableData}
         });
+        const allData = await Promise.all(datas);
+        res.json(allData);
 
-        const allData = [];
-
-        processTable.push(tables, (error, data) => {
-            if (error) {
-                console.error(error);
-                res.status(500).json({ message: "Erro ao buscar dados do banco de dados" });
-            } else {
-                allData.push(data);
-            }
-        });
-    } catch(error) {
-        console.error(error);
-        res.status(500).json({ message: "Erro ao buscar dados do banco de dados" });
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message: "Erro ao buscar dados do banco de dados"});
     }
+
+    
 });
+
 
 app.post("/users", async (req, res) =>{
     const email = req.body.email;
