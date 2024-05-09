@@ -26,7 +26,7 @@ function Singup(){
     }
 
     useEffect(()=>{
-        fetch("http://localhost:8080/users", {
+        fetch("https://ecommerce-server-wheat.vercel.app/users", {
             method: "GET",
             headers: {
                 "Content-type": "application/json"
@@ -47,7 +47,7 @@ function Singup(){
     const handleSubmit = async (e) =>{
         e.preventDefault();
         
-        await Axios.post("http://localhost:8080/users", {
+        await Axios.post("https://ecommerce-server-wheat.vercel.app/users", {
             email: values.email,
             senha: values.senha,
             login: values.usuario,
