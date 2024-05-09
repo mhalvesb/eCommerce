@@ -45,11 +45,23 @@ app.get("/users", async (req, res) => {
         const [results] = await db.sequelize.query("SHOW TABLES");
         const tables = results.map(result => result.Tables_in_sql10705200);
 
+        const pageSize = 10; // Defina o tamanho da página conforme necessário
         const datas = [];
+
         for (const table of tables) {
-            const [tableData] = await db.sequelize.query(`SELECT * FROM ${table} LIMIT 10`); // Limite o número de linhas recuperadas
+            let offset = 0;
+            let tableData = [];
+            let dataChunk;
+
+            do {
+                dataChunk = await db.sequelize.query(`SELECT * FROM ${table} LIMIT ${offset}, ${pageSize}`);
+                tableData.push(...dataChunk);
+                offset += pageSize;
+            } while (dataChunk.length === pageSize);
+
             datas.push({ table, data: tableData });
         }
+
         res.json(datas);
     } catch(error) {
         console.error(error);
