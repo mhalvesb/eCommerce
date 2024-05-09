@@ -51,7 +51,8 @@ app.get("/users", async (req, res) =>{
         res.json(allData);
 
     } catch(error){
-
+        console.log(error);
+        res.status(500).json({message: "Erro ao buscar dados do banco de dados"});
     }
 
     
