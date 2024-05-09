@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.USERNAME, process.env.DB_PASSWORD,{
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
+const sequelize = new Sequelize("sql10705200", "sql10705200", "e8waRMlr8R",{
+    host: "sql10.freesqldatabase.com",
+    port: "3306",
     dialect: "mysql",
     dialectModule: require('mysql2'),
     
