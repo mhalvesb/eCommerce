@@ -33,6 +33,10 @@ app.use((req, res, next) =>{
 })
 
 
+app.get("/", (req, res) =>{
+    res.send("Tudo Ok");
+})
+
 
 app.get("/users", async (req, res) =>{
     try{
