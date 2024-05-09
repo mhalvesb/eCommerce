@@ -58,33 +58,32 @@ app.get("/users", async (req, res) =>{
 });
 
 
-app.post("/users", async (req, res) =>{
+app.post("/users", async (req, res) => {
     const email = req.body.email;
     const senha = req.body.senha;
     const login = req.body.login;
     const nome = req.body.nome;
-    
 
-    
-
-    db.users.findOne({where:{
-        email: email
-    }}).then(usuario =>{
-        if(usuario){
-            res.status(200).json({error: "Já há um usuario cadastrado"})
-            
-        } else{
-            db.users.create({
-                email: email,
-                senha: senha,
-                login: login,
-                nome: nome
-            });
-            res.status(200).json({success: "Usuário cadastrado com sucesso"});
+    try {
+        const usuario = await db.users.findOne({ where: { email: email } });
+        if (usuario) {
+            return res.status(400).json({ error: "Já há um usuário cadastrado com este e-mail" });
         }
-    });
 
-    console.log(req.flash("success_msg"));
+        await db.users.create({
+            email: email,
+            senha: senha,
+            login: login,
+            nome: nome
+        });
+
+        // Envie a resposta após o usuário ser criado com sucesso
+        res.status(201).json({ success: "Usuário cadastrado com sucesso" });
+    } catch (error) {
+        console.error("Erro ao criar usuário:", error);
+        // Envie uma resposta de erro se algo der errado
+        res.status(500).json({ error: "Erro ao processar sua solicitação" });
+    }
 });
 
 app.post("/login", async (req, res)=>{
