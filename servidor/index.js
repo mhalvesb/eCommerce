@@ -9,7 +9,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 require("./config/auth.js")(passport);
 
-
+app.use(cors());
 app.use(session({
     secret: "curso", 
     resave: true, 
@@ -23,7 +23,6 @@ app.use(passport.session());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(cors());
 app.use(flash());
 app.use((req, res, next) =>{
     res.locals.success_msg = req.flash("success_msg");
@@ -59,6 +58,7 @@ app.get("/users", async (req, res) =>{
 
 
 app.post("/users", async (req, res) => {
+
     const email = req.body.email;
     const senha = req.body.senha;
     const login = req.body.login;
@@ -87,6 +87,7 @@ app.post("/users", async (req, res) => {
 });
 
 app.post("/login", async (req, res)=>{
+
     passport.authenticate("local", (error, user, message) => {
         if (error) {
             console.error(error);
