@@ -170,9 +170,6 @@ h1 a{
     .headercart p{
         display: none;
     }
-    .headerarea{
-        justify-content: flex-end;
-    }
 
     .headerlogo{
         margin-right: auto;
@@ -188,6 +185,8 @@ h1 a{
 @media(max-width: 500px){
     .headerlogo{
         justify-content: flex-end;
+        padding: 0;
+        padding-left: 10px;
     }
     h1 a{
         font-size: 12px;
@@ -196,9 +195,26 @@ h1 a{
     .headerarea{
         width: 100vw;
     }
+    .headerinput{
+        margin: 0px 10px;
+    }
     .headerinput img, .headerlogin img, .headercart img{
         margin: 0;
         width: 20px;
+    }
+    .headerlogin, .headercart{
+        margin: 0px 5px;
+    }
+    .headercategories{
+        margin: 0px;
+        justify-self: flex-start;
+        width: 100%;
+        margin: 0px 5px;
+    }
+
+    .headercategories select{
+        margin: 0px 0px;
+        width: 100%;
     }
 }
 
