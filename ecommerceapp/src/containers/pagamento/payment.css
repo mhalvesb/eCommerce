@@ -173,3 +173,24 @@ input::-webkit-inner-spin-button{
         width: 30%;
     }
 }
+
+
+@media (max-width: 1264px){
+    .rowText h1{
+        font-size: 20px;
+    }
+    .column1 h2 {
+        font-size: 20px;
+        
+    }
+}
+
+@media (max-width: 940px){
+    .informs{
+        flex-direction: column;
+    }
+
+    .row1, .row2, .column1{
+        width: 100%;
+    }
+}
