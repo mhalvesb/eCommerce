@@ -5,9 +5,12 @@ import "./buy.css";
 
 export function Buys(){
     const Navigate = useNavigate();
+    localStorage.clear();
+   /*
     setTimeout(() =>{
         Navigate("/");
     }, 5000)
+   */
 
     return(
         <div className="successBuy">

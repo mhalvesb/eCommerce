@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 
 
 import "./payment.css";
@@ -10,10 +10,16 @@ import Footer from "../../components/footer/footer";
 
 
 function Payment(){
+    const Navigate = useNavigate();
     const storageItem = localStorage.getItem("cartItem");
     const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")) : [];
     const [cartItems, setCartItems] = useState(initialItem);
 
+
+
+    function handleBuySuccess(){
+        Navigate("/success")
+    }
 
     return(
         <div className="paymentContainer">
@@ -90,7 +96,7 @@ function Payment(){
                         <h4>R$ 110,00</h4>
                     </div>
 
-                <button>Concluir a compra</button>
+                <button onClick={() => handleBuySuccess()}>Concluir a compra</button>
                 </div>
         </div>
 

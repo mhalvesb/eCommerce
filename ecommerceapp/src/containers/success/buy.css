@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
+    text-align: center;
 }
 
 .successBuy img{
