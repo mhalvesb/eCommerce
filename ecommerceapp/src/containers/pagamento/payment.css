@@ -162,3 +162,14 @@ input::-webkit-inner-spin-button{
 .column1 button:hover{
     background-color: rgb(218, 141, 0);
 }
+
+
+@media (max-width: 1920px){
+    .inputsInformations input {
+        width: 100%;
+    }
+
+    .row1, .row2, .column1{
+        width: 30%;
+    }
+}
