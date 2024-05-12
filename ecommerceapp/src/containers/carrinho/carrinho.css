@@ -19,6 +19,7 @@
     width: 90%;
     align-items: flex-start;
     height: 100vh;
+    margin-bottom: 20px;
 }
 
 .cart-text{
@@ -221,3 +222,34 @@
     }
 }
 
+
+@media(max-width: 1264px){
+    .item img {
+        width: 120px;
+        height: 120px;
+    }
+    .more img {
+        width: 20px;
+        height: auto;
+        cursor: pointer;
+    }
+    .side1, .side2 {
+        background-color: #fff;
+        width: 48%;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    .items-qtd button {
+        width: 20px;
+        height: 20px;
+        margin: 0px 8px;
+    }
+    .items-qtd p {
+        font-size: 15px;
+        color: #333;
+        font-weight: 200;
+    }
+    .item-options{
+        font-size: 16px;
+    }
+}
