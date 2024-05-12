@@ -285,5 +285,38 @@
 
 
 @media (max-width: 500px){
+    .carrinho-area{
+        width: 90vw;
+    }
 
+    .buy button{
+        height: 45px;
+    }
+
+    .item img {
+        width: 100px;
+        height: auto;
+    }
+    .more img {
+        width: 20px;
+        height: auto;
+    }
+
+    .item-options h4 {
+        font-size: 16px;
+    }
+    .items-qtd p {
+        font-size: 12px;
+        color: #333;
+        font-weight: 200;
+    }
+    .items-qtd button {
+        width: 16px;
+        height: 16px;
+        margin: 0px 8px;
+    }
+
+    .resume p {
+        font-size: 18px;
+    }
 }
