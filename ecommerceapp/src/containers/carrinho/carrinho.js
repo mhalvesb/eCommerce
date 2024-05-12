@@ -142,7 +142,7 @@ function Carrinho(){
                 </div>
                 <div className="buy">
                         <button onClick={() => handleBuy()}>Comprar agora</button>
-                    </div>
+                </div>
             </div>
         </div>
 

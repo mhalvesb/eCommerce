@@ -27,7 +27,8 @@ function Payment(){
 
             <Step stepTwo={true}></Step>
 
-            <div className="informs">
+           <form action="" method="" onSubmit={() => handleBuySuccess()}>
+           <div className="informs">
                 <div className="row1">
                     <div className="rowText">
                         <h1>Suas informações</h1>
@@ -96,9 +97,10 @@ function Payment(){
                         <h4>R$ 110,00</h4>
                     </div>
 
-                <button onClick={() => handleBuySuccess()}>Concluir a compra</button>
+                <button>Concluir a compra</button>
                 </div>
         </div>
+           </form>
 
        
 
