@@ -12,13 +12,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: auto;
 }
 
 .informs{
     display: flex;
     justify-content: space-between;
     width: 90%;
-    margin-bottom: 100px;
+    
 }
 
 .row1{
