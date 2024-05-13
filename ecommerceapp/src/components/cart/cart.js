@@ -11,7 +11,6 @@ function Cart({show, handleClickCart, items}){
 
     useEffect(()=>{
         localStorage.setItem("cartItem", JSON.stringify(cartItems));
-        console.log("atualizado");
     })
 
     
@@ -28,7 +27,6 @@ function Cart({show, handleClickCart, items}){
         return total;
     }
     totalValue();
-    console.log(totalValue());
 
     
     
@@ -60,7 +58,6 @@ function Cart({show, handleClickCart, items}){
                                 }
                                 if(item.qtd <= 0){
                                     items.splice(index, 1);
-                                    console.log("ok");
                                 }
                             }
                             

@@ -25,15 +25,12 @@ function Carrinho(){
 
     const handleCepValue = (e) =>{
         if(e.target.value.length == 6){
-            console.log("ok");
             e.target.value = e.target.value.slice(0, 5);
 
         } else if(e.target.value.length == 5 && !e.target.value.includes("-")){
             e.target.value += "-";
             
         } 
-        console.log(e.target.value.length);
-        console.log();
 
     }
 

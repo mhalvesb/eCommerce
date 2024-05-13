@@ -39,7 +39,6 @@ function Login(){
                 email: email,
                 senha: senha
             }).then((response)=>{
-                console.log(response.data.user);
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 navigate("/");
             });

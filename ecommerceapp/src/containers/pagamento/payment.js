@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -15,11 +15,20 @@ function Payment(){
     const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")) : [];
     const [cartItems, setCartItems] = useState(initialItem);
 
+    console.log(cartItems.length == 0);
+
+    
 
 
     function handleBuySuccess(){
         Navigate("/success")
     }
+
+    useEffect(() =>{
+        if(cartItems.length == 0){
+            Navigate("/");
+            }
+    }, [Navigate]);
 
     return(
         <div className="paymentContainer">
