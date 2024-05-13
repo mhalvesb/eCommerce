@@ -367,6 +367,22 @@ hr{
     }
 }
 
-@media (max-width: 600px){
-    
+@media (max-width: 700px){
+    .firstrow{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .roupatext {
+        
+         margin-left: 0px;
+    }
+    .roupatext h1 {
+        font-size: 16px;
+        margin-top: 9px;
+        text-align: center;
+    }
+    .desctxt, .descanim{
+        width: 100%;
+    }
 }
