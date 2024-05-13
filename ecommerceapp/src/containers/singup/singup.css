@@ -81,3 +81,119 @@
     color: #111;
     font-weight: 800;
 }
+
+
+@media (max-width: 1500px){
+    .sig-2{
+        background-position: center;
+    }
+
+}
+
+@media (max-width: 1264px){
+    .sig-2 h2{
+        font-size: 35px;
+    }
+
+    .sig-2 h1{
+        font-size: 42px;
+    }
+
+    .inputarea input{
+        max-width: 300px;
+    }
+    .sig-1 h1 {
+        font-size: 25px;
+        margin: 10px 0px;
+    }
+}
+
+@media(max-width: 1000px){
+    .sig-2 h2{
+        font-size: 25px;
+    }
+
+    .sig-2 h1{
+        font-size: 32px;
+    }
+
+    .inputarea input{
+        max-width: 240px;
+    }
+    .sig-1 h1 {
+        font-size: 20px;
+        margin: 10px 0px;
+    }
+    .singup-container{
+        padding: 60px 0px;
+    }
+}
+
+
+
+@media (max-width: 800px){
+    .sig-1{
+        position: absolute;
+        width: 100%;
+    }
+
+    .sig-2{
+        width: 100%;
+        margin: 0;
+    }
+
+    .sig-2 h1, .sig-2 h2{
+        display: none;
+    }
+    .inputarea input{
+        max-width: 300px;
+    }
+
+}
+
+@media(max-width: 500px){
+    .sig-2 h1, .sig-2 h2{
+        display: none;
+    }
+
+    .sig-1 h1{
+        font-size: 16px;
+    }
+    .sig-1 h2{
+        font-size: 20px;
+    }
+    .inputarea input{
+        max-width: 200px;
+    }
+    .singup-container{
+        padding: 40px 0px;
+    }
+}
+
+@media (max-width: 400px){
+    .isg-2 h1, .sig-2 h2{
+        display: none;
+    }
+
+    .sig-1 h1{
+        font-size: 12px;
+    }
+    .sig-1 h2{
+        font-size: 16px;
+    }
+    .inputarea{
+        align-items: center;
+    }
+    .inputarea input{
+        max-width: 150px;
+    }
+    .singup-container{
+        padding: 30px 0px; 
+        align-items: center; 
+    }
+    .singup-container button{
+        width: 150px;
+        margin: auto;
+        display: block;
+    }
+}
