@@ -90,7 +90,7 @@ function Singup(){
                                 <p>Seu e-mail</p>
                             </div>
                             <div className="inputarea">
-                                    <input type="text" name="senha" id="pass" onChange={handleValue} required></input>
+                                    <input type="password" name="senha" id="pass" onChange={handleValue} required></input>
                                     <p>Sua senha</p>
                                 </div>
                                 <button>Cadastrar-se</button>
