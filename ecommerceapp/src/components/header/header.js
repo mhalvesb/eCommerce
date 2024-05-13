@@ -102,9 +102,9 @@ function Header({items, hidden}){
                     <input type="text" placeholder="Procure um produto"></input>
                 </div>
                 
-                    <div className="headerlogin logins" style={{display: hidden ? "none" : "flex"}}>
+                    <div className="headerlogin logins" style={{display: hidden ? "none" : "flex"}} onClick={handleLogin}>
                         <img src={User} alt="user"></img>
-                        {user ? user.nome : <p onClick={handleLogin}>Login</p>}
+                        {user ? user.nome : <p>Login</p>}
                     </div>
                 
                 <div>
