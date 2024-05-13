@@ -14,6 +14,21 @@ function BlusaBranca(props){
     const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")) : [];
     const [cartItems, setCartItems] = useState(initialItem);
 
+
+
+
+
+    const addItems = (productName, productImage, productPrice) =>{
+        const newItem = {
+            name: productName,
+            image: productImage,
+            price: productPrice,
+            qtd: 1,
+        }
+
+
+        setCartItems([...cartItems, newItem]);
+    }
     const handleItemClick = (index) =>{
         setLi(index);
     }
@@ -35,6 +50,11 @@ function BlusaBranca(props){
             setUseAnimSpec(true);
         }
     }
+
+
+    useEffect(()=>{
+        localStorage.setItem("cartItem", JSON.stringify(cartItems));
+    }, [addItems]);
     return(
         <div>
             <Header items={cartItems}/>
@@ -73,7 +93,7 @@ function BlusaBranca(props){
                                    })}
                                 </ul>
                             </div>
-                            <button className="addCart">Adicionar ao carrinho</button>
+                            <button className="addCart" onClick={() =>addItems(props.name, props.img, props.price)}>Adicionar ao carrinho</button>
                             <div className="frete">
                                 <label>Consultar o frete</label>
                                 <br></br>

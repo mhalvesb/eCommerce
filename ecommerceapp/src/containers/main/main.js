@@ -70,13 +70,12 @@ function Main(){
 
 
             setCartId(cartId + 1);
-            console.log("ok");
             
     }
 
     useEffect(()=>{
         localStorage.setItem("cartItem", JSON.stringify(cartItems));
-    })
+    });
 
     
 
