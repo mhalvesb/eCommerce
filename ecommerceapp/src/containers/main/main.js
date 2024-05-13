@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 import Header from "../../components/header/header.js";
 import Footer from "../../components/footer/footer.js";
@@ -27,7 +27,7 @@ function Main(){
     const [cartItems, setCartItems] = useState(initialItem);
 
     const [cartId, setCartId] = useState(1);
-
+    const navigate = useNavigate();
  
 
     
@@ -113,33 +113,33 @@ function Main(){
 
                        
                        <div className="product">
-                       <Link to="/roupas/blusabranca">
+                       <a href="/roupas/blusabranca">
                             <img src={Blusa} alt="blusa"></img>
                             <h4>Blusa branca Masculina</h4>
                             <p>R$ 90,00</p>
-                        </Link>
+                        </a>
                             <button onClick={() => addToCart("Blusa branca Masculina", "90,00", Blusa)}>Comprar</button>
                         </div>
                        
 
                        
                         <div className="product">
-                        <Link to="/roupas/calcapreta">
+                        <a href="/roupas/calcapreta">
                                 <img src={CalcaPreta} alt="blusa"></img>
                                 <h4>Calça preta Masculina</h4>
                                 <p>R$ 120,00</p>
-                        </Link>
+                        </a>
                                 <button onClick={() => addToCart("Calça preta Masculina", "120,00", CalcaPreta)}>Comprar</button>
                             </div>
                        
 
                         
                             <div className="product">
-                            <Link to="/roupas/blusapreta">
+                            <a href="/roupas/blusapreta">
                                 <img src={BlusaPreta} alt="blusa"></img>
                                 <h4>Blusa preta Masculina</h4>
                                 <p>R$ 100,00</p>
-                            </Link>
+                            </a>
                                 <button onClick={() => addToCart("Blusa preta Masculina", "100,00", BlusaPreta)}>Comprar</button>
                             </div>
                         
