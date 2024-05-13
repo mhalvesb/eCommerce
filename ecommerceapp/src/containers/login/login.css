@@ -122,3 +122,91 @@
     transform: translate(10%, -100%);
 }
 
+
+
+
+@media (max-width: 1500px){
+    .log-1{
+        background-position: center;
+    }
+}
+
+@media (max-width: 1264px){
+    .log-1 h2{
+        font-size: 35px;
+    }
+
+    .log-1 h1{
+        font-size: 42px;
+    }
+
+    .inputarea input{
+        max-width: 300px;
+    }
+    .log-2 h1 {
+        font-size: 25px;
+        margin: 10px 0px;
+    }
+}
+
+@media(max-width: 1000px){
+    .log-1 h2{
+        font-size: 25px;
+    }
+
+    .log-1 h1{
+        font-size: 32px;
+    }
+
+    .inputarea input{
+        max-width: 240px;
+    }
+    .log-2 h1 {
+        font-size: 20px;
+        margin: 10px 0px;
+    }
+    .login-container{
+        padding: 60px 0px;
+    }
+}
+
+
+
+@media (max-width: 800px){
+    .log-2{
+        position: absolute;
+        width: 100%;
+    }
+
+    .log-1{
+        width: 100%;
+        margin: 0;
+    }
+
+    .log-1 h1, .log-1 h2{
+        display: none;
+    }
+    .inputarea input{
+        max-width: 300px;
+    }
+
+}
+
+@media(max-width: 500px){
+    .log-1 h1, .log-1 h2{
+        display: none;
+    }
+
+    .log-2 h1{
+        font-size: 16px;
+    }
+    .log-2 h2{
+        font-size: 20px;
+    }
+    .inputarea input{
+        max-width: 200px;
+    }
+    .login-container{
+        padding: 40px 0px;
+    }
+}
