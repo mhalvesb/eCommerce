@@ -49,7 +49,7 @@ function Singup(){
         
         await Axios.post("https://ecommerce-server-wheat.vercel.app/users", {
             email: values.email,
-            senha: values.senha,
+            senha: values.pass,
             login: values.usuario,
             nome: values.nome
         }).then((response) =>{
