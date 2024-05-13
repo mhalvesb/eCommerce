@@ -49,7 +49,7 @@ function Singup(){
         
         await Axios.post("https://ecommerce-server-wheat.vercel.app/users", {
             email: values.email,
-            senha: values.pass,
+            senha: values.senha,
             login: values.usuario,
             nome: values.nome
         }).then((response) =>{
@@ -90,7 +90,7 @@ function Singup(){
                                 <p>Seu e-mail</p>
                             </div>
                             <div className="inputarea">
-                                    <input type="password" name="senha" id="pass" onChange={handleValue} required></input>
+                                    <input type="text" name="senha" id="pass" onChange={handleValue} required></input>
                                     <p>Sua senha</p>
                                 </div>
                                 <button>Cadastrar-se</button>
