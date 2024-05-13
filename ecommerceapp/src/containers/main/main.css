@@ -356,12 +356,13 @@ span:after{
 @media(max-width: 800px){
     .bannertext{
         width: 100%;
-        padding: 0;
+        
     }
 
     .banner{
         background-size: cover;
         background-position:center;
+        padding: 0;
     }
     .bannertext{
         display: none;
