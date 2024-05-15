@@ -15,8 +15,48 @@ function Payment(){
     const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")) : [];
     const [cartItems, setCartItems] = useState(initialItem);
 
-    console.log(cartItems.length == 0);
+    
+    const subTotal = () =>{
+        let total = 0;
+        cartItems.forEach((item) =>{
+            total += parseFloat(item.price) * item.qtd;
+        });
+        return total;
+    }
 
+
+    const subTaxt = () =>{
+        let total = 0;
+        cartItems.forEach((item) =>{
+            total += parseFloat(item.price) * item.qtd;
+        });
+
+        return total / 10;
+    }
+
+    const totalValue = () =>{
+
+
+        let subTotal = 0;
+        cartItems.forEach((item) =>{
+            subTotal += parseFloat(item.price) * item.qtd;
+        });
+
+        let subTax = 0;
+        cartItems.forEach((item) =>{
+            subTax += parseFloat(item.price) * item.qtd;
+        });
+        
+         return (subTotal + (subTax / 10));
+    }
+
+    const resumo = () =>{
+        let resumeItems = "";
+        cartItems.forEach((item) =>{
+           resumeItems += `${item.qtd} ${item.name}, `;
+        });
+        return resumeItems;
+    }
     
 
 
@@ -92,18 +132,21 @@ function Payment(){
                 </div>
                 <div className="column1">
                     <h2>Resumo da compra</h2>
-                    <p>1 Blusa branca, 2 Calças</p>
+                    <p>{resumo()}</p>
+                    <div className="line"></div>
                     <div className="subTotal">
                         <h5>Subtotal:</h5>
-                        <h4>R$ 100,00</h4>
+                        <h4>R$ {subTotal()}</h4>
                     </div>
+                    <div className="line"></div>
                     <div className="subTax">
-                        <h5>Taxa de segurança</h5>
-                        <h4>R$ 10,00</h4>
+                        <h5>Taxa de segurança:</h5>
+                        <h4>R$ {subTaxt()}</h4>
                     </div>
+                    <div className="line"></div>
                     <div className="total">
                         <h5>Total:</h5>
-                        <h4>R$ 110,00</h4>
+                        <h4>R$ {totalValue()}</h4>
                     </div>
 
                 <button>Concluir a compra</button>

@@ -20,6 +20,8 @@ function Carrinho(){
     const storageItem = localStorage.getItem("cartItem");
     const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")) : [];
     const [cartItems, setCartItems] = useState(initialItem);
+
+    
     let valueLength;
     let inputCepValue = "";
 

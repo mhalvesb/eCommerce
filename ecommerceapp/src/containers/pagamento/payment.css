@@ -13,12 +13,13 @@
     justify-content: center;
     flex-direction: column;
     margin-bottom: auto;
+    width: 90%;
 }
 
 .informs{
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 100%;
     
 }
 
@@ -126,6 +127,20 @@ input::-webkit-inner-spin-button{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+}
+
+.line{
+    align-self: center;
+    background-color: transparent;
+    width: 90%;
+    border-top: 1px dotted #888;
+    padding: 10px 0px;
+}
+
+.subTotal h5, .subTax h5{
+    color: #888;
+    font-weight: 500;
 }
 
 .subTax{
@@ -141,7 +156,7 @@ input::-webkit-inner-spin-button{
     align-items: center;
     justify-content: space-between;
     display: flex;
-    padding: 10px 20px;
+    padding: 10px 10px;
 }
 
 .total h5{
@@ -151,6 +166,8 @@ input::-webkit-inner-spin-button{
 .total h4{
     font-weight: 200;
 }
+
+
 
 .column1 button{
     height: 50px;
@@ -188,7 +205,11 @@ input::-webkit-inner-spin-button{
     }
     .column1 h2 {
         font-size: 20px;
-        
+    }
+
+    .column1 button{
+        font-size: 16px;
+        padding: 0px 0px;
     }
 }
 
@@ -199,5 +220,8 @@ input::-webkit-inner-spin-button{
 
     .row1, .row2, .column1{
         width: 100%;
+    }
+    .line{
+        width: 95%;
     }
 }
