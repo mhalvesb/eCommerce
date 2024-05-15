@@ -19,11 +19,9 @@ function Singup(){
     const [values, setValues] = useState();
     const navigate = useNavigate();
     const location = useLocation();
-    let message = ""
+    const [message, setMessage] = useState("");
 
-    if(location.state){
-        message = location.state.message;
-    }
+    
 
     useEffect(()=>{
         fetch("https://ecommerce-server-wheat.vercel.app/users", {
@@ -59,8 +57,8 @@ function Singup(){
                 navigate("/login", {state: {message: "Usuario cadastrado com sucesso"}});
             }
             
-        }).catch(()=>{
-            console.log("erro");
+        }).catch((error)=>{
+            console.log(error);
         });
 
         
@@ -72,7 +70,7 @@ function Singup(){
         return(
             <div className="singup-area">
                 <div className="sig-1">
-                    <Message msg={message} type="failure"/>
+                    {message && <Message msg={message} type="failure"/>}
                     <div className="singup-container">
                     <h2>Ecommerce</h2>
                         <h1>Bem vindo a nossa plataforma</h1>

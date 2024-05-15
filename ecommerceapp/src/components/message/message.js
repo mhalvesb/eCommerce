@@ -5,30 +5,21 @@ import React, {useState, useEffect} from "react";
 import "./message.css";
 
 
-function Message({type, msg}){
-    const [isVisible, setVisible] = useState(false);
-    
+function Message({type, msg, isVisible}){
+    const [hasVisible, setVisible] = useState(true);
    
 
-    useEffect(()=>{
-        if(!msg){
-            setVisible(false);
-            return
-        } else{
-            setVisible(true);
-        }
-
-
-        
-    },[msg]);
+    useEffect(() =>{
+        console.log("set");
+    }, [isVisible]);
 
     const timer = setTimeout(() =>{
-        setVisible(false)
-    }, 10000)
+        setVisible(true);
+    }, 10000);
 
     return(
         <>
-        {isVisible && 
+        {hasVisible && 
         <div className={type}>
            {msg}
         </div>}

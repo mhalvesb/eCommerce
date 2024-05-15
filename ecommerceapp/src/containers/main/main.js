@@ -29,7 +29,6 @@ function Main(){
     const [cartId, setCartId] = useState(1);
     const navigate = useNavigate();
  
-
     
     const addToCart = (productName, productPrice, productImage) =>{
             const existingItem = cartItems.find(item => item.name === productName);

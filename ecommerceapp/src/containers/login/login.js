@@ -18,36 +18,35 @@ function Login(){
     
     const navigate = useNavigate();
     const location = useLocation();
-    let message = "";
+    let messageSuccess = [];
+    const [messageFailure, setMessageFailure] = useState("");
 
 
     
     
     if(location.state){
-        message = location.state.message
+     //  messageFailure = location.state.message
     }
 
 
     const loginSub = async (e) =>{
         e.preventDefault()
+
+        
+
         try{
             const formData = new FormData(e.target);
             const email = formData.get('email');
             const senha = formData.get('senha');
-
-            const responses = await Axios.post("https://ecommerce-server-wheat.vercel.app/login", {
+            const response = await Axios.post("https://ecommerce-server-wheat.vercel.app/login", {
                 email: email,
                 senha: senha
-            }).then((response)=>{
+            });
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 navigate("/");
-            });
-
-            
         } catch(error){
-
+            setMessageFailure(error.response.data.error);
         }
-    
     }
 
 
@@ -69,12 +68,12 @@ function Login(){
             </div>
 
             <div className="log-2">
-                {message && <Message type="success" msg={message}/>}
+                {messageFailure.length > 0 && <Message type="failure" msg={messageFailure}/>}
 
                 <div className="login-container">
                         <h2>Ecommerce</h2>
                         <h1>Bom ver você novamente</h1>
-                    <form action="" method="POST" onSubmit={loginSub}>
+                    <form onSubmit={(e) => loginSub(e)}>
                         <div className="inputarea">
 
                             <input type="text" name="email" id="emails" required></input>
