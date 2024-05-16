@@ -38,8 +38,9 @@ function Login(){
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 navigate("/");
             } catch(error){
-                const errorMessage = error.response.data.error;
-                window.location.href = "/login?error=" + errorMessage;
+                const errorMessage = process.env.SERVER_LOGIN;
+                console.log(errorMessage);
+               // window.location.href = "/login?error=" + errorMessage;
             }
     }
 
