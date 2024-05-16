@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize("sql10707025", "sql10707025", "j6gr1smwIk",{
-    host: "sql10.freemysqlhosting.net",
+const sequelize = new Sequelize("sql10707041", "sql10707041", "E4wUyUxDpe",{
+    host: "sql10.freesqldatabase.com",
     port: 3306,
     dialect: "mysql",
     dialectModule: require('mysql2'),
@@ -8,24 +8,26 @@ const sequelize = new Sequelize("sql10707025", "sql10707025", "j6gr1smwIk",{
 });
 
 
+console.log(sequelize);
 
 const users = sequelize.define("usuarios", {
     email: {
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING(255)
     },
     senha: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING(255)
     },
     login:{
-        type: Sequelize.STRING(20)
+        type: Sequelize.STRING(255)
     },
     nome: {
-        type: Sequelize.STRING(20)
+        type: Sequelize.STRING(255)
     }
 });
 
 
-sequelize.sync();
+
+
 
 module.exports = {
     Sequelize: Sequelize,
