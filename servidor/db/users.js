@@ -26,7 +26,7 @@ const users = sequelize.define("usuarios", {
 });
 
 
-sequelize.sync();
+
 
 
 
