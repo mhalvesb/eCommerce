@@ -31,7 +31,7 @@ function Login(){
             const formData = new FormData(e.target);
             const email = formData.get('email');
             const senha = formData.get('senha');
-            const response = await Axios.post("https://ecommerce-server-wheat.vercel.app/login", {
+            const response = await Axios.post(process.env.SERVER_LOGIN, {
                 email: email,
                 senha: senha
             });
