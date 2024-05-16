@@ -54,11 +54,11 @@ function Singup(){
             if(response.data.error){
                 navigate("/singup", {state: {message: response.data.error}});
             } else{
-                navigate("/login", {state: {message: "Usuario cadastrado com sucesso"}});
+                navigate("/login", {state: {messageSuccess: "Usuario cadastrado com sucesso"}});
             }
             
         }).catch((error)=>{
-            console.log(error);
+            
         });
 
         

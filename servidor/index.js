@@ -88,14 +88,15 @@ app.post("/users", async (req, res) => {
 
 app.post("/login", async (req, res)=>{
 
-    passport.authenticate("local", (error, user, message) => {
+    passport.authenticate("local", (error, user, info) => {
         if (error) {
             console.error(error);
             return error;
         }
         if (!user) {
-            return res.status(401).json({ error: "Usuário não encontrado ou senha inválida" });
+            return res.status(401).json({error: info.message});
         }
+
         req.login(user, (err) => {
             if (err) {
                 console.error(err);

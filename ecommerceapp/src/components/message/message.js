@@ -6,16 +6,20 @@ import "./message.css";
 
 
 function Message({type, msg, isVisible}){
-    const [hasVisible, setVisible] = useState(true);
+    const [hasVisible, setVisible] = useState(false);
    
+        const timer = setTimeout(() =>{
+            setVisible(false);
+        }, 5000);
+
 
     useEffect(() =>{
-        console.log("set");
-    }, [isVisible]);
-
-    const timer = setTimeout(() =>{
-        setVisible(true);
-    }, 10000);
+        if(msg){
+            setVisible(true);
+        } else{
+            setVisible(false);
+        }
+    }, [msg])
 
     return(
         <>

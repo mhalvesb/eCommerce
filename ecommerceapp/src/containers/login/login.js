@@ -18,39 +18,39 @@ function Login(){
     
     const navigate = useNavigate();
     const location = useLocation();
-    let messageSuccess = [];
+    const [messageSuccess, setMessageSuccess] = useState("");
     const [messageFailure, setMessageFailure] = useState("");
 
-
     
     
-    if(location.state){
-     //  messageFailure = location.state.message
-    }
 
 
     const loginSub = async (e) =>{
-        e.preventDefault()
-
-        
-
+        e.preventDefault();
         try{
             const formData = new FormData(e.target);
             const email = formData.get('email');
             const senha = formData.get('senha');
-            const response = await Axios.post("https://ecommerce-server-wheat.vercel.app/login", {
+            const response = await Axios.post("http://localhost:8080/login", {
                 email: email,
                 senha: senha
             });
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 navigate("/");
-        } catch(error){
-            setMessageFailure(error.response.data.error);
-        }
+            } catch(error){
+                const errorMessage = error.response.data.error;
+                window.location.href = "/login?error=" + errorMessage;
+            }
     }
 
 
-
+    useEffect(() =>{
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get("error");
+        if(error){
+            setMessageFailure(error);
+        }
+    })
 
 
     return(
@@ -68,7 +68,7 @@ function Login(){
             </div>
 
             <div className="log-2">
-                {messageFailure.length > 0 && <Message type="failure" msg={messageFailure}/>}
+                {messageFailure && <Message type="failure" msg={messageFailure}/>}
 
                 <div className="login-container">
                         <h2>Ecommerce</h2>
