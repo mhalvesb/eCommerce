@@ -4,7 +4,6 @@ import {useLocation, useNavigate} from "react-router-dom";
 import Axios from "axios";
 import Message from "../../components/message/message.js";
 import {Link} from "react-router-dom";
-
 import "./login.css";
 import axios from "axios";
 
@@ -15,7 +14,7 @@ function Login(){
         window.location.href = "/"
         navigate("/");
     }
-    
+    console.log(process.env.SERVER_LOGIN);
     const navigate = useNavigate();
     const location = useLocation();
     const [messageSuccess, setMessageSuccess] = useState("");
@@ -39,7 +38,7 @@ function Login(){
                 navigate("/");
             } catch(error){
                 const errorMessage = process.env.SERVER_LOGIN;
-                console.log(errorMessage);
+                
                // window.location.href = "/login?error=" + errorMessage;
             }
     }
