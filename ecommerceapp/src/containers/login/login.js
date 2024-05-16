@@ -14,7 +14,7 @@ function Login(){
         window.location.href = "/"
         navigate("/");
     }
-    console.log(process.env.SERVER_LOGIN);
+    console.log(process.env.REACT_APP_SERVER_LOGIN);
     const navigate = useNavigate();
     const location = useLocation();
     const [messageSuccess, setMessageSuccess] = useState("");
