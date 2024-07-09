@@ -30,7 +30,7 @@ function Login(){
             const formData = new FormData(e.target);
             const email = formData.get('email');
             const senha = formData.get('senha');
-            const response = await Axios.post(process.env.SERVER_LOGIN, {
+            const response = await Axios.post("http://localhost:8080/login", {
                 email: email,
                 senha: senha
             });
