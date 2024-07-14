@@ -7,17 +7,24 @@ const session = require("express-session");
 const localStrategy = require("passport-local").Strategy;
 const passport = require("passport");
 const flash = require("flash");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
+app.use(cookieParser());
 app.use(session({
-    secret: "secret",
-    resave: true,
-    saveUninitialized: true
+    secret: "secret"
 }));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(
+    cors({
+      origin: "http://localhost:3000",
+      credentials: true,
+    })
+  );
 const mongoClientOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -42,20 +49,50 @@ const client = new MongoClient(myUrl, {
   }
 
 
+ConnectDb();
+
+passport.serializeUser((user, done) => {
+    console.log("Serialize User");
+    done(null, user);
+});
+
+passport.deserializeUser( async (id, done) => {
+    console.log("Deserialize User");
+    const db = client.db("usuarios");
+    const collection = db.collection("meuusuarios");
+    
+    try {
+        console.log("procurando usuario");
+        const user = await collection.findOne({usuario: id.usuario});
+
+        if (!user) {
+            console.log("Usuario não encontrado");
+            return done(null, false);
+            
+        }
+        console.log("Usuario encontrado");
+        console.log(user);
+        return done(null, user);
+    } catch(err) {
+        console.log("Erro encontrado");
+        return done(null, err);
+    }
+});
 
 
 
 passport.use(new localStrategy({usernameField: "usuario", passwordField: "senha"}, async (usuario, senha, done) =>{
-    
         const db = client.db("usuarios");
         const collection = db.collection("meuusuarios");
-        
+       // console.log(senha);
         try{
             const user = await collection.findOne({usuario: usuario});
 
             if(!user){
+                console.log("sem usuario");
                 return done(null, false);
             } else{
+                console.log("há usuario");
                 return done(null, user);
             }
 
@@ -66,25 +103,7 @@ passport.use(new localStrategy({usernameField: "usuario", passwordField: "senha"
     
 }));
 
-passport.serializeUser((user, done) => {
-    done(null, user);
-});
 
-passport.deserializeUser(async (id, done) => {
-    const db = client.db("usuarios");
-    const collection = db.collection("meuusuarios");
-    try {
-        const user = await collection.findOne({usuario: id.usuario});
-
-        if (!user) {
-            return done(null, false);
-            
-        }
-        return done(null, user);
-    } catch(err) {
-        return done(null, err);
-    }
-});
 
 app.get("/user", (req, res) =>{
     if(req.user){
@@ -95,15 +114,15 @@ app.get("/user", (req, res) =>{
 });
 
 app.post("/login", async (req, res, next) =>{
-        try{
-            await passport.authenticate("local", {
-                successRedirect: "/user",
-                failureRedirect: "/auth/login",
-                failureFlash: true
-            })(req, res, next);
-        }catch(err){
+    try{
+        await passport.authenticate("local", {
+            successRedirect: ("/user"),
+            failureRedirect: ("/user"),
+            failureFlash: true
+        })(req, res, next);
+    }catch(err){
 
-        }
+    }
 });
 
 

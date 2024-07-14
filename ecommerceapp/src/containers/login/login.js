@@ -10,14 +10,17 @@ import axios from "axios";
 
 
 function Login(){
+    /*
     if(localStorage.getItem("user")){
         window.location.href = "/"
         navigate("/");
     }
+    */
+
     console.log(process.env.REACT_APP_SERVER_LOGIN);
     const navigate = useNavigate();
-    const location = useLocation();
-    const [messageSuccess, setMessageSuccess] = useState("");
+   // const location = useLocation();
+    //const [messageSuccess, setMessageSuccess] = useState("");
     const [messageFailure, setMessageFailure] = useState("");
 
     
@@ -28,14 +31,17 @@ function Login(){
         e.preventDefault();
         try{
             const formData = new FormData(e.target);
-            const email = formData.get('email');
+            const usuario = formData.get('usuario');
             const senha = formData.get('senha');
             const response = await Axios.post("http://localhost:8080/login", {
-                email: email,
+                usuario: usuario,
                 senha: senha
+            }, {
+                withCredentials: true
             });
-                localStorage.setItem("user", JSON.stringify(response.data.user));
-                navigate("/");
+                //localStorage.setItem("user", JSON.stringify(response.data.user));
+                console.log(response);
+               // navigate("/");
             } catch(error){
                 const errorMessage = process.env.SERVER_LOGIN;
                 
@@ -76,7 +82,7 @@ function Login(){
                     <form onSubmit={(e) => loginSub(e)}>
                         <div className="inputarea">
 
-                            <input type="text" name="email" id="emails" required></input>
+                            <input type="text" name="usuario" id="emails" required></input>
                             <p>Seu e-mail</p>
 
                         </div>

@@ -16,7 +16,6 @@ import { Axios } from "axios";
 
 
 function Header({items, hidden}){
-    
     const [cartItems, setCartItems] = useState(items);
     const [cartId, setCartId] = useState(1);
     const [user, setUser] = useState();
@@ -24,8 +23,10 @@ function Header({items, hidden}){
     useEffect(()=>{
         const userDataString = localStorage.getItem('user');
         
-        if(userDataString){
-            setUser(JSON.parse(userDataString));
+        if(!userDataString || userDataString === undefined || userDataString === null){
+            console.log("nada valido");
+        } else{
+          // setUser(JSON.parse(userDataString));
         }
     }, [])
     
