@@ -10,7 +10,7 @@ import Search from "../../assets/icons/search.png";
 
 
 import Carts from "../cart/cart.js";
-import { Axios } from "axios";
+import Axios from "axios";
 
 
 
@@ -18,15 +18,16 @@ import { Axios } from "axios";
 function Header({items, hidden}){
     const [cartItems, setCartItems] = useState(items);
     const [cartId, setCartId] = useState(1);
-    const [user, setUser] = useState();
+    const [user, setUser] = useState("");
 
     useEffect(()=>{
         const userDataString = localStorage.getItem('user');
         
-        if(!userDataString || userDataString === undefined || userDataString === null){
+        if(!userDataString || userDataString === undefined || userDataString === null || userDataString === "undefined"){
             console.log("nada valido");
-        } else{
-          // setUser(JSON.parse(userDataString));
+        }else{
+            console.log(userDataString);
+            setUser(userDataString);
         }
     }, [])
     
@@ -68,9 +69,17 @@ function Header({items, hidden}){
     })
 
 
-    const handleLogout = () =>{
-        localStorage.removeItem("user");
-        window.location.reload();
+    const handleLogout = async () =>{
+        try{
+            await Axios.post("http://localhost:8080/logout", {
+                withCredentials: true
+            });
+            localStorage.removeItem("user");
+            window.location.reload();
+        }catch(err){
+            console.log(err);
+        }
+        
     }
 
     const handleLogin = () =>{
@@ -93,7 +102,7 @@ function Header({items, hidden}){
                 </div>
                 <div className="headercategories" style={{display: hidden ? "none" : "block"}}>
                         <select value={categoriaSelect} onChange={handleSelecionarCategoria}>
-                            <option  value="">Inicio</option>
+                            <option value="">Inicio</option>
                             <option value="blusas">Blusas</option>
                             <option value="calcas">Calças</option>
                         </select>
@@ -105,7 +114,7 @@ function Header({items, hidden}){
                 
                     <div className="headerlogin logins" style={{display: hidden ? "none" : "flex"}} onClick={handleLogin}>
                         <img src={User} alt="user"></img>
-                        {user ? user.nome : <p>Login</p>}
+                        {user ? user : <p>Login</p>}
                     </div>
                 
                 <div>

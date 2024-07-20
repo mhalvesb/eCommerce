@@ -42,9 +42,6 @@ function Main(){
                     }
                     setCartItems([...cartItems, updateItem]);
                 });
-
-                
-
             } 
             else 
             {
@@ -58,18 +55,7 @@ function Main(){
             };
             setCartItems([...cartItems, newItem]);
             }
-
-            
-           
-
-            
-
-            
-
-
-
             setCartId(cartId + 1);
-            
     }
 
     useEffect(()=>{

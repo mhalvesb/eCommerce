@@ -107,9 +107,10 @@ passport.use(new localStrategy({usernameField: "usuario", passwordField: "senha"
 
 app.get("/user", (req, res) =>{
     if(req.user){
-        res.send(`Ola ${req.user.usuario}`);
+        const user = req.user;
+        res.send(user);
     } else{
-        res.send("Ok");
+        res.status(500).send("Usuario não encontrado");
     }
 });
 
@@ -123,6 +124,16 @@ app.post("/login", async (req, res, next) =>{
     }catch(err){
 
     }
+});
+
+app.post("/logout", (req, res, next) =>{
+    req.logout((err) =>{
+        if(err){
+            return next(err);
+        }
+        console.log("Logout efetuado com sucesso");
+        res.status(200).send("Logout efetuado com sucesso");
+    });
 });
 
 

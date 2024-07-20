@@ -36,16 +36,17 @@ function Login(){
             const response = await Axios.post("http://localhost:8080/login", {
                 usuario: usuario,
                 senha: senha
-            }, {
+            }, 
+            {
                 withCredentials: true
             });
-                //localStorage.setItem("user", JSON.stringify(response.data.user));
-                console.log(response);
-               // navigate("/");
+                console.log(response.data.usuario);
+                localStorage.setItem("user", response.data.usuario);
+                navigate("/");
+
             } catch(error){
-                const errorMessage = process.env.SERVER_LOGIN;
-                
-               // window.location.href = "/login?error=" + errorMessage;
+                const errorMessage = "Usuario não encontrado";
+                window.location.href = "/login?error=" + errorMessage;
             }
     }
 
