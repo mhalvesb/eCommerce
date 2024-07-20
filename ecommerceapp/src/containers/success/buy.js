@@ -5,7 +5,7 @@ import "./buy.css";
 
 export function Buys(){
     const Navigate = useNavigate();
-    localStorage.clear();
+    localStorage.remoteItem("cartItem");
    
     setTimeout(() =>{
         Navigate("/");

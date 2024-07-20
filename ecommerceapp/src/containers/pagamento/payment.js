@@ -7,6 +7,7 @@ import "./payment.css";
 import Header from "../../components/header/header.js";
 import { Step } from "../../components/steps/step";
 import Footer from "../../components/footer/footer";
+import  Axios  from "axios";
 
 
 function Payment(){
@@ -14,8 +15,11 @@ function Payment(){
     const storageItem = localStorage.getItem("cartItem");
     const initialItem = storageItem ? JSON.parse(localStorage.getItem("cartItem")) : [];
     const [cartItems, setCartItems] = useState(initialItem);
+    const [cepValue, setCep] = useState("");
 
-    
+    const [addressValue, setAddress] = useState({});
+    const [cityValue, setCity] = useState({});
+
     const subTotal = () =>{
         let total = 0;
         cartItems.forEach((item) =>{
@@ -58,7 +62,33 @@ function Payment(){
         return resumeItems;
     }
     
+    const autoCompleteCep = (e) =>{
+        
+        if(e.target.value.length > 8){
+            console.log("Já chegou nos 8");
+        } else{
+            setCep(e.target.value);
+        }
+        
 
+    }
+
+    const setAddressValue = (e) =>{
+        setAddress(
+            {
+                ...addressValue,
+                logradouro: e.target.value
+            }
+        );
+    }
+    
+    const setCityValue = (e) =>{
+        setCity(
+            {
+            ...cityValue,
+            localidade: e.target.value
+        });
+    }
 
     function handleBuySuccess(){
         Navigate("/success")
@@ -69,7 +99,15 @@ function Payment(){
             Navigate("/");
             }
     }, [Navigate]);
+    useEffect(() =>{
+        if(cepValue.length >= 8){
+            Axios.get(`https://viacep.com.br/ws/${cepValue}/json/`).then(response =>{
+            setAddress(response.data);
+            setCity(response.data);
 
+            });
+        }
+    }, [cepValue]);
     return(
         <div className="paymentContainer">
             <Header items={cartItems} hidden={true}></Header>
@@ -89,15 +127,17 @@ function Payment(){
                                 <p>Nome</p>
                             </div>
                             <div className="inputs">
-                                <input type="text" required></input>
-                                <p>Endereço</p>
-                            </div>
-                            <div className="inputs">
-                                <input type="text" required></input>
+                                <input  type="number" name="cep" id="cep" maxLength="8" onChange={(e) => autoCompleteCep(e)} value={cepValue} required></input>
                                 <p>CEP</p>
                             </div>
+
                             <div className="inputs">
-                                <input type="text" required></input>
+                                <input type="text" onChange={(e) => setAddressValue(e)} value={addressValue.logradouro ? addressValue.logradouro : ""} required></input>
+                                <p>Endereço</p>
+                            </div>
+                            
+                            <div className="inputs">
+                                <input type="text" onChange={(e) => setCityValue(e)} value={cityValue.localidade ? cityValue.localidade : ""} required></input>
                                 <p>Cidade</p>
                             </div>
                             <div className="inputs">
